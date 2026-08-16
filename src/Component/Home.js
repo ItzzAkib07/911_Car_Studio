@@ -21,7 +21,7 @@ import service1 from '../images/service1.jpg';
 import service2 from '../images/service2.jpg';
 import painting from '../images/painting.jpg';
 import wasing from '../images/bikeWash.jpg';
-import diwali from '../images/Happy diwali.jpg'
+// import diwali from '../images/Happy diwali.jpg'
 
 
 // booking or contact
@@ -63,9 +63,9 @@ import { Tooltip } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import moment from 'moment'
-import DateTimePicker from '@mui/lab/DateTimePicker';
+// import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+// import moment from 'moment'
+// import DateTimePicker from '@mui/lab/DateTimePicker';
 
 // React-Datepicker
 import DatePicker from 'react-datepicker';
@@ -90,9 +90,9 @@ const style = {
 };
 
 // Modal style Diwali offer
-const offerModalStyle = {
+// const offerModalStyle = {
 
-};
+// };
 
 
 
@@ -125,7 +125,7 @@ const Home = () => {
     const [getAddress, setAddress] = React.useState('');
     const [currentDate, setCurrentDate] = React.useState(new Date());
     const [showFields, setShowFields] = useState(false); // Initialize the checkbox state
-    const pickupDate = moment(fromDate).format('DD-MM-YYYY hh:mm A');
+    // const pickupDate = moment(fromDate).format('DD-MM-YYYY hh:mm A');
 
     // Function to send mail
     const sendEmail = (e) => {
@@ -193,9 +193,9 @@ const Home = () => {
 
 
     // states for modal - 4 Diwali Offer
-    const [open4, setOpen4] = React.useState(false);
-    const handleOpen4 = () => setOpen4(true);
-    const handleClose4 = () => setOpen4(false);
+    // const [open4, setOpen4] = React.useState(false);
+    // const handleOpen4 = () => setOpen4(true);
+    // const handleClose4 = () => setOpen4(false);
 
     const handleFromDateChange = date => {
         setFromDate(date);
@@ -224,7 +224,7 @@ const Home = () => {
         // Hide the first section after 10 seconds
         const timeoutId = setTimeout(() => {
             setShowFirstSection(false);
-            handleOpen4();
+            // handleOpen4();
         }, 7000);
 
         return () => {
@@ -274,7 +274,7 @@ const Home = () => {
                         <div className='logo'>
 
                             <SmoothScrollingLink to="home" >
-                                <img src={logo} />
+                                <img src={logo} alt="911 Car Detailing Studio Logo" />
                             </SmoothScrollingLink>
 
 
@@ -340,19 +340,19 @@ const Home = () => {
                                     <ul style={{ padding: "0" }}>
 
                                         <li className="icons">
-                                            <a href="https://www.facebook.com/profile.php?id=61550075405673&mibextid=ZbWKwL" target="_blank">
+                                            <a href="https://www.facebook.com/profile.php?id=61550075405673&mibextid=ZbWKwL" target="_blank" rel="noreferrer">
                                                 <i className="fa-brands fa-facebook" ></i>
                                             </a>
                                         </li>
 
                                         <li className="icons">
-                                            <a href="https://www.instagram.com/911_premiumcardetailing/" target="_blank">
+                                            <a href="https://www.instagram.com/911_premiumcardetailing/" target="_blank" rel="noreferrer">
                                                 <i className="fa-brands fa-instagram"></i>
                                             </a>
                                         </li>
 
                                         <li className="icons">
-                                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target="_blank">
+                                            <a href="https://wa.me/message/FXCIZ4L4CNDJK1" target="_blank" rel="noreferrer">
                                                 <i className="fa-brands fa-whatsapp"></i>
                                             </a>
                                         </li>
@@ -381,7 +381,7 @@ const Home = () => {
                                     <p className="footer-heart">
                                         Made with <g-emoji className="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
                                             <img className="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png" />
-                                        </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank'>Akib Mulla</a>
+                                        </g-emoji> by <a href="https://itzzakib07.github.io/dopefolio/" target='_blank' rel='noreferrer'>Akib Mulla</a>
                                     </p>
                                 </div>
 
@@ -462,7 +462,7 @@ const Home = () => {
                         </div>
 
                         <div className='sec-2' data-aos="fade-up">
-                            <img src={quality}></img>
+                            <img src={quality} alt="Quality Assured"></img>
                         </div>
 
                     </section>
@@ -477,7 +477,7 @@ const Home = () => {
                             <div className='section-1' >
 
                                 <div className='sub-1' data-aos="fade-right">
-                                    <img src={service1} />
+                                    <img src={service1} alt="Paint Protection Film Service" />
                                 </div>
 
                                 <div className='sub-2' data-aos="fade-left">
@@ -500,14 +500,14 @@ const Home = () => {
                                 </div>
 
                                 <div className='sub-4' data-aos="fade-left">
-                                    <img src={service2} />
+                                    <img src={service2} alt="Paint Correction Service" />
                                 </div>
                             </div>
 
                             <div className='section-3'>
 
                                 <div className='sub-5' data-aos="fade-right">
-                                    <img src={wasing} />
+                                    <img src={wasing} alt="Ceramic Graphene Coatings" />
                                 </div>
 
                                 <div className='sub-6' data-aos="fade-left">
@@ -532,7 +532,7 @@ const Home = () => {
                                 </div>
 
                                 <div className='sub-8' data-aos="fade-left">
-                                    <img src={painting} />
+                                    <img src={painting} alt="Exterior Detailing and Car Spa" />
                                 </div>
                             </div>
 
@@ -549,7 +549,7 @@ const Home = () => {
                             <div className='service' id='service1' data-aos="fade-right">
 
                                 <div className='img'>
-                                    <img src={brake} />
+                                    <img src={brake} alt="Brake Service" />
                                 </div>
 
                                 <h4>Brake Service</h4>
@@ -566,7 +566,7 @@ const Home = () => {
 
                             <div className='service' id='service2' data-aos="fade-left">
                                 <div className='img'>
-                                    <img src={engine} />
+                                    <img src={engine} alt="Engine Service" />
                                 </div>
 
                                 <h4>Engine Service</h4>
@@ -581,7 +581,7 @@ const Home = () => {
 
                             <div className='service' id='service3' data-aos="fade-right">
                                 <div className='img'>
-                                    <img src={wheel} />
+                                    <img src={wheel} alt="Wheel Service" />
                                 </div>
 
                                 <h4>Wheel Service</h4>
@@ -598,7 +598,7 @@ const Home = () => {
 
                             <div className='service' id='service4' data-aos="fade-left">
                                 <div className='img'>
-                                    <img src={oil} />
+                                    <img src={oil} alt="Oil Service" />
                                 </div>
 
                                 <h4>Oil Service</h4>
@@ -614,7 +614,7 @@ const Home = () => {
 
                             <div className='service' id='service5' data-aos="fade-right" >
                                 <div className='img'>
-                                    <img src={battery} />
+                                    <img src={battery} alt="Battery Service" />
                                 </div>
 
                                 <h4>Battery Service</h4>
@@ -1030,7 +1030,7 @@ const Home = () => {
 
                                 <div className='map'>
 
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
+                                    <iframe title="911 Car Detailing Studio Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1430271143336!2d73.90498707473623!3d18.567589467737257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1747c575c1d%3A0xd51856b9cc9076e7!2sThe%20Piston%20Bike%20Lounge!5e0!3m2!1sen!2sin!4v1693466323046!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style={{ height: '100%', width: '100%', border: 'none' }} />
 
                                 </div>
 
