@@ -7,7 +7,7 @@ const SmoothScrollingLink = ({ to, children }) => {
       to={to}
       smooth={true}
       duration={100}
-      offset={-80} // Change this offset based on your header height or sticky elements.
+      offset={-90} // Offset to clear the sticky header height (5rem + buffer).
       onClick={() => {
         // Handle any additional logic here if needed before scrolling.
         document.getElementById('side-navbar').style.width = "0";
