@@ -564,93 +564,128 @@ const Home = () => {
                     </section>
 
 
-                    {/* Service Information Section */}
-                    <section className='service-container'>
+                    {/* Key Benefits Section */}
+                    <section className='premium-benefits-section'>
 
-                        <div className='service-details' id='service-details'>
+                        <div className='premium-benefits-header' data-aos="fade-up">
+                            <span className='premium-services-label'>WHY CHOOSE US</span>
+                            <h1 className='premium-services-title'>KEY BENEFITS</h1>
+                            <div className='premium-services-line'></div>
+                        </div>
 
-                            <div className='service' id='service1' data-aos="fade-right">
-
-                                <div className='img'>
-                                    <img src={brake} alt="Brake Service" />
+                        <div className='premium-benefits-grid'>
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="50">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-star"></i>
                                 </div>
-
-                                <h4>Brake Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p1'>
-
-                                        Regular bike brake service is crucial for safety, longevity, performance, and comfort. Properly maintained brakes ensure your safety while riding, prolong the lifespan of components, enhance stopping power, and provide a more enjoyable riding experience.
-                                    </p>
-
-                                </div>
+                                <h3>ENHANCES LOOK</h3>
+                                <p>Elevate your vehicle's appearance with a deep, mirror-like finish that turns heads.</p>
                             </div>
 
-                            <div className='service' id='service2' data-aos="fade-left">
-                                <div className='img'>
-                                    <img src={engine} alt="Engine Service" />
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="100">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-shield-halved"></i>
                                 </div>
-
-                                <h4>Engine Service</h4>
-
-                                <div className='information'>
-                                    <p id='p2'>
-                                        Regular bike engine service is essential for performance, safety, longevity, fuel efficiency, and resale value. Maintaining your engine ensures proper functionality, prevents issues, reduces the risk of accidents, prolongs its lifespan, saves fuel costs, and enhances resale prospects.
-                                    </p>
-                                </div>
-
+                                <h3>PROTECTS PAINT</h3>
+                                <p>Shield your paint from chips, scratches, and environmental contaminants with advanced protection.</p>
                             </div>
 
-                            <div className='service' id='service3' data-aos="fade-right">
-                                <div className='img'>
-                                    <img src={wheel} alt="Wheel Service" />
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="150">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-clock"></i>
                                 </div>
-
-                                <h4>Wheel Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p3'>
-                                        Regular bike wheel service ensures safety, performance, and longevity. It provides smoother rides, prevents accidents, and extends the lifespan of your bike components.it enhances comfort and aesthetics for an overall biking experience.
-
-                                    </p>
-
-                                </div>
+                                <h3>LONG LASTING PROTECTION</h3>
+                                <p>Our coatings and films provide durable protection that lasts for years, not just weeks.</p>
                             </div>
 
-                            <div className='service' id='service4' data-aos="fade-left">
-                                <div className='img'>
-                                    <img src={oil} alt="Oil Service" />
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="200">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-droplet"></i>
                                 </div>
-
-                                <h4>Oil Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p4'>
-                                        Regular bike oil service ensures proper lubrication, cooling, and performance, extending engine life and preventing damage from contamination. Fresh oil reduces friction, increases horsepower, and improves fuel efficiency for a smooth ride.
-                                    </p>
-                                </div>
-
+                                <h3>HYDROPHOBIC EFFECT</h3>
+                                <p>Water beads and rolls off effortlessly, keeping your car cleaner for longer.</p>
                             </div>
 
-                            <div className='service' id='service5' data-aos="fade-right" >
-                                <div className='img'>
-                                    <img src={battery} alt="Battery Service" />
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="250">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-sun"></i>
                                 </div>
-
-                                <h4>Battery Service</h4>
-
-                                <div className='information'>
-
-                                    <p id='p5'>
-                                        Regular bike battery service ensures reliable starting, proper electrical component functioning, and enhanced battery lifespan. It also promotes safety by preventing electrical issues and potential engine stalling while providing long-term cost savings.
-                                    </p>
-                                </div>
-
+                                <h3>UV & CHEMICAL RESISTANCE</h3>
+                                <p>Defend against UV fading, bird droppings, acid rain, and harsh chemical exposure.</p>
                             </div>
 
+                            <div className='premium-benefit-card' data-aos="fade-up" data-aos-delay="300">
+                                <div className='premium-benefit-icon'>
+                                    <i className="fa-solid fa-gem"></i>
+                                </div>
+                                <h3>INCREASES VALUE</h3>
+                                <p>Maintain your vehicle in showroom condition, preserving its resale value over time.</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    {/* More Services + Pick Up & Drop */}
+                    <section className='premium-more-section'>
+
+                        <div className='premium-more-header' data-aos="fade-up">
+                            <span className='premium-services-label'>ALSO AVAILABLE</span>
+                            <h1 className='premium-services-title'>MORE SERVICES</h1>
+                            <div className='premium-services-line'></div>
+                        </div>
+
+                        <div className='premium-more-grid'>
+
+                            <div className='premium-more-card' data-aos="fade-up" data-aos-delay="100">
+                                <div className='premium-more-card-icon'>
+                                    <i className="fa-solid fa-couch"></i>
+                                </div>
+                                <h3>INTERIOR DETAILING</h3>
+                                <p>Deep cleaning and restoration of your vehicle's interior — seats, dashboard, carpets, and every hidden corner — leaving it fresh and like new.</p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-service-cta'>BOOK NOW <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+                            </div>
+
+                            <div className='premium-more-card' data-aos="fade-up" data-aos-delay="200">
+                                <div className='premium-more-card-icon'>
+                                    <i className="fa-solid fa-spray-can-sparkles"></i>
+                                </div>
+                                <h3>GLASS COATING</h3>
+                                <p>Hydrophobic glass protection for improved visibility, easier maintenance, and a crystal-clear windshield that repels water and grime.</p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-service-cta'>BOOK NOW <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+                            </div>
+
+                            <div className='premium-more-card' data-aos="fade-up" data-aos-delay="300">
+                                <div className='premium-more-card-icon'>
+                                    <i className="fa-solid fa-circle-dot"></i>
+                                </div>
+                                <h3>WHEEL & CALIPER CLEANING</h3>
+                                <p>Deep cleaning and detailing for wheels and brake calipers — removing brake dust, grime, and buildup for a clean, polished finish.</p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-service-cta'>BOOK NOW <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+                            </div>
+
+                        </div>
+
+                        {/* Pick Up & Drop Banner */}
+                        <div className='premium-pickup-banner' data-aos="zoom-in">
+                            <div className='premium-pickup-content'>
+                                <div className='premium-pickup-icon'>
+                                    <i className="fa-solid fa-car-side"></i>
+                                </div>
+                                <h2 className='premium-pickup-title'>PICK UP & DROP SERVICE</h2>
+                                <p className='premium-pickup-tagline'>
+                                    SO YOU STAY FREE,<br />
+                                    WE'LL TAKE CARE OF YOUR CAR.
+                                </p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-pickup-cta'>SCHEDULE PICKUP <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+                            </div>
                         </div>
 
                     </section>
@@ -1105,6 +1140,20 @@ const Home = () => {
 
                                 </div>
 
+                                {/* Studio Information */}
+                                <div className='premium-studio-info' data-aos="fade-up">
+                                    <h3 className='premium-studio-name'>911 PREMIUM CAR DETAILING STUDIO</h3>
+                                    <p className='premium-studio-address'>IN FRONT OF GOLDEN WINDS, DY PATIL, PUNE CITY – 411047</p>
+                                    <div className='premium-studio-phones'>
+                                        <a href="tel:9112829911" className='premium-studio-phone'>
+                                            <i className="fa-solid fa-phone"></i> 9112829911
+                                        </a>
+                                        <span className='premium-studio-divider'>|</span>
+                                        <a href="tel:8657445050" className='premium-studio-phone'>
+                                            <i className="fa-solid fa-phone"></i> 8657445050
+                                        </a>
+                                    </div>
+                                </div>
 
 
                             </div>

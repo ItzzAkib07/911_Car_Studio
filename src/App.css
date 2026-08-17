@@ -953,7 +953,365 @@ h1:hover {
   transform: translateX(4px);
 }
 
-/* Old servicing classes kept for backwards compatibility but hidden */
+/* ///////////////////////////////////////////////////////////////////////////////   Key Benefits Section  //////////////////////////////////////////////////////////////////////////////// */
+
+.premium-benefits-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.premium-benefits-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.premium-benefits-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.premium-benefit-card {
+  background: rgba(22, 22, 22, 0.9);
+  border: 1px solid rgba(138, 43, 226, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, blueviolet, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.premium-benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 12px 40px rgba(138, 43, 226, 0.15);
+}
+
+.premium-benefit-card:hover::before {
+  opacity: 1;
+}
+
+.premium-benefit-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: all 0.4s ease;
+}
+
+.premium-benefit-card:hover .premium-benefit-icon {
+  background: linear-gradient(135deg, blueviolet, rgba(138, 43, 226, 0.5));
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+}
+
+.premium-benefit-icon i {
+  font-size: 1.4rem;
+  color: blueviolet;
+  transition: color 0.4s ease;
+}
+
+.premium-benefit-card:hover .premium-benefit-icon i {
+  color: white;
+}
+
+.premium-benefit-card h3 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  color: white;
+  margin: 0 0 0.75rem 0;
+}
+
+.premium-benefit-card p {
+  font-size: 0.88rem;
+  color: rgb(150, 145, 145);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   More Services Section  //////////////////////////////////////////////////////////////////////////////// */
+
+.premium-more-section {
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.premium-more-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.premium-more-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.premium-more-card {
+  background: #161616;
+  border: 1px solid rgba(138, 43, 226, 0.08);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-more-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, blueviolet, #b393d3);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.premium-more-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(138, 43, 226, 0.25);
+  box-shadow: 0 16px 50px rgba(138, 43, 226, 0.12);
+}
+
+.premium-more-card:hover::after {
+  transform: scaleX(1);
+}
+
+.premium-more-card-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(138, 43, 226, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.premium-more-card:hover .premium-more-card-icon {
+  background: linear-gradient(135deg, blueviolet, rgba(138, 43, 226, 0.6));
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.35);
+}
+
+.premium-more-card-icon i {
+  font-size: 1.3rem;
+  color: blueviolet;
+  transition: color 0.4s ease;
+}
+
+.premium-more-card:hover .premium-more-card-icon i {
+  color: white;
+}
+
+.premium-more-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  color: white;
+  margin: 0 0 0.75rem 0;
+}
+
+.premium-more-card p {
+  font-size: 0.9rem;
+  color: rgb(160, 155, 155);
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  flex: 1;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Pick Up & Drop Banner  //////////////////////////////////////////////////////////////////////////////// */
+
+.premium-pickup-banner {
+  max-width: 1200px;
+  margin: 4rem auto 3rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #1a0a2e 0%, #0e0e1a 50%, #1a0a2e 100%);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-pickup-banner::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.25rem;
+  background: conic-gradient(from 180deg, blueviolet, transparent 40%, transparent 60%, blueviolet);
+  z-index: -1;
+  animation: rotateBannerBorder 6s linear infinite;
+}
+
+@keyframes rotateBannerBorder {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.premium-pickup-content {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  position: relative;
+}
+
+.premium-pickup-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, blueviolet, #6a1b9a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
+  animation: pulseIcon 2s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4); }
+  50% { box-shadow: 0 8px 50px rgba(138, 43, 226, 0.7); }
+}
+
+.premium-pickup-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.premium-pickup-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.premium-pickup-tagline {
+  font-size: 1rem;
+  color: rgb(180, 175, 175);
+  line-height: 1.8;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.08rem;
+  font-weight: 500;
+}
+
+.premium-pickup-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2.5rem;
+  background: linear-gradient(135deg, blueviolet, #6a1b9a);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.premium-pickup-cta:hover {
+  background: linear-gradient(135deg, #9c27b0, blueviolet);
+  box-shadow: 0 6px 30px rgba(138, 43, 226, 0.5);
+  transform: translateY(-2px);
+}
+
+.premium-pickup-cta i {
+  transition: transform 0.3s ease;
+}
+
+.premium-pickup-cta:hover i {
+  transform: translateX(4px);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////   Studio Information  //////////////////////////////////////////////////////////////////////////////// */
+
+.premium-studio-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem 2rem 3rem;
+  border-top: 1px solid rgba(138, 43, 226, 0.1);
+}
+
+.premium-studio-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.premium-studio-address {
+  font-size: 0.85rem;
+  color: rgb(140, 135, 135);
+  letter-spacing: 0.1rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.premium-studio-phones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.premium-studio-phone {
+  color: blueviolet;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.premium-studio-phone:hover {
+  color: #b393d3;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+}
+
+.premium-studio-phone i {
+  font-size: 0.8rem;
+}
+
+.premium-studio-divider {
+  color: rgba(138, 43, 226, 0.3);
+  font-size: 1.2rem;
+}
+
+/* Old servicing classes kept for backwards compatibility */
 .servicing {
   height: 100%;
   margin-top: 4rem;
@@ -2040,6 +2398,86 @@ h1:hover {
     font-size: 3rem;
     bottom: 1rem;
     left: 1rem;
+  }
+
+  /* Key Benefits — Mobile */
+  .premium-benefits-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .premium-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .premium-benefit-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .premium-benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  /* More Services — Mobile */
+  .premium-more-section {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .premium-more-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .premium-more-card {
+    padding: 2rem 1.25rem;
+  }
+
+  /* Pick Up Banner — Mobile */
+  .premium-pickup-banner {
+    margin: 2.5rem 0 2rem;
+    border-radius: 1rem;
+  }
+
+  .premium-pickup-content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .premium-pickup-title {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .premium-pickup-tagline {
+    font-size: 0.9rem;
+  }
+
+  .premium-pickup-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .premium-pickup-icon i {
+    font-size: 1.4rem;
+  }
+
+  /* Studio Info — Mobile */
+  .premium-studio-info {
+    padding: 2rem 1rem;
+  }
+
+  .premium-studio-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.12rem;
+  }
+
+  .premium-studio-phones {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .premium-studio-divider {
+    display: none;
   }
 
   .form {
