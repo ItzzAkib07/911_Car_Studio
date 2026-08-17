@@ -2955,3 +2955,1353 @@ h1:hover {
     left: 95%;
   }
 }
+
+
+
+/* =========================================================
+   911 PREMIUM CAR DETAILING STUDIO
+   PRICING + KEY BENEFITS RESPONSIVE CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL SAFETY
+   ========================================================= */
+
+.premium-pricing-section,
+.premium-benefits-section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.premium-pricing-grid,
+.premium-benefits-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.premium-pricing-card,
+.premium-benefit-card {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.premium-pricing-card *,
+.premium-benefit-card * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   320px - 374px
+   ========================================================= */
+
+@media only screen and (max-width: 374px) {
+
+  /* =======================================================
+     PRICING SECTION
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    padding: 2rem 0.75rem;
+  }
+
+  .premium-pricing-header {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .premium-pricing-header .premium-services-title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .premium-pricing-header .premium-services-subtitle {
+    width: 100%;
+    padding: 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /*
+   * IMPORTANT:
+   * One card per row on very small screens.
+   */
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 1.5rem 1rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .premium-pricing-tier {
+    font-size: 0.65rem;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .premium-pricing-badge {
+    font-size: 0.6rem;
+    padding: 0.35rem 0.6rem;
+    margin-bottom: 0.75rem;
+    max-width: 100%;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.15rem;
+    line-height: 1.25;
+    margin: 0.5rem 0;
+    word-break: normal;
+  }
+
+  .premium-pricing-sub {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .premium-pricing-price {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .premium-pricing-currency {
+    font-size: 1rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .premium-pricing-divider {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .premium-pricing-info {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    cursor: pointer;
+    padding: 0.5rem 0;
+  }
+
+  .premium-pricing-info i {
+    font-size: 0.7rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+    min-height: 2.8rem;
+    padding: 0.7rem 0.75rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.06rem;
+  }
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    padding: 2rem 0.75rem;
+  }
+
+  .premium-benefits-header {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .premium-benefits-header .premium-services-title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    min-width: 0;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-radius: 0.75rem;
+  }
+
+  .premium-benefit-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .premium-benefit-icon i {
+    font-size: 1rem;
+  }
+
+  .premium-benefit-card h3 {
+    width: 100%;
+    margin: 0 0 0.65rem;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  .premium-benefit-card p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   STANDARD MOBILE
+   375px - 600px
+   ========================================================= */
+
+@media only screen and (min-width: 375px) and (max-width: 600px) {
+
+  /* =======================================================
+     PRICING
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    padding: 2.5rem 1rem;
+  }
+
+  .premium-pricing-header {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .premium-pricing-header .premium-services-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .premium-pricing-header .premium-services-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    padding: 0 0.25rem;
+  }
+
+  /*
+   * Three cards become one column.
+   */
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1.25rem;
+    border-radius: 1rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .premium-pricing-tier {
+    font-size: 0.7rem;
+    letter-spacing: 0.14rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .premium-pricing-badge {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 0.65rem;
+    padding: 0.4rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin: 0.5rem 0;
+  }
+
+  .premium-pricing-sub {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .premium-pricing-price {
+    margin: 1.25rem 0;
+  }
+
+  .premium-pricing-currency {
+    font-size: 1.1rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .premium-pricing-divider {
+    width: 100%;
+    margin: 1.25rem 0;
+  }
+
+  .premium-pricing-info {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08rem;
+  }
+
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    padding: 2.5rem 1rem;
+  }
+
+  .premium-benefits-header {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .premium-benefits-header .premium-services-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+
+  .premium-benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .premium-benefit-icon i {
+    font-size: 1.2rem;
+  }
+
+  .premium-benefit-card h3 {
+    width: 100%;
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .premium-benefit-card p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   LARGE PHONES / SMALL TABLETS
+   601px - 767px
+   ========================================================= */
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+
+  /* =======================================================
+     PRICING
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+
+  .premium-pricing-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .premium-pricing-header .premium-services-title {
+    font-size: 2.5rem;
+  }
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  /*
+   * Make the third pricing card occupy full width.
+   */
+
+  .premium-pricing-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .premium-pricing-amount {
+    font-size: 3rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+    min-height: 3rem;
+  }
+
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+
+  .premium-benefits-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .premium-benefits-header .premium-services-title {
+    font-size: 2.5rem;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+
+  .premium-benefit-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1rem;
+  }
+
+  .premium-benefit-card h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .premium-benefit-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   TABLETS
+   768px - 1023px
+   ========================================================= */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  /* =======================================================
+     PRICING
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+
+  .premium-pricing-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .premium-pricing-header .premium-services-title {
+    font-size: 3rem;
+  }
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  .premium-pricing-tier {
+    font-size: 0.7rem;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .premium-pricing-sub {
+    font-size: 0.75rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 2.75rem;
+  }
+
+  .premium-pricing-info {
+    font-size: 0.75rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+
+  .premium-benefits-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .premium-benefits-header .premium-services-title {
+    font-size: 3rem;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+  }
+
+  .premium-benefit-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.25rem;
+  }
+
+  .premium-benefit-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .premium-benefit-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+   1024px - 1199px
+   ========================================================= */
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+  /* =======================================================
+     PRICING
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    padding: 4rem 2.5rem;
+  }
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 2.25rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.35rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 3rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+  }
+
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    padding: 4rem 2.5rem;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  .premium-benefit-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.25rem;
+  }
+
+  .premium-benefit-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .premium-benefit-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px+
+   ========================================================= */
+
+@media only screen and (min-width: 1200px) {
+
+  /* =======================================================
+     PRICING
+     ======================================================= */
+
+  .premium-pricing-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+  }
+
+  .premium-pricing-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .premium-pricing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .premium-pricing-card {
+    width: 100%;
+    min-width: 0;
+    padding: 3rem 2rem;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .premium-pricing-sub {
+    font-size: 0.85rem;
+  }
+
+  .premium-pricing-price {
+    margin: 1.5rem 0;
+  }
+
+  .premium-pricing-amount {
+    font-size: 3.5rem;
+  }
+
+  .premium-pricing-info {
+    font-size: 0.85rem;
+  }
+
+  .premium-pricing-cta {
+    width: 100%;
+    min-height: 3.2rem;
+    margin-top: auto;
+  }
+
+
+  /* =======================================================
+     KEY BENEFITS
+     ======================================================= */
+
+  .premium-benefits-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+  }
+
+  .premium-benefits-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .premium-benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .premium-benefit-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 18rem;
+    padding: 2.75rem 2rem;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .premium-benefit-icon {
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .premium-benefit-icon i {
+    font-size: 1.35rem;
+  }
+
+  .premium-benefit-card h3 {
+    width: 100%;
+    margin: 0 0 0.85rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .premium-benefit-card p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================================================
+   LARGE / ULTRA-WIDE DESKTOP
+   1600px+
+   ========================================================= */
+
+@media only screen and (min-width: 1600px) {
+
+  .premium-pricing-section,
+  .premium-benefits-section {
+    max-width: 1500px;
+  }
+
+  .premium-pricing-grid,
+  .premium-benefits-grid {
+    gap: 2.5rem;
+  }
+
+  .premium-pricing-card {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .premium-pricing-name {
+    font-size: 1.65rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 4rem;
+  }
+
+  .premium-benefit-card {
+    min-height: 20rem;
+    padding: 3rem 2.5rem;
+  }
+
+  .premium-benefit-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .premium-benefit-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+
+  .premium-pricing-section,
+  .premium-benefits-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /*
+   * Use 2 columns in landscape to avoid extremely
+   * long scrolling on phones.
+   */
+
+  .premium-pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .premium-pricing-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+  }
+
+  .premium-pricing-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .premium-pricing-amount {
+    font-size: 2.5rem;
+  }
+
+  .premium-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .premium-benefit-card {
+    min-height: 15rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .premium-pricing-card:hover,
+  .premium-benefit-card:hover {
+    transform: none;
+  }
+
+  .premium-pricing-info,
+  .premium-pricing-cta {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .premium-pricing-info {
+    cursor: pointer;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .premium-pricing-card,
+  .premium-benefit-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   PRICING HIGHLIGHTS
+   ========================================================= */
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   320px - 374px
+   ========================================================= */
+
+@media only screen and (max-width: 374px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+    min-height: 4.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+    padding: 0.85rem 0.5rem;
+
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .premium-pricing-highlight span {
+    width: 100%;
+    min-width: 0;
+
+    font-size: 0.58rem;
+    line-height: 1.3;
+    letter-spacing: 0.03rem;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+
+/* =========================================================
+   STANDARD MOBILE
+   375px - 600px
+   ========================================================= */
+
+@media only screen and (min-width: 375px) and (max-width: 600px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+    min-height: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.6rem;
+    padding: 1rem 0.65rem;
+
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .premium-pricing-highlight span {
+    width: 100%;
+    min-width: 0;
+
+    font-size: 0.65rem;
+    line-height: 1.35;
+    letter-spacing: 0.04rem;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+
+/* =========================================================
+   LARGE PHONES / SMALL TABLETS
+   601px - 767px
+   ========================================================= */
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+    min-height: 5.25rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.7rem;
+    padding: 1rem;
+
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .premium-pricing-highlight span {
+    min-width: 0;
+
+    font-size: 0.7rem;
+    line-height: 1.35;
+    letter-spacing: 0.04rem;
+
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   TABLETS
+   768px - 1023px
+   ========================================================= */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2.5rem 0;
+    padding: 0;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+    min-height: 4.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+    padding: 0.85rem 0.5rem;
+
+    text-align: center;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1.15rem;
+  }
+
+  .premium-pricing-highlight span {
+    width: 100%;
+    min-width: 0;
+
+    font-size: 0.65rem;
+    line-height: 1.35;
+    letter-spacing: 0.03rem;
+
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+   1024px - 1199px
+   ========================================================= */
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 3rem 0;
+    padding: 0;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.65rem;
+    padding: 1rem;
+
+    text-align: center;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .premium-pricing-highlight span {
+    min-width: 0;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    letter-spacing: 0.04rem;
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px+
+   ========================================================= */
+
+@media only screen and (min-width: 1200px) {
+
+  .premium-pricing-highlights {
+    width: 100%;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .premium-pricing-highlight {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 4.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+    padding: 1.1rem 1rem;
+
+    text-align: center;
+  }
+
+  .premium-pricing-highlight i {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+  }
+
+  .premium-pricing-highlight span {
+    min-width: 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: 0.05rem;
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* =========================================================
+   ULTRA-WIDE DESKTOP
+   1600px+
+   ========================================================= */
+
+@media only screen and (min-width: 1600px) {
+
+  .premium-pricing-highlights {
+    max-width: 1300px;
+    gap: 2rem;
+  }
+
+  .premium-pricing-highlight {
+    min-height: 5rem;
+    padding: 1.25rem;
+  }
+
+  .premium-pricing-highlight i {
+    font-size: 1.3rem;
+  }
+
+  .premium-pricing-highlight span {
+    font-size: 0.8rem;
+    letter-spacing: 0.06rem;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+
+  .premium-pricing-highlights {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .premium-pricing-highlight {
+    min-height: 4rem;
+    padding: 0.65rem 0.4rem;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .premium-pricing-highlight i {
+    font-size: 0.95rem;
+  }
+
+  .premium-pricing-highlight span {
+    font-size: 0.58rem;
+    line-height: 1.25;
+  }
+}
