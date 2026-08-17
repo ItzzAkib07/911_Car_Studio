@@ -12,15 +12,15 @@ import logo from '../images/911_logo.png'
 import quality from '../images/maintainance.svg'
 
 // services
-import brake from '../images/brake.png';
-import engine from '../images/engine.png';
-import wheel from '../images/wheel.png';
-import oil from '../images/oil.png';
-import battery from '../images/battery.png';
-import service1 from '../images/service1.jpg';
-import service2 from '../images/service2.jpg';
-import painting from '../images/painting.jpg';
-import wasing from '../images/bikeWash.jpg';
+// import brake from '../images/brake.png';
+// import engine from '../images/engine.png';
+// import wheel from '../images/wheel.png';
+// import oil from '../images/oil.png';
+// import battery from '../images/battery.png';
+import service1 from '../images/PPF.png';
+import service2 from '../images/PAINT.png';
+import painting from '../images/COATING.png';
+import wasing from '../images/SPA.png';
 // import diwali from '../images/Happy diwali.jpg'
 
 
@@ -691,218 +691,159 @@ const Home = () => {
                     </section>
 
 
-                    {/* pricing section */}
-                    <section id='pricing'>
+                    {/* Pricing Section — Premium */}
+                    <section className='premium-pricing-section' id='pricing'>
 
-                        <div className='pricing-container'>
+                        <div className='premium-pricing-header' data-aos="fade-up">
+                            <span className='premium-services-label'>OUR PLANS</span>
+                            <h1 className='premium-services-title'>PRICING</h1>
+                            <div className='premium-services-line'></div>
+                            <p className='premium-services-subtitle'>Transparent pricing with no hidden charges. Choose the plan that fits your needs.</p>
+                        </div>
 
-                            <h1 data-aos="fade-down">Pricing</h1>
+                        <div className='premium-pricing-grid'>
 
-                            <div className='listing' data-aos="fade-up">
+                            {/* Plan 1 — Basic */}
+                            <div className='premium-pricing-card' data-aos="fade-up" data-aos-delay="100">
+                                <div className='premium-pricing-tier'>BASIC</div>
+                                <h2 className='premium-pricing-name'>General Service</h2>
+                                <span className='premium-pricing-sub'>Without Oil</span>
+                                <div className='premium-pricing-price'>
+                                    <span className='premium-pricing-currency'>₹</span>
+                                    <span className='premium-pricing-amount'>399</span>
+                                </div>
+                                <div className='premium-pricing-divider'></div>
+                                <p className='premium-pricing-info' onClick={handleOpen1}>
+                                    <i className="fa-solid fa-circle-info"></i> View service details
+                                </p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-pricing-cta'>BOOK SERVICE <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
 
-                                <div className='pricing' >
-                                    <h2>General Service <span>Without Oil</span></h2>
-
-                                    <span>Rs 399/-</span>
-
-                                    <span>Get to know more about this service </span>
-
-                                    <p onClick={handleOpen1}>Click here</p>
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open}
-                                        onClose={handleClose1}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose1}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>General Service <span>Without Oil</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <ul className='serviceList'>
-                                                    <li> <span> Cleaning</span> </li>
-                                                    <li> <span> Chain Cleaning </span> </li>
-                                                    <li> <span> Chain Lubrication </span> </li>
-                                                    <li> <span> Brake Adjustment </span> </li>
-                                                    <li> <span> Brake Pad Inspection </span> </li>
-                                                    <li> <span> Brake Caliper Alignment </span> </li>
-                                                    <li> <span> Gear Shifting Adjustment </span> </li>
-                                                    <li> <span> Tire Inspection </span> </li>
-                                                    <li> <span> Headset Adjustment </span> </li>
-                                                    <li> <span> Cable Inspection </span> </li>
-                                                </ul>
-                                            </Box>
-
+                                <Modal open={open} onClose={handleClose1} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+                                    <Box sx={style}>
+                                        <Box sx={{ position: 'relative', alignItems: 'center', color: 'white', left: '50%', top: '-1rem', fontSize: '1.5rem', fontWeight: '900', cursor: 'pointer' }} onClick={handleClose1}>
+                                            <i className="fa-solid fa-xmark"></i>
                                         </Box>
-                                    </Modal>
-
-                                </div>
-
-                                <div className='pricing'>
-                                    <h2>General Service <span>With Oil</span></h2>
-
-                                    <span>Rs 699/-</span>
-
-                                    <span>Get to know more about this service </span>
-
-                                    <p onClick={handleOpen2}>Click here</p>
-
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open2}
-                                        onClose={handleClose2}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose2}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>General Service <span>With Oil</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                    This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
-                                                </span>
-
-                                                <ul className='serviceList'>
-                                                    <li> <span> Checking oil levels</span> </li>
-                                                    <li> <span> Draining and topping up the oil </span> </li>
-                                                    <li> <span> Suspension forks </span> </li>
-                                                    <li> <span> Shock absorbers </span> </li>
-                                                    <li> <span> Internal gear hubs </span> </li>
-                                                    <li> <span> Brake and Gear oil </span> </li>
-                                                </ul>
-                                            </Box>
-
+                                        <div className='modal-header'>
+                                            <h2>General Service <span>Without Oil</span></h2>
+                                        </div>
+                                        <Box>
+                                            <ul className='serviceList'>
+                                                <li> <span> Cleaning</span> </li>
+                                                <li> <span> Chain Cleaning </span> </li>
+                                                <li> <span> Chain Lubrication </span> </li>
+                                                <li> <span> Brake Adjustment </span> </li>
+                                                <li> <span> Brake Pad Inspection </span> </li>
+                                                <li> <span> Brake Caliper Alignment </span> </li>
+                                                <li> <span> Gear Shifting Adjustment </span> </li>
+                                                <li> <span> Tire Inspection </span> </li>
+                                                <li> <span> Headset Adjustment </span> </li>
+                                                <li> <span> Cable Inspection </span> </li>
+                                            </ul>
                                         </Box>
-                                    </Modal>
-                                </div>
-
-                                <div className='pricing'>
-                                    <h2>Special Service <span className='h2-span'>Customizable</span></h2>
-
-                                    <span>Rs 799/-</span>
-
-                                    <span>Get to know more about this service</span>
-
-                                    <p onClick={handleOpen3}>Click here</p>
-
-                                    <SmoothScrollingLink to="booking" >
-                                        <button>Book Service</button>
-                                    </SmoothScrollingLink>
-
-                                    <Modal
-                                        open={open3}
-                                        onClose={handleClose3}
-                                        aria-labelledby="modal-modal-title"
-                                        aria-describedby="modal-modal-description"
-                                    >
-                                        <Box sx={style}>
-
-                                            <Box sx={{
-                                                position: 'relative',
-                                                alignItems: 'center',
-                                                color: 'white',
-                                                left: '50%',
-                                                top: '-1rem',
-                                                fontSize: '1.5rem',
-                                                fontWeight: '900',
-                                                cursor: 'pointer'
-                                            }}
-                                                onClick={handleClose3}
-                                            >
-                                                <i className="fa-solid fa-xmark"></i>
-                                            </Box>
-
-                                            <div className='modal-header'>
-                                                <h2>Special Service <span>Customizable</span></h2>
-                                            </div>
-
-                                            <Box>
-                                                <span style={{ color: 'rgb(189, 183, 183)' }}>
-                                                    This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
-                                                </span>
-                                            </Box>
-
-                                        </Box>
-                                    </Modal>
-
-                                </div>
-
-                                <div className='pricing-information'>
-
-                                    <h2>AFFORDABLE PRICING PLANS</h2>
-
-                                    <p>We provide the best bike service, recommend the best products through an independent review process.</p>
-
-                                    <ul>
-                                        <li><span>SAME DAY SERVICE</span></li>
-                                        <li><span>CONVENIENT LOCATION</span></li>
-                                        <li><span>ONLINE APPOINTMENT</span></li>
-                                    </ul>
-
-                                </div>
-
-                                <div className='pricing-information'>
-
-                                    <h2>PICK-UP & DROP SERVICE</h2>
-
-                                    <p>
-                                        We provide a convenient service for both car and bike washing. You can choose either car or bike washing exclusively. We offer pickup and drop-off from any location beyond 5km with an <strong>additional charge of 100.</strong>
-                                        <br />
-                                        <ul>
-                                            <li>
-                                                <span>Enjoy a 7-10 day warranty on our services.</span>
-                                            </li>
-                                        </ul>
-                                    </p>
-
-                                </div>
-
+                                    </Box>
+                                </Modal>
                             </div>
 
+                            {/* Plan 2 — Popular */}
+                            <div className='premium-pricing-card premium-pricing-featured' data-aos="fade-up" data-aos-delay="200">
+                                <div className='premium-pricing-badge'>MOST POPULAR</div>
+                                <div className='premium-pricing-tier'>STANDARD</div>
+                                <h2 className='premium-pricing-name'>General Service</h2>
+                                <span className='premium-pricing-sub'>With Oil</span>
+                                <div className='premium-pricing-price'>
+                                    <span className='premium-pricing-currency'>₹</span>
+                                    <span className='premium-pricing-amount'>699</span>
+                                </div>
+                                <div className='premium-pricing-divider'></div>
+                                <p className='premium-pricing-info' onClick={handleOpen2}>
+                                    <i className="fa-solid fa-circle-info"></i> View service details
+                                </p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-pricing-cta premium-pricing-cta-filled'>BOOK SERVICE <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+
+                                <Modal open={open2} onClose={handleClose2} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+                                    <Box sx={style}>
+                                        <Box sx={{ position: 'relative', alignItems: 'center', color: 'white', left: '50%', top: '-1rem', fontSize: '1.5rem', fontWeight: '900', cursor: 'pointer' }} onClick={handleClose2}>
+                                            <i className="fa-solid fa-xmark"></i>
+                                        </Box>
+                                        <div className='modal-header'>
+                                            <h2>General Service <span>With Oil</span></h2>
+                                        </div>
+                                        <Box>
+                                            <span style={{ color: 'rgb(189, 183, 183)' }}>
+                                                This service will cover all the tasks from general service without oil and adds oil-based component maintenance,such as
+                                            </span>
+
+                                            <ul className='serviceList'>
+                                                <li> <span> Checking oil levels</span> </li>
+                                                <li> <span> Draining and topping up the oil </span> </li>
+                                                <li> <span> Suspension forks </span> </li>
+                                                <li> <span> Shock absorbers </span> </li>
+                                                <li> <span> Internal gear hubs </span> </li>
+                                                <li> <span> Brake and Gear oil </span> </li>
+                                            </ul>
+                                        </Box>
+                                    </Box>
+                                </Modal>
+                            </div>
+
+                            {/* Plan 3 — Premium */}
+                            <div className='premium-pricing-card' data-aos="fade-up" data-aos-delay="300">
+                                <div className='premium-pricing-tier'>PREMIUM</div>
+                                <h2 className='premium-pricing-name'>Special Service</h2>
+                                <span className='premium-pricing-sub'>Customizable</span>
+                                <div className='premium-pricing-price'>
+                                    <span className='premium-pricing-currency'>₹</span>
+                                    <span className='premium-pricing-amount'>799</span>
+                                </div>
+                                <div className='premium-pricing-divider'></div>
+                                <p className='premium-pricing-info' onClick={handleOpen3}>
+                                    <i className="fa-solid fa-circle-info"></i> View service details
+                                </p>
+                                <SmoothScrollingLink to="booking">
+                                    <button className='premium-pricing-cta'>BOOK SERVICE <i className="fa-solid fa-arrow-right"></i></button>
+                                </SmoothScrollingLink>
+
+                                <Modal open={open3} onClose={handleClose3} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+                                    <Box sx={style}>
+                                        <Box sx={{ position: 'relative', alignItems: 'center', color: 'white', left: '50%', top: '-1rem', fontSize: '1.5rem', fontWeight: '900', cursor: 'pointer' }} onClick={handleClose3}>
+                                            <i className="fa-solid fa-xmark"></i>
+                                        </Box>
+                                        <div className='modal-header'>
+                                            <h2>Special Service <span>Customizable</span></h2>
+                                        </div>
+                                        <Box>
+                                            <span style={{ color: 'rgb(189, 183, 183)' }}>
+                                                This comprehensive service encompasses a thorough check and maintenance of the entire bike, including cleaning, oil-based component servicing, and it goes further with <strong> bike polishing and painting to restore its aesthetics and make it look brand new.</strong>
+                                            </span>
+                                        </Box>
+                                    </Box>
+                                </Modal>
+                            </div>
+
+                        </div>
+
+                        {/* Pricing Highlights */}
+                        <div className='premium-pricing-highlights' data-aos="fade-up">
+                            <div className='premium-pricing-highlight'>
+                                <i className="fa-solid fa-bolt"></i>
+                                <span>SAME DAY SERVICE</span>
+                            </div>
+                            <div className='premium-pricing-highlight'>
+                                <i className="fa-solid fa-location-dot"></i>
+                                <span>CONVENIENT LOCATION</span>
+                            </div>
+                            <div className='premium-pricing-highlight'>
+                                <i className="fa-solid fa-calendar-check"></i>
+                                <span>ONLINE APPOINTMENT</span>
+                            </div>
+                            <div className='premium-pricing-highlight'>
+                                <i className="fa-solid fa-shield-halved"></i>
+                                <span>7-10 DAY WARRANTY</span>
+                            </div>
                         </div>
 
                     </section>

@@ -1584,6 +1584,264 @@ h1:hover {
   color: yellow;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////   Premium Pricing Section  //////////////////////////////////////////////////////////////////////////////// */
+
+.premium-pricing-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 50%, #0a0a0a 100%);
+  overflow: hidden;
+  scroll-margin-top: 6rem;
+}
+
+.premium-pricing-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.premium-pricing-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Base pricing card */
+.premium-pricing-card {
+  background: #161616;
+  border: 1px solid rgba(138, 43, 226, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.premium-pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, blueviolet, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.premium-pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(138, 43, 226, 0.25);
+  box-shadow: 0 12px 40px rgba(138, 43, 226, 0.1);
+}
+
+.premium-pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* Featured card (middle) */
+.premium-pricing-featured {
+  border-color: rgba(138, 43, 226, 0.35);
+  background: linear-gradient(180deg, rgba(138, 43, 226, 0.06) 0%, #161616 40%);
+  transform: scale(1.04);
+}
+
+.premium-pricing-featured:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 16px 50px rgba(138, 43, 226, 0.2);
+}
+
+.premium-pricing-featured::before {
+  opacity: 1;
+  height: 3px;
+  background: linear-gradient(90deg, blueviolet, #b393d3, blueviolet);
+}
+
+/* MOST POPULAR badge */
+.premium-pricing-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, blueviolet, #6a1b9a);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0 1rem 0 0.75rem;
+}
+
+/* Tier label */
+.premium-pricing-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  color: blueviolet;
+  margin-bottom: 1rem;
+}
+
+/* Service name */
+.premium-pricing-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.25rem 0;
+}
+
+/* Sub-label */
+.premium-pricing-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: blueviolet;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Price display */
+.premium-pricing-price {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.premium-pricing-currency {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgb(180, 175, 175);
+  line-height: 1;
+  margin-top: 0.4rem;
+}
+
+.premium-pricing-amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+
+/* Divider */
+.premium-pricing-divider {
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, blueviolet, transparent);
+  margin-bottom: 1.25rem;
+}
+
+/* View details link */
+.premium-pricing-info {
+  font-size: 0.82rem;
+  color: blueviolet;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.5rem 0;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+.premium-pricing-info:hover {
+  color: #b393d3;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.premium-pricing-info i {
+  font-size: 0.85rem;
+}
+
+/* CTA buttons */
+.premium-pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: blueviolet;
+  border: 1.5px solid blueviolet;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.premium-pricing-cta:hover {
+  background: blueviolet;
+  color: white;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+  transform: translateY(-2px);
+}
+
+.premium-pricing-cta i {
+  transition: transform 0.3s ease;
+  font-size: 0.7rem;
+}
+
+.premium-pricing-cta:hover i {
+  transform: translateX(4px);
+}
+
+/* Filled CTA for featured card */
+.premium-pricing-cta-filled {
+  background: linear-gradient(135deg, blueviolet, #6a1b9a);
+  color: white;
+  border-color: transparent;
+}
+
+.premium-pricing-cta-filled:hover {
+  background: linear-gradient(135deg, #9c27b0, blueviolet);
+  box-shadow: 0 6px 30px rgba(138, 43, 226, 0.5);
+}
+
+/* Pricing Highlights strip */
+.premium-pricing-highlights {
+  max-width: 1100px;
+  margin: 3.5rem auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.premium-pricing-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(138, 43, 226, 0.06);
+  border: 1px solid rgba(138, 43, 226, 0.12);
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.premium-pricing-highlight:hover {
+  background: rgba(138, 43, 226, 0.12);
+  border-color: rgba(138, 43, 226, 0.3);
+  transform: translateY(-2px);
+}
+
+.premium-pricing-highlight i {
+  color: blueviolet;
+  font-size: 0.85rem;
+}
+
+.premium-pricing-highlight span {
+  color: rgb(180, 175, 175);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
 /* Service information */
 
 .service-information {
