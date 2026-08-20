@@ -65,14 +65,18 @@ const style = {
   left: "50%",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
   transform: "translate(-50%, -50%)",
-  width: "20rem",
-  height: "auto",
-  bgcolor: "black",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  width: "90%",
+  maxWidth: "500px",
+  maxHeight: "85vh",
+  overflowY: "auto",
+  bgcolor: "#141414",
+  border: "1px solid rgba(235, 187, 141, 0.3)",
+  borderRadius: "1.25rem",
+  boxShadow:
+    "0 20px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(235, 187, 141, 0.15)",
+  p: { xs: 2.5, sm: 3.5 },
+  outline: "none",
 };
 
 const Home = () => {
@@ -81,14 +85,35 @@ const Home = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll listener for sticky header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // funtion to slide the navbar
   function slide() {
-    document.getElementById("side-navbar").style.width = "20rem";
+    const el = document.getElementById("side-navbar");
+    if (el) el.style.width = "20rem";
+    const overlay = document.getElementById("side-navbar-overlay");
+    if (overlay) overlay.style.display = "block";
   }
 
   // funtion to close the nav bar
   function close() {
-    document.getElementById("side-navbar").style.width = "0";
+    const el = document.getElementById("side-navbar");
+    if (el) el.style.width = "0";
+    const overlay = document.getElementById("side-navbar-overlay");
+    if (overlay) overlay.style.display = "none";
   }
 
   // booking
@@ -176,26 +201,138 @@ const Home = () => {
     AOS.init();
   }, []);
 
-  // modal states
-  // states for modal - 1
-  const [open, setOpen] = React.useState(false);
-  const handleOpen1 = () => setOpen(true);
-  const handleClose1 = () => setOpen(false);
+  // Plan Details Dynamic Modal state
+  const [selectedPlanModal, setSelectedPlanModal] = useState(null);
 
-  // states for modal - 2
-  const [open2, setOpen2] = React.useState(false);
-  const handleOpen2 = () => setOpen2(true);
-  const handleClose2 = () => setOpen2(false);
-
-  // states for modal - 3
-  const [open3, setOpen3] = React.useState(false);
-  const handleOpen3 = () => setOpen3(true);
-  const handleClose3 = () => setOpen3(false);
-
-  // states for modal - 4 Diwali Offer
-  // const [open4, setOpen4] = React.useState(false);
-  // const handleOpen4 = () => setOpen4(true);
-  // const handleClose4 = () => setOpen4(false);
+  // 911 Car Detailing Studio Comprehensive Pricing Packages
+  const pricingPlans = [
+    {
+      id: "car-spa",
+      tier: "ESSENTIAL CARE",
+      name: "Studio Car Spa",
+      sub: "Snow Foam Wash & Interior Detailing",
+      price: "1,499",
+      badge: null,
+      delay: "100",
+      description:
+        "Comprehensive exterior snow foam pre-wash and deep interior cabin refresh designed for routine maintenance and showroom cleanliness.",
+      points: [
+        "High-Pressure pH-Neutral Snow Foam Wash & Two-Bucket Gentle Hand Wash",
+        "Alloy Wheels, Arches & Tyre Deep Degreasing with UV Dressing",
+        "High-Power Cabin, Boot & Foot Mat Interior Vacuuming",
+        "Dashboard, Console & Door Trim Antibacterial Conditioning",
+        "Streak-Free Crystal Clear Glass Cleaning (Interior & Exterior)",
+        "Hydrophobic Spray Sealant for Instant Paint Gloss & Water Beading",
+        "Door Jambs, Fuel Lid & Trunk Channel Pressure Cleaning",
+        "AC Vent Freshening & Cabin Odor Neutralization",
+      ],
+    },
+    {
+      id: "interior-spa",
+      tier: "CABIN RESTORATION",
+      name: "Deep Interior Spa",
+      sub: "Steam Sanitization + Leather Shield",
+      price: "3,499",
+      badge: null,
+      delay: "150",
+      description:
+        "Complete high-temperature steam sterilization, hot-water stain extraction, and leather hydration to restore your vehicle's interior to factory freshness.",
+      points: [
+        "High-Temperature Pressurized Steam Sanitation (Eliminates 99.9% Bacteria)",
+        "Deep Hot-Water Extraction for Fabric Seats, Roof-Liner & Floor Carpets",
+        "Multi-Stage pH-Balanced Leather Cleaning, Hydration & UV Protection",
+        "Dashboard, Console & Door Trims Deep Scrubbing & Matte UV Dressing",
+        "AC Vent Steam Flush & Ozone Air Purification for Odor Eradication",
+        "Trunk Space Deep Extraction & Spare Tyre Well Cleaning",
+        "Glass Anti-Fogging & Streak-Free Interior Clarity Treatment",
+        "Anti-Static Cockpit Dust Repellent Application",
+      ],
+    },
+    {
+      id: "paint-correction",
+      tier: "PAINT RESTORATION",
+      name: "Paint Correction & Polish",
+      sub: "Multi-Stage Swirl & Scratch Removal",
+      price: "4,999",
+      badge: null,
+      delay: "200",
+      description:
+        "Multi-stage machine compounding and finishing polish designed to eliminate swirl marks, oxidation, and scratches for deep mirror gloss.",
+      points: [
+        "3-Stage Chemical Paint Decontamination (Clay Bar + Iron Fallout Removal)",
+        "Multi-Stage Rotary/DA Compounding (Removes 85–90% Swirls & Scratches)",
+        "Jewel Finishing Polish for Maximum Depth, Clarity & Reflection",
+        "Headlight & Tail Light Optical Clarification & Defect Removal",
+        "Engine Bay Waterless Steam Cleaning & Protective Dressing",
+        "6-Month Graphene / Polymer Synthetic Paint Sealant Application",
+        "Windshield & Glass Hard-Water Spot Removal and Polishing",
+        "Exterior Unpainted Plastic Trims Deep Restoration",
+      ],
+    },
+    {
+      id: "ceramic-coating",
+      tier: "3-YEAR NANO SHIELD",
+      name: "9H Ceramic Coating",
+      sub: "Dual-Layer 9H Shield (3-Yr Warranty)",
+      price: "12,999",
+      badge: "MOST POPULAR",
+      delay: "250",
+      description:
+        "Our signature ceramic protection system creating a super-hard, high-gloss hydrophobic shield over your vehicle with a 3-Year Studio Warranty.",
+      points: [
+        "Complete Multi-Stage Paint Correction & High-Gloss Mirror Prep",
+        "9H Dual-Layer Nano Ceramic Coating on all Painted Panels",
+        "3-Year Studio Warranty with Scheduled Periodic Inspections",
+        "High-Heat Ceramic Coating on Alloy Rims & Brake Calipers",
+        "360° Hydrophobic Rain-Repellent Glass Coating on Windows & Sunroof",
+        "Interior Leather & Fabric Anti-Stain Ceramic Nano Barrier",
+        "Exterior Plastic Trims & Rubber Long-Term UV Ceramic Coating",
+        "Digital Paint Depth Audit & Gloss Measurement Certification",
+      ],
+    },
+    {
+      id: "graphene-coating",
+      tier: "5-YEAR GRAPHENE",
+      name: "10H Graphene Coating",
+      sub: "Thermal Matrix Shield (5-Yr Warranty)",
+      price: "18,999",
+      badge: "ADVANCED TECH",
+      delay: "300",
+      description:
+        "Next-generation 10H graphene nano-matrix infused coating offering extreme hardness, anti-static dust repellency, and superior thermal dissipation.",
+      points: [
+        "Extensive 3-Stage Paint Correction (Up to 95% Defect Removal)",
+        "10H Graphene Matrix Coating Infused on all Painted Body Panels",
+        "5-Year Studio Warranty with Scheduled Top-Up Maintenance",
+        "Reduced Water-Spotting & Chemical Etching via Graphene Thermal Shield",
+        "High-Heat Graphene Rim, Exhaust Tip & Caliper Coating",
+        "All-Weather 360° Hydrophobic Glass & Mirror Coating",
+        "Complete Interior Leather, Alcantara & Fabric Hydrophobic Shield",
+        "Complimentary 1st Year Maintenance Wash & Inspection Included",
+      ],
+    },
+    {
+      id: "ppf",
+      tier: "PHYSICAL ARMOR",
+      name: "Paint Protection Film (PPF)",
+      sub: "Self-Healing TPU Film (5-7 Yr Warranty)",
+      price: "44,999",
+      badge: "MAX PROTECTION",
+      delay: "350",
+      description:
+        "The ultimate physical automotive armor. Aerospace-grade self-healing TPU film engineered to resist stone chips, gravel scratches, keying, and road hazards.",
+      points: [
+        "Aerospace-Grade Instant Self-Healing TPU (Thermoplastic Polyurethane) Film",
+        "Maximum Physical Defense Against Stone Chips, Rock Debris & Key Scratches",
+        "Instant Micro-Scratch Healing via Sunlight / Engine Heat Exposure",
+        "Optically Clear, Non-Yellowing UV Resistant Adhesive Technology",
+        "Precision Computer Cut & Invisible Edge-Wrapping (Zero Blade Contact)",
+        "5 to 7-Year Studio Warranty Against Yellowing, Peeling & Bubbling",
+        "Pre-Infused Ceramic Top Coat for Extreme Water Beading & Easy Cleaning",
+        "Available in High-Gloss Crystal Clear or Stealth Matte Satin Finishes",
+      ],
+    },
+  ];
 
   const handleFromDateChange = (date) => {
     setFromDate(date);
@@ -242,44 +379,83 @@ const Home = () => {
 
       {/* Main Container */}
       <section className="home-container">
+        {/* Header section — Only visible after intro splash screen finishes */}
+        {!showFirstSection && (
+          <header
+            id="header"
+            className={`header ${isScrolled ? "scrolled" : ""}`}
+          >
+            <div className="header-container">
+              {/* Left Group: Menu button & Brand Logo */}
+              <div className="header-left">
+                {/* Open side - navbar button */}
+                <Tooltip title="Menu">
+                  <div className="menu-btn" onClick={slide} id="open">
+                    <span className="btn">
+                      <i className="fa-solid fa-bars"></i>
+                    </span>
+                  </div>
+                </Tooltip>
 
-        {/* Header section */}
-        <section id="header">
-          <div className="header">
-            {/* Open side - navbar button */}
-            <Tooltip title="Menu">
-              <div className="menu-btn">
-                <span className="btn" id="open" onClick={slide}>
-                  <i className="fa-solid fa-bars"></i>
-                </span>
+                {/* Logo & Studio Title */}
+                <div className="logo">
+                  <SmoothScrollingLink to="home">
+                    <div className="logo-brand-wrap">
+                      <img src={logo} alt="911 Car Detailing Studio Logo" />
+                      <div className="title">
+                        <span className="title-number">911</span>
+                        <span className="half-title">CAR DETAILING STUDIO</span>
+                      </div>
+                    </div>
+                  </SmoothScrollingLink>
+                </div>
               </div>
-            </Tooltip>
 
-            {/* Logo section */}
-            <div className="logo">
-              <SmoothScrollingLink to="home">
-                <img src={logo} alt="911 Car Detailing Studio Logo" />
-              </SmoothScrollingLink>
-
-              <div className="title animate__animated animate__shakeX">
+              {/* Desktop Nav Items */}
+              <nav className="desktop-navbar">
                 <SmoothScrollingLink to="home">
-                  <span>
-                    {" "}
-                    911 <span className="half-title">CAR DETAILING STUDIO</span>
-                  </span>
+                  <span className="nav-item-link">Home</span>
                 </SmoothScrollingLink>
-              </div>
+
+                <SmoothScrollingLink to="quality">
+                  <span className="nav-item-link">Quality</span>
+                </SmoothScrollingLink>
+
+                <SmoothScrollingLink to="services">
+                  <span className="nav-item-link">Services</span>
+                </SmoothScrollingLink>
+
+                <SmoothScrollingLink to="pricing">
+                  <span className="nav-item-link">Pricing</span>
+                </SmoothScrollingLink>
+
+                <SmoothScrollingLink to="booking">
+                  <span className="nav-item-link">Book Service</span>
+                </SmoothScrollingLink>
+
+                <SmoothScrollingLink to="contact">
+                  <span className="nav-item-link">Contact Us</span>
+                </SmoothScrollingLink>
+              </nav>
             </div>
+
+            {/* Dark Backdrop Overlay for Mobile Drawer */}
+            <div
+              id="side-navbar-overlay"
+              className="side-navbar-overlay"
+              onClick={close}
+            ></div>
 
             {/* Side - navbar section  */}
             <div className="side-navbar" id="side-navbar">
               {/* title and close navbar */}
               <div className="close-hamburger">
-                <span style={{ marginLeft: "1rem" }}>
-                  911 CAR DETAILING STUDIO
-                </span>
+                <div className="side-nav-brand">
+                  <img src={logo} alt="911 Logo" className="side-brand-img" />
+                  <span className="side-brand-text">911 CAR DETAILING</span>
+                </div>
 
-                <button id="close" onClick={close}>
+                <button id="close" onClick={close} aria-label="Close Menu">
                   <i className="fa-solid fa-xmark"></i>
                 </button>
               </div>
@@ -287,28 +463,38 @@ const Home = () => {
               {/* Side - navItem section */}
               <div className="side-navItems" id="side-navItems">
                 <SmoothScrollingLink to="home">
-                  <span className="subnavbtn">
+                  <span className="subnavbtn" onClick={close}>
                     <i className="fa-solid fa-home"></i> Home
                   </span>
                 </SmoothScrollingLink>
 
+                <SmoothScrollingLink to="quality">
+                  <span className="subnavbtn" onClick={close}>
+                    <i className="fa-solid fa-shield-halved"></i> Quality
+                    Assured
+                  </span>
+                </SmoothScrollingLink>
+
                 <SmoothScrollingLink to="services">
-                  <span className="subnavbtn">
-                    {" "}
+                  <span className="subnavbtn" onClick={close}>
                     <i className="fa-solid fa-gear"></i> Our Services
                   </span>
                 </SmoothScrollingLink>
 
+                <SmoothScrollingLink to="pricing">
+                  <span className="subnavbtn" onClick={close}>
+                    <i className="fa-solid fa-tags"></i> Pricing Plans
+                  </span>
+                </SmoothScrollingLink>
+
                 <SmoothScrollingLink to="booking">
-                  <span className="subnavbtn">
-                    {" "}
-                    <i className="fa-solid fa-user-pen"></i> Book service
+                  <span className="subnavbtn" onClick={close}>
+                    <i className="fa-solid fa-user-pen"></i> Book Service
                   </span>
                 </SmoothScrollingLink>
 
                 <SmoothScrollingLink to="contact">
-                  <span className="subnavbtn">
-                    {" "}
+                  <span className="subnavbtn" onClick={close}>
                     <i className="fa-solid fa-phone"></i> Contact Us
                   </span>
                 </SmoothScrollingLink>
@@ -319,21 +505,22 @@ const Home = () => {
                 sx={{
                   width: "100%",
                   textAlign: "center",
-                  position: "absolute",
-                  bottom: "6rem",
+                  marginTop: "auto",
+                  paddingBottom: "1.5rem",
                 }}
               >
                 <span>
-                  <h2 id="social-head">Get In Touch With Us </h2>
+                  <h2 id="social-head">Get In Touch With Us</h2>
                 </span>
 
-                <Box sx={{}}>
-                  <ul style={{ padding: "0" }}>
+                <Box>
+                  <ul className="side-drawer-socials">
                     <li className="icons">
                       <a
                         href="https://www.facebook.com/profile.php?id=61550075405673&mibextid=ZbWKwL"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Facebook"
                       >
                         <i className="fa-brands fa-facebook"></i>
                       </a>
@@ -344,6 +531,7 @@ const Home = () => {
                         href="https://www.instagram.com/911_premiumcardetailing/"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Instagram"
                       >
                         <i className="fa-brands fa-instagram"></i>
                       </a>
@@ -354,30 +542,20 @@ const Home = () => {
                         href="https://wa.me/message/FXCIZ4L4CNDJK1"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="WhatsApp"
                       >
                         <i className="fa-brands fa-whatsapp"></i>
                       </a>
                     </li>
                   </ul>
                 </Box>
-              </Box>
 
-              {/* Navbar Footer */}
-              <Box
-                sx={{
-                  width: "100%",
-                  textAlign: "center",
-                  position: "absolute",
-                  bottom: "0",
-                }}
-              >
-                <footer>
-                  <span>
+                {/* Navbar Footer */}
+                <footer className="side-drawer-footer">
+                  <span className="side-drawer-copyright">
                     &copy;{new Date().getFullYear()}, 911 Car Detailing Studio
                   </span>
-                </footer>
 
-                <div>
                   <p className="footer-heart">
                     Made with{" "}
                     <g-emoji
@@ -388,8 +566,8 @@ const Home = () => {
                       <img
                         className="emoji"
                         alt="heart"
-                        height="20"
-                        width="20"
+                        height="18"
+                        width="18"
                         src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"
                       />
                     </g-emoji>{" "}
@@ -402,11 +580,11 @@ const Home = () => {
                       Akib Mulla
                     </a>
                   </p>
-                </div>
+                </footer>
               </Box>
             </div>
-          </div>
-        </section>
+          </header>
+        )}
 
         {/* body section */}
         <section className="home-sections">
@@ -960,290 +1138,184 @@ const Home = () => {
           {/* Pricing Section — Premium */}
           <section className="premium-pricing-section" id="pricing">
             <div className="premium-pricing-header" data-aos="fade-up">
-              <span className="premium-services-label">OUR PLANS</span>
-              <h1 className="premium-services-title">PRICING</h1>
+              <span className="premium-services-label">OUR PACKAGES</span>
+              <h1 className="premium-services-title">STUDIO PRICING</h1>
               <div className="premium-services-line"></div>
               <p className="premium-services-subtitle">
-                Transparent pricing with no hidden charges. Choose the plan that
-                fits your needs.
+                Transparent luxury detailing plans with no hidden charges.
+                Choose the perfection package tailored for your car.
               </p>
             </div>
 
             <div className="premium-pricing-grid">
-              {/* Plan 1 — Basic */}
-              <div
-                className="premium-pricing-card"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div className="premium-pricing-tier">BASIC</div>
-                <h2 className="premium-pricing-name">General Service</h2>
-                <span className="premium-pricing-sub">Without Oil</span>
-                <div className="premium-pricing-price">
-                  <span className="premium-pricing-currency">₹</span>
-                  <span className="premium-pricing-amount">399</span>
-                </div>
-                <div className="premium-pricing-divider"></div>
-                <p className="premium-pricing-info" onClick={handleOpen1}>
-                  <i className="fa-solid fa-circle-info"></i> View service
-                  details
-                </p>
-                <SmoothScrollingLink to="booking">
-                  <button className="premium-pricing-cta">
-                    BOOK SERVICE <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </SmoothScrollingLink>
-
-                <Modal
-                  open={open}
-                  onClose={handleClose1}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
+              {pricingPlans.map((plan) => (
+                <div
+                  key={plan.id}
+                  className={`premium-pricing-card ${plan.badge ? "premium-pricing-featured" : ""}`}
+                  data-aos="fade-up"
+                  data-aos-delay={plan.delay}
                 >
-                  <Box sx={style}>
-                    <Box
-                      sx={{
-                        position: "relative",
-                        alignItems: "center",
-                        color: "white",
-                        left: "50%",
-                        top: "-1rem",
-                        fontSize: "1.5rem",
-                        fontWeight: "900",
-                        cursor: "pointer",
-                      }}
-                      onClick={handleClose1}
+                  {plan.badge && (
+                    <div className="premium-pricing-badge">{plan.badge}</div>
+                  )}
+                  <div className="premium-pricing-tier">{plan.tier}</div>
+                  <h2 className="premium-pricing-name">{plan.name}</h2>
+                  <span className="premium-pricing-sub">{plan.sub}</span>
+                  <div className="premium-pricing-price">
+                    <span className="premium-pricing-currency">₹</span>
+                    <span className="premium-pricing-amount">{plan.price}</span>
+                  </div>
+                  <div className="premium-pricing-divider"></div>
+                  <p
+                    className="premium-pricing-info"
+                    onClick={() => setSelectedPlanModal(plan)}
+                  >
+                    <i className="fa-solid fa-circle-info"></i> View service
+                    details
+                  </p>
+                  <SmoothScrollingLink to="booking">
+                    <button
+                      className={`premium-pricing-cta ${plan.badge ? "premium-pricing-cta-filled" : ""}`}
                     >
-                      <i className="fa-solid fa-xmark"></i>
-                    </Box>
-                    <div className="modal-header">
-                      <h2>
-                        General Service <span>Without Oil</span>
-                      </h2>
-                    </div>
-                    <Box>
-                      <ul className="serviceList">
-                        <li>
-                          {" "}
-                          <span> Cleaning</span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Chain Cleaning </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Chain Lubrication </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Brake Adjustment </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Brake Pad Inspection </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Brake Caliper Alignment </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Gear Shifting Adjustment </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Tire Inspection </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Headset Adjustment </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Cable Inspection </span>{" "}
-                        </li>
-                      </ul>
-                    </Box>
-                  </Box>
-                </Modal>
-              </div>
-
-              {/* Plan 2 — Popular */}
-              <div
-                className="premium-pricing-card premium-pricing-featured"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div className="premium-pricing-badge">MOST POPULAR</div>
-                <div className="premium-pricing-tier">STANDARD</div>
-                <h2 className="premium-pricing-name">General Service</h2>
-                <span className="premium-pricing-sub">With Oil</span>
-                <div className="premium-pricing-price">
-                  <span className="premium-pricing-currency">₹</span>
-                  <span className="premium-pricing-amount">699</span>
+                      BOOK SERVICE <i className="fa-solid fa-arrow-right"></i>
+                    </button>
+                  </SmoothScrollingLink>
                 </div>
-                <div className="premium-pricing-divider"></div>
-                <p className="premium-pricing-info" onClick={handleOpen2}>
-                  <i className="fa-solid fa-circle-info"></i> View service
-                  details
-                </p>
-                <SmoothScrollingLink to="booking">
-                  <button className="premium-pricing-cta premium-pricing-cta-filled">
-                    BOOK SERVICE <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </SmoothScrollingLink>
-
-                <Modal
-                  open={open2}
-                  onClose={handleClose2}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <Box sx={style}>
-                    <Box
-                      sx={{
-                        position: "relative",
-                        alignItems: "center",
-                        color: "white",
-                        left: "50%",
-                        top: "-1rem",
-                        fontSize: "1.5rem",
-                        fontWeight: "900",
-                        cursor: "pointer",
-                      }}
-                      onClick={handleClose2}
-                    >
-                      <i className="fa-solid fa-xmark"></i>
-                    </Box>
-                    <div className="modal-header">
-                      <h2>
-                        General Service <span>With Oil</span>
-                      </h2>
-                    </div>
-                    <Box>
-                      <span style={{ color: "rgb(189, 183, 183)" }}>
-                        This service will cover all the tasks from general
-                        service without oil and adds oil-based component
-                        maintenance,such as
-                      </span>
-
-                      <ul className="serviceList">
-                        <li>
-                          {" "}
-                          <span> Checking oil levels</span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Draining and topping up the oil </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Suspension forks </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Shock absorbers </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Internal gear hubs </span>{" "}
-                        </li>
-                        <li>
-                          {" "}
-                          <span> Brake and Gear oil </span>{" "}
-                        </li>
-                      </ul>
-                    </Box>
-                  </Box>
-                </Modal>
-              </div>
-
-              {/* Plan 3 — Premium */}
-              <div
-                className="premium-pricing-card"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div className="premium-pricing-tier">PREMIUM</div>
-                <h2 className="premium-pricing-name">Special Service</h2>
-                <span className="premium-pricing-sub">Customizable</span>
-                <div className="premium-pricing-price">
-                  <span className="premium-pricing-currency">₹</span>
-                  <span className="premium-pricing-amount">799</span>
-                </div>
-                <div className="premium-pricing-divider"></div>
-                <p className="premium-pricing-info" onClick={handleOpen3}>
-                  <i className="fa-solid fa-circle-info"></i> View service
-                  details
-                </p>
-                <SmoothScrollingLink to="booking">
-                  <button className="premium-pricing-cta">
-                    BOOK SERVICE <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </SmoothScrollingLink>
-
-                <Modal
-                  open={open3}
-                  onClose={handleClose3}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <Box sx={style}>
-                    <Box
-                      sx={{
-                        position: "relative",
-                        alignItems: "center",
-                        color: "white",
-                        left: "50%",
-                        top: "-1rem",
-                        fontSize: "1.5rem",
-                        fontWeight: "900",
-                        cursor: "pointer",
-                      }}
-                      onClick={handleClose3}
-                    >
-                      <i className="fa-solid fa-xmark"></i>
-                    </Box>
-                    <div className="modal-header">
-                      <h2>
-                        Special Service <span>Customizable</span>
-                      </h2>
-                    </div>
-                    <Box>
-                      <span style={{ color: "rgb(189, 183, 183)" }}>
-                        This comprehensive service encompasses a thorough check
-                        and maintenance of the entire bike, including cleaning,
-                        oil-based component servicing, and it goes further with{" "}
-                        <strong>
-                          {" "}
-                          bike polishing and painting to restore its aesthetics
-                          and make it look brand new.
-                        </strong>
-                      </span>
-                    </Box>
-                  </Box>
-                </Modal>
-              </div>
+              ))}
             </div>
 
-            {/* Pricing Highlights */}
+            {/* Dynamic Plan Details Modal */}
+            <Modal
+              open={Boolean(selectedPlanModal)}
+              onClose={() => setSelectedPlanModal(null)}
+              aria-labelledby="plan-modal-title"
+            >
+              <Box sx={style}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    width: "100%",
+                    color: "#EBBB8D",
+                    fontSize: "1.35rem",
+                    cursor: "pointer",
+                    mb: 1,
+                  }}
+                  onClick={() => setSelectedPlanModal(null)}
+                  aria-label="Close Details Modal"
+                >
+                  <i className="fa-solid fa-xmark"></i>
+                </Box>
+                {selectedPlanModal && (
+                  <>
+                    <div className="modal-header">
+                      <h2>
+                        {selectedPlanModal.name}{" "}
+                        <span>{selectedPlanModal.sub}</span>
+                      </h2>
+                    </div>
+                    <Box>
+                      <p
+                        style={{
+                          color: "rgb(180, 175, 175)",
+                          fontSize: "0.86rem",
+                          lineHeight: 1.55,
+                          margin: "0 0 1rem 0",
+                        }}
+                      >
+                        {selectedPlanModal.description}
+                      </p>
+                      <ul className="serviceList">
+                        {selectedPlanModal.points.map((pt, idx) => (
+                          <li key={idx}>
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </Box>
+                  </>
+                )}
+              </Box>
+            </Modal>
+
+            {/* Pricing Highlights & Studio Value Pillars */}
             <div className="premium-pricing-highlights" data-aos="fade-up">
               <div className="premium-pricing-highlight">
-                <i className="fa-solid fa-bolt"></i>
-                <span>SAME DAY SERVICE</span>
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-shield-halved"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">
+                    UP TO 7 YEARS WARRANTY
+                  </span>
+                  <span className="highlight-sub">
+                    Official Written Guarantee
+                  </span>
+                </div>
               </div>
+
               <div className="premium-pricing-highlight">
-                <i className="fa-solid fa-location-dot"></i>
-                <span>CONVENIENT LOCATION</span>
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-user-shield"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">
+                    CERTIFIED MASTER DETAILERS
+                  </span>
+                  <span className="highlight-sub">
+                    Paint Correction & PPF Artisans
+                  </span>
+                </div>
               </div>
+
               <div className="premium-pricing-highlight">
-                <i className="fa-solid fa-calendar-check"></i>
-                <span>ONLINE APPOINTMENT</span>
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-temperature-arrow-up"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">DUST-FREE STUDIO BAYS</span>
+                  <span className="highlight-sub">
+                    Infrared Curing & CRI 95+ Lighting
+                  </span>
+                </div>
               </div>
+
               <div className="premium-pricing-highlight">
-                <i className="fa-solid fa-shield-halved"></i>
-                <span>7-10 DAY WARRANTY</span>
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-car-side"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">
+                    DOORSTEP PICK UP & DROP
+                  </span>
+                  <span className="highlight-sub">
+                    Insured Transit Across Pune
+                  </span>
+                </div>
+              </div>
+
+              <div className="premium-pricing-highlight">
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-chart-line"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">DIGITAL PAINT AUDIT</span>
+                  <span className="highlight-sub">
+                    Thickness & Gloss Verification
+                  </span>
+                </div>
+              </div>
+
+              <div className="premium-pricing-highlight">
+                <div className="highlight-icon-wrap">
+                  <i className="fa-solid fa-handshake-simple"></i>
+                </div>
+                <div className="highlight-text-group">
+                  <span className="highlight-title">100% TRANSPARENCY</span>
+                  <span className="highlight-sub">
+                    Zero Hidden Costs & Free Estimate
+                  </span>
+                </div>
               </div>
             </div>
           </section>
