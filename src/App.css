@@ -57,17 +57,1061 @@ h1{
 }
 
 
-.offerModalStyle{
+/* =========================================================================
+   Luxury Promotional Offer Popup Modal & Dynamic Offers List
+   ========================================================================= */
+
+.premium-offer-card {
+  position: relative;
+  background: radial-gradient(circle at top left, #1a1a1a 0%, #111111 60%, #0a0a0a 100%);
+  border: 1px solid rgba(235, 187, 141, 0.38) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 50px rgba(235, 187, 141, 0.18) !important;
+  border-radius: 1.5rem;
+  padding: 2.25rem 2rem !important;
+  box-sizing: border-box;
+}
+
+.premium-offer-close-btn {
   position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
+  top: 1.15rem;
+  right: 1.15rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background: rgba(235, 187, 141, 0.1);
+  border: 1px solid rgba(235, 187, 141, 0.3);
+  color: #EBBB8D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.premium-offer-close-btn:hover {
+  background: #EBBB8D;
+  color: #111;
+  transform: rotate(90deg) scale(1.08);
+  box-shadow: 0 0 15px rgba(235, 187, 141, 0.5);
+}
+
+.premium-offer-header-center {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.premium-offer-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #F5D5B5, #C99765);
+  padding: 0.35rem 0.95rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 15px rgba(235, 187, 141, 0.35);
+  margin-bottom: 0.65rem;
+}
+
+.premium-offer-main-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.05rem;
+  margin: 0 0 0.35rem 0;
+  background: linear-gradient(135deg, #ffffff 30%, #EBBB8D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-offer-main-sub {
+  font-size: 0.85rem;
+  color: rgb(180, 175, 175);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.premium-offer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.premium-offer-item-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(235, 187, 141, 0.22);
+  border-radius: 1.15rem;
+  padding: 1.25rem 1.35rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.premium-offer-item-card:hover {
+  border-color: rgba(235, 187, 141, 0.5);
+  background: rgba(235, 187, 141, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.premium-offer-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.premium-offer-item-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.premium-offer-item-badge {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  color: #EBBB8D;
+  text-transform: uppercase;
+}
+
+.premium-offer-item-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.premium-offer-discount-tag {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #F5D5B5);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  letter-spacing: 0.04rem;
+  box-shadow: 0 4px 12px rgba(235, 187, 141, 0.3);
+}
+
+.premium-offer-item-desc {
+  font-size: 0.82rem;
+  color: rgb(175, 170, 170);
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+.premium-offer-item-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.95rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.premium-offer-item-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: rgb(210, 205, 205);
+}
+
+.premium-offer-item-highlights li i {
+  color: #EBBB8D;
+  font-size: 0.8rem;
+}
+
+.premium-offer-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.65rem;
+  border-top: 1px dashed rgba(235, 187, 141, 0.2);
+}
+
+.premium-offer-code-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(235, 187, 141, 0.08);
+  border: 1px dashed rgba(235, 187, 141, 0.4);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.premium-offer-code-pill:hover {
+  background: rgba(235, 187, 141, 0.18);
+  border-color: #EBBB8D;
+}
+
+.premium-offer-code-txt {
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+
+.premium-offer-pill-copy-btn {
+  background: #EBBB8D;
+  color: #111;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.premium-offer-pill-copy-btn:hover {
+  background: #F5D5B5;
+}
+
+.premium-offer-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #C99765);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(235, 187, 141, 0.25);
+}
+
+.premium-offer-apply-btn:hover {
+  background: linear-gradient(135deg, #F5D5B5, #EBBB8D);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(235, 187, 141, 0.45);
+}
+
+.premium-offer-item-validity {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.premium-offer-item-validity i {
+  color: #EBBB8D;
+}
+
+.premium-offer-dismiss-wrap {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.premium-offer-dismiss-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+}
+
+.premium-offer-dismiss-btn:hover {
+  color: #EBBB8D;
+  text-decoration: underline;
+}
+
+/* =========================================================================
+   Playful Empty State when No Offers Active (OfferModal)
+   ========================================================================= */
+
+.premium-offer-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.premium-offer-empty-icon-wrap {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: rgba(235, 187, 141, 0.1);
+  border: 1px solid rgba(235, 187, 141, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 30px rgba(235, 187, 141, 0.2);
+}
+
+.premium-offer-empty-icon {
+  font-size: 2rem;
+  color: #EBBB8D;
+}
+
+.premium-offer-empty-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #F5D5B5);
+  padding: 0.35rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 0.85rem;
+}
+
+.premium-offer-empty-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 0.65rem 0;
+  letter-spacing: 0.04rem;
+}
+
+.premium-offer-empty-desc {
+  font-size: 0.88rem;
+  color: rgb(185, 180, 180);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 1.35rem auto;
+}
+
+.premium-offer-empty-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.empty-feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #F5D5B5;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(235, 187, 141, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 1.5rem;
+}
+
+.empty-feature-item i {
+  color: #10b981;
+}
+
+.premium-offer-empty-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2rem;
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D 0%, #F5D5B5 50%, #C99765 100%);
+  border: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(235, 187, 141, 0.35);
+}
+
+.premium-offer-empty-cta-btn:hover {
+  background: linear-gradient(135deg, #F5D5B5, #e0a365);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(235, 187, 141, 0.55);
+}
+
+/* =========================================================================
+   Booking Form Coupon Box, Playful Notice & Live Pricing Breakdown Card
+   ========================================================================= */
+
+.premium-coupon-toggle-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(235, 187, 141, 0.22);
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.premium-coupon-toggle-card:hover {
+  border-color: rgba(235, 187, 141, 0.4);
+}
+
+.premium-coupon-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.premium-coupon-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #F5D5B5;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+}
+
+.premium-coupon-checkbox-label i {
+  color: #EBBB8D;
+  font-size: 1rem;
+}
+
+.premium-coupon-see-offers-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #F5D5B5);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(235, 187, 141, 0.25);
+}
+
+.premium-coupon-see-offers-btn:hover {
+  background: linear-gradient(135deg, #F5D5B5, #e0a365);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(235, 187, 141, 0.45);
+}
+
+.premium-coupon-no-offers-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  color: #EBBB8D;
+  background: rgba(235, 187, 141, 0.08);
+  border: 1px solid rgba(235, 187, 141, 0.35);
+  border-radius: 2rem;
+  padding: 0.38rem 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.premium-coupon-no-offers-pill-btn:hover {
+  background: rgba(235, 187, 141, 0.2);
+  color: #ffffff;
+  border-color: #EBBB8D;
+  transform: translateY(-1px);
+}
+
+.premium-coupon-expanded-box {
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px dashed rgba(235, 187, 141, 0.2);
+}
+
+.premium-coupon-no-offers-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, rgba(235, 187, 141, 0.08) 0%, rgba(20, 20, 20, 0.85) 100%);
+  border: 1px dashed rgba(235, 187, 141, 0.35);
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.no-offers-banner-icon {
+  font-size: 1.4rem;
+  color: #EBBB8D;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.no-offers-banner-text strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02rem;
+}
+
+.no-offers-banner-text p {
+  font-size: 0.82rem;
+  color: rgb(185, 180, 180);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.premium-coupon-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.premium-coupon-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #141414;
+  border: 1px solid rgba(235, 187, 141, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  gap: 0.65rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premium-coupon-input-wrap:focus-within {
+  border-color: #EBBB8D;
+  box-shadow: 0 0 12px rgba(235, 187, 141, 0.25);
+}
+
+.premium-coupon-icon {
+  color: #EBBB8D;
+  font-size: 1rem;
+}
+
+.premium-coupon-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.premium-coupon-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.premium-coupon-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.45rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D, #F5D5B5);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.premium-coupon-apply-btn:hover {
+  background: linear-gradient(135deg, #F5D5B5, #e0a365);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(235, 187, 141, 0.4);
+}
+
+.premium-coupon-remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.premium-coupon-remove-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.premium-coupon-status-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-top: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.6rem;
+}
+
+.premium-coupon-status-msg.msg-success {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.premium-coupon-status-msg.msg-error {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.premium-coupon-footer-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.premium-coupon-footer-link {
+  background: transparent;
+  border: none;
+  color: #EBBB8D;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.premium-coupon-footer-link:hover {
+  color: #F5D5B5;
+  text-decoration: underline;
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   Live Pricing Breakdown Card
+   ========================================================= */
+
+.premium-price-breakdown-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(235, 187, 141, 0.06) 0%, rgba(20, 20, 20, 0.95) 100%);
+  border: 1.5px solid rgba(235, 187, 141, 0.35);
+  border-radius: 1.25rem;
+  padding: 1.45rem 1.6rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(235, 187, 141, 0.1);
+}
+
+.price-breakdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(235, 187, 141, 0.18);
+  margin-bottom: 1rem;
+}
+
+.price-breakdown-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #EBBB8D;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.price-service-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.price-breakdown-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.price-breakdown-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: rgb(190, 185, 185);
+}
+
+.price-row-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.price-row-label i {
+  color: #EBBB8D;
+}
+
+.price-row-value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.price-breakdown-row.discount-row {
+  color: #10b981;
+}
+
+.discount-value {
+  color: #10b981 !important;
+  font-weight: 800;
+}
+
+.price-breakdown-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(235, 187, 141, 0.2);
+  margin: 0.35rem 0;
+}
+
+.price-breakdown-row.total-row {
+  font-size: 1.05rem;
+  padding-top: 0.25rem;
+}
+
+.price-total-label {
+  font-weight: 800;
+  color: #F5D5B5;
+  letter-spacing: 0.04rem;
+}
+
+.price-total-value {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #EBBB8D;
+  letter-spacing: 0.06rem;
+}
+
+.price-breakdown-footnote {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.95rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.price-breakdown-footnote i {
+  color: #EBBB8D;
+}
+
+/* =========================================================
+   Pick-Up & Drop Service Toggle Box
+   ========================================================= */
+
+.premium-pickup-toggle-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(235, 187, 141, 0.22);
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.premium-pickup-toggle-card:hover {
+  border-color: rgba(235, 187, 141, 0.4);
+}
+
+.premium-pickup-toggle-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.premium-pickup-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #F5D5B5;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+}
+
+.premium-pickup-checkbox-label i {
+  color: #EBBB8D;
+  font-size: 1rem;
+}
+
+.premium-pickup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #EBBB8D;
+  background: rgba(235, 187, 141, 0.1);
+  border: 1px solid rgba(235, 187, 141, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+}
+
+.premium-pickup-plans-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: rgba(235, 187, 141, 0.8);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.premium-pickup-plans-link:hover {
+  color: #F5D5B5;
+  text-decoration: underline;
+}
+
+.premium-pickup-expanded-fields {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.35rem;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px dashed rgba(235, 187, 141, 0.25);
+  border-radius: 1rem;
+}
+
+.premium-pickup-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #EBBB8D;
+  margin-bottom: 1.2rem;
+}
+
+.premium-pickup-info-banner i {
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Booking Action Buttons Group
+   ========================================================= */
+
+.premium-booking-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  width: 100%;
+}
+
+.premium-booking-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.premium-booking-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1rem 2.25rem;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: #111;
+  background: linear-gradient(135deg, #EBBB8D 0%, #F5D5B5 50%, #C99765 100%);
+  border: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(235, 187, 141, 0.35);
+  flex: 1;
+  min-width: 250px;
+}
+
+.premium-booking-submit-btn:hover {
+  background: linear-gradient(135deg, #F5D5B5 0%, #EBBB8D 50%, #e0a365 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(235, 187, 141, 0.55);
+}
+
+.premium-booking-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1rem 1.85rem;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: #EBBB8D;
+  background: rgba(235, 187, 141, 0.06);
+  border: 1px solid rgba(235, 187, 141, 0.35);
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.premium-booking-reset-btn:hover {
+  background: rgba(235, 187, 141, 0.18);
+  border-color: #EBBB8D;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(235, 187, 141, 0.2);
+}
+
+.premium-booking-trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.25rem;
+}
+
+.premium-booking-trust-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.premium-booking-trust-strip span i {
+  color: #EBBB8D;
+}
+
+.premium-booking-trust-strip .dot {
+  color: rgba(235, 187, 141, 0.4);
+}
+
+@media only screen and (max-width: 600px) {
+  .premium-offer-card {
+    padding: 1.75rem 1.15rem !important;
+    border-radius: 1.25rem;
+  }
+
+  .premium-offer-main-title {
+    font-size: 1.45rem;
+  }
+
+  .premium-offer-item-card {
+    padding: 1rem 1.1rem;
+  }
+
+  .premium-offer-item-name {
+    font-size: 1rem;
+  }
+
+  .premium-offer-discount-tag {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .premium-coupon-toggle-card,
+  .premium-price-breakdown-card,
+  .premium-pickup-toggle-card {
+    padding: 1.15rem 1rem;
+    border-radius: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .premium-coupon-input-group {
     flex-direction: column;
-    align-items: center;
-    transform: translate(-50%, -50%);
-    width: 40%;
-    height: 90%;
-    box-shadow: 24;
+    gap: 0.5rem;
+  }
+
+  .premium-coupon-apply-btn,
+  .premium-coupon-remove-btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+
+  .price-total-value {
+    font-size: 1.2rem;
+  }
+
+  .premium-booking-btn-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .premium-booking-submit-btn,
+  .premium-booking-reset-btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .premium-booking-trust-strip {
+    font-size: 0.72rem;
+    gap: 0.45rem;
+  }
 }
 
 /* Landing page */
