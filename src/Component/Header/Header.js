@@ -197,7 +197,7 @@ const Header = ({ isScrolled, slide, close }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Akib Mulla
+                Akib
               </a>
             </p>
           </footer>

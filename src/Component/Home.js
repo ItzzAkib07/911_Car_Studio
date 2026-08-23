@@ -76,7 +76,9 @@ const Home = () => {
 
   return (
     <>
-      {showFirstSection && <IntroSplash />}
+      {showFirstSection && (
+        <IntroSplash onFinish={() => setShowFirstSection(false)} />
+      )}
 
       {/* Main Container */}
       <section className="home-container">

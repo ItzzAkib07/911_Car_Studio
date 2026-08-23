@@ -48,35 +48,32 @@ const BookingSection = () => {
   };
 
   // Helper: Run coupon calculation and set states
-  const applyCouponLogic = useCallback(
-    (code, currentService) => {
-      if (!code || !code.trim()) {
-        setCouponMessage({
-          type: "error",
-          text: "Please enter a valid coupon code.",
-        });
-        setAppliedCouponResult(null);
-        return;
-      }
+  const applyCouponLogic = useCallback((code, currentService) => {
+    if (!code || !code.trim()) {
+      setCouponMessage({
+        type: "error",
+        text: "Please enter a valid coupon code.",
+      });
+      setAppliedCouponResult(null);
+      return;
+    }
 
-      const result = calculateDiscount(code, currentService);
+    const result = calculateDiscount(code, currentService);
 
-      if (result.isValid) {
-        setAppliedCouponResult(result);
-        setCouponMessage({
-          type: "success",
-          text: result.message,
-        });
-      } else {
-        setAppliedCouponResult(null);
-        setCouponMessage({
-          type: "error",
-          text: result.message,
-        });
-      }
-    },
-    []
-  );
+    if (result.isValid) {
+      setAppliedCouponResult(result);
+      setCouponMessage({
+        type: "success",
+        text: result.message,
+      });
+    } else {
+      setAppliedCouponResult(null);
+      setCouponMessage({
+        type: "error",
+        text: result.message,
+      });
+    }
+  }, []);
 
   // Listen for global "apply_studio_coupon" event (e.g. triggered from OfferModal)
   useEffect(() => {
@@ -93,7 +90,7 @@ const BookingSection = () => {
     return () => {
       window.removeEventListener(
         "apply_studio_coupon",
-        handleGlobalCouponApply
+        handleGlobalCouponApply,
       );
     };
   }, [getService, applyCouponLogic]);
@@ -172,16 +169,16 @@ const BookingSection = () => {
     finalPayableAmount > 0
       ? `₹${finalPayableAmount.toLocaleString("en-IN")}`
       : baseServicePrice > 0
-      ? `₹${baseServicePrice.toLocaleString("en-IN")}`
-      : "Standard Studio Estimate";
+        ? `₹${baseServicePrice.toLocaleString("en-IN")}`
+        : "Standard Studio Estimate";
 
   const priceSummaryText = isCouponApplied
     ? `Original: ₹${baseServicePrice.toLocaleString(
-        "en-IN"
+        "en-IN",
       )} | Coupon Applied: ${
         appliedCouponResult.coupon.code
       } (-₹${discountAmount.toLocaleString(
-        "en-IN"
+        "en-IN",
       )}) | Final Amount: ₹${finalPayableAmount.toLocaleString("en-IN")}`
     : `Service Price: ${originalPriceFormatted}`;
 
@@ -202,11 +199,11 @@ const BookingSection = () => {
               "service_t7mpdet",
               "template_9drd373",
               form.current,
-              "DTYHmwwee9kgpN9ZT"
+              "DTYHmwwee9kgpN9ZT",
             )
             .then(() => {
               toast(
-                "Thank you for choosing 911 Car Detailing Studio.\n Give us some time, we will get back to you soon."
+                "Thank you for choosing 911 Car Detailing Studio.\n Give us some time, we will get back to you soon.",
               );
               setTimeout(() => {
                 window.location.reload(false);
@@ -214,7 +211,7 @@ const BookingSection = () => {
             })
             .catch((error) => {
               toast.error(
-                "Not able to book the service. Please check your connection or try again later."
+                "Not able to book the service. Please check your connection or try again later.",
               );
               console.log(error.text);
             });
@@ -227,11 +224,11 @@ const BookingSection = () => {
             "service_t7mpdet",
             "template_9drd373",
             form.current,
-            "DTYHmwwee9kgpN9ZT"
+            "DTYHmwwee9kgpN9ZT",
           )
           .then(() => {
             toast(
-              "Thank you for choosing 911 Car Detailing Studio.\n Give us some time, we will get back to you soon."
+              "Thank you for choosing 911 Car Detailing Studio.\n Give us some time, we will get back to you soon.",
             );
             setTimeout(() => {
               window.location.reload(false);
@@ -239,7 +236,7 @@ const BookingSection = () => {
           })
           .catch((error) => {
             toast.error(
-              "Not able to book the service. Please check your connection or try again later."
+              "Not able to book the service. Please check your connection or try again later.",
             );
             console.log(error.text);
           });
@@ -268,11 +265,19 @@ const BookingSection = () => {
       >
         <form className="premium-booking-form" ref={form} onSubmit={sendEmail}>
           {/* Hidden Fields for EmailJS to include full Pricing & Coupon breakdown in email */}
-          <input type="hidden" name="original_price" value={originalPriceFormatted} />
+          <input
+            type="hidden"
+            name="original_price"
+            value={originalPriceFormatted}
+          />
           <input
             type="hidden"
             name="coupon_code"
-            value={isCouponApplied ? appliedCouponResult.coupon.code : "No Coupon Applied"}
+            value={
+              isCouponApplied
+                ? appliedCouponResult.coupon.code
+                : "No Coupon Applied"
+            }
           />
           <input
             type="hidden"
@@ -282,10 +287,22 @@ const BookingSection = () => {
           <input
             type="hidden"
             name="discount_amount"
-            value={isCouponApplied ? `₹${discountAmount.toLocaleString("en-IN")}` : "₹0"}
+            value={
+              isCouponApplied
+                ? `₹${discountAmount.toLocaleString("en-IN")}`
+                : "₹0"
+            }
           />
-          <input type="hidden" name="final_payable_amount" value={finalPriceFormatted} />
-          <input type="hidden" name="pricing_summary" value={priceSummaryText} />
+          <input
+            type="hidden"
+            name="final_payable_amount"
+            value={finalPriceFormatted}
+          />
+          <input
+            type="hidden"
+            name="pricing_summary"
+            value={priceSummaryText}
+          />
 
           {/* 2-Column Grid for Primary Inputs */}
           <div className="premium-booking-grid">
@@ -418,7 +435,8 @@ const BookingSection = () => {
             {/* Select Service */}
             <div className="premium-input-group">
               <label className="premium-input-label">
-                <i className="fa-solid fa-screwdriver-wrench"></i> Select Service *
+                <i className="fa-solid fa-screwdriver-wrench"></i> Select
+                Service *
               </label>
               <FormControl variant="standard" sx={{ width: "100%" }}>
                 <Select
@@ -506,7 +524,8 @@ const BookingSection = () => {
           {/* Full Width Query / Special Requirements */}
           <div className="premium-input-group premium-input-full">
             <label className="premium-input-label">
-              <i className="fa-solid fa-comment-dots"></i> Special Requirements / Query (Optional)
+              <i className="fa-solid fa-comment-dots"></i> Special Requirements
+              / Query (Optional)
             </label>
             <TextField
               id="details"
@@ -606,7 +625,12 @@ const BookingSection = () => {
                     <div className="no-offers-banner-text">
                       <strong>Garage Running at Full Throttle! 🏎️💨</strong>
                       <p>
-                        Our detailing bays and infrared curing lamps are running at maximum RPM! We don't have ongoing discount coupon drops right now, but every vehicle booked still receives our championship-grade mirror gloss, 3-stage chemical decontamination, and 100% zero-advance booking guarantee!
+                        Our detailing bays and infrared curing lamps are running
+                        at maximum RPM! We don't have ongoing discount coupon
+                        drops right now, but every vehicle booked still receives
+                        our championship-grade mirror gloss, 3-stage chemical
+                        decontamination, and 100% zero-advance booking
+                        guarantee!
                       </p>
                     </div>
                   </div>
@@ -674,18 +698,27 @@ const BookingSection = () => {
                       type="button"
                       className="premium-coupon-footer-link"
                       onClick={() =>
-                        window.dispatchEvent(new CustomEvent("open_offer_modal"))
+                        window.dispatchEvent(
+                          new CustomEvent("open_offer_modal"),
+                        )
                       }
                     >
-                      Browse Studio Offers & Deals <i className="fa-solid fa-angle-right"></i>
+                      Browse Studio Offers & Deals{" "}
+                      <i className="fa-solid fa-angle-right"></i>
                     </button>
                   </div>
                 ) : (
                   <div className="premium-coupon-footer-help">
-                    <span>Want to check our studio package specifications?</span>
+                    <span>
+                      Want to check our studio package specifications?
+                    </span>
                     <SmoothScrollingLink to="pricing">
-                      <button type="button" className="premium-coupon-footer-link">
-                        Explore All Detailing Plans <i className="fa-solid fa-angle-right"></i>
+                      <button
+                        type="button"
+                        className="premium-coupon-footer-link"
+                      >
+                        Explore All Detailing Plans{" "}
+                        <i className="fa-solid fa-angle-right"></i>
                       </button>
                     </SmoothScrollingLink>
                   </div>
@@ -701,7 +734,8 @@ const BookingSection = () => {
             <div className="premium-price-breakdown-card animate__animated animate__fadeIn">
               <div className="price-breakdown-header">
                 <span className="price-breakdown-title">
-                  <i className="fa-solid fa-receipt"></i> ESTIMATED SERVICE SUMMARY
+                  <i className="fa-solid fa-receipt"></i> ESTIMATED SERVICE
+                  SUMMARY
                 </span>
                 <span className="price-service-name">{getService}</span>
               </div>
@@ -709,7 +743,9 @@ const BookingSection = () => {
               <div className="price-breakdown-body">
                 {/* Original Base Price */}
                 <div className="price-breakdown-row">
-                  <span className="price-row-label">Original Package Price</span>
+                  <span className="price-row-label">
+                    Original Package Price
+                  </span>
                   <span className="price-row-value">
                     ₹{baseServicePrice.toLocaleString("en-IN")}
                   </span>
@@ -719,7 +755,8 @@ const BookingSection = () => {
                 {isCouponApplied && (
                   <div className="price-breakdown-row discount-row">
                     <span className="price-row-label">
-                      <i className="fa-solid fa-tag"></i> Coupon Discount ({appliedCouponResult.coupon.code})
+                      <i className="fa-solid fa-tag"></i> Coupon Discount (
+                      {appliedCouponResult.coupon.code})
                     </span>
                     <span className="price-row-value discount-value">
                       - ₹{discountAmount.toLocaleString("en-IN")}{" "}
@@ -734,7 +771,9 @@ const BookingSection = () => {
 
                 {/* Final Total Row */}
                 <div className="price-breakdown-row total-row">
-                  <span className="price-total-label">Final Estimated Amount</span>
+                  <span className="price-total-label">
+                    Final Estimated Amount
+                  </span>
                   <span className="price-total-value">
                     ₹{finalPayableAmount.toLocaleString("en-IN")}
                   </span>
@@ -742,7 +781,8 @@ const BookingSection = () => {
               </div>
 
               <div className="price-breakdown-footnote">
-                <i className="fa-solid fa-shield-halved"></i> 100% Transparency • No Hidden Taxes or Surcharges
+                <i className="fa-solid fa-shield-halved"></i> 100% Transparency
+                • No Hidden Taxes or Surcharges
               </div>
             </div>
           )}
@@ -827,8 +867,8 @@ const BookingSection = () => {
                 {/* Pick-Up Address */}
                 <div className="premium-input-group">
                   <label className="premium-input-label">
-                    <i className="fa-solid fa-location-dot"></i> Complete Pick-up
-                    Address *
+                    <i className="fa-solid fa-location-dot"></i> Complete
+                    Pick-up Address *
                   </label>
                   <TextField
                     id="address"
@@ -874,7 +914,11 @@ const BookingSection = () => {
           <div className="premium-booking-action">
             <div className="premium-booking-btn-group">
               <button className="premium-booking-submit-btn" type="submit">
-                CONFIRM APPOINTMENT {isCouponApplied ? `(₹${finalPayableAmount.toLocaleString("en-IN")})` : ""} <i className="fa-solid fa-arrow-right"></i>
+                CONFIRM APPOINTMENT{" "}
+                {isCouponApplied
+                  ? `(₹${finalPayableAmount.toLocaleString("en-IN")})`
+                  : ""}{" "}
+                <i className="fa-solid fa-arrow-right"></i>
               </button>
 
               <button
@@ -890,7 +934,8 @@ const BookingSection = () => {
             {/* Trust badges */}
             <div className="premium-booking-trust-strip">
               <span>
-                <i className="fa-solid fa-check-circle"></i> Zero Advance Required
+                <i className="fa-solid fa-check-circle"></i> Zero Advance
+                Required
               </span>
               <span className="dot">•</span>
               <span>
@@ -898,7 +943,8 @@ const BookingSection = () => {
               </span>
               <span className="dot">•</span>
               <span>
-                <i className="fa-solid fa-shield-heart"></i> 100% Satisfaction Guarantee
+                <i className="fa-solid fa-shield-heart"></i> 100% Satisfaction
+                Guarantee
               </span>
             </div>
           </div>

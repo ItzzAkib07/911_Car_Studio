@@ -68,30 +68,30 @@ const OfferModal = ({ isEnabled, customConfig }) => {
       closeAfterTransition
       sx={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        p: { xs: 2, sm: 3 },
-        backdropFilter: "blur(8px)",
-        backgroundColor: "rgba(0, 0, 0, 0.82)",
+        alignItems: "flex-end",
+        justifyContent: "flex-end",
+        p: { xs: 1, sm: 2, md: 3 },
+        backdropFilter: "blur(2px)",
+        backgroundColor: "rgba(0, 0, 0, 0.35)",
         zIndex: 1300,
       }}
     >
       <Box
-        className="premium-offer-card animate__animated animate__zoomIn"
+        className="premium-offer-card animate__animated animate__fadeInUp"
         onClick={(e) => e.stopPropagation()}
         sx={{
           position: "relative",
           width: "100%",
-          maxWidth: "600px",
-          maxHeight: "88vh",
+          maxWidth: { xs: "320px", sm: "360px", md: "410px" },
+          maxHeight: { xs: "62vh", sm: "68vh", md: "72vh" },
           overflowY: "auto",
           bgcolor: "#121212",
-          borderRadius: "1.5rem",
+          borderRadius: { xs: "1rem", sm: "1.25rem" },
           border: "1px solid rgba(235, 187, 141, 0.35)",
           boxShadow:
-            "0 25px 70px rgba(0, 0, 0, 0.9), 0 0 45px rgba(235, 187, 141, 0.18)",
+            "0 20px 60px rgba(0, 0, 0, 0.92), 0 0 35px rgba(235, 187, 141, 0.16)",
           outline: "none",
-          p: { xs: 2.25, sm: 3.5 },
+          p: { xs: 1.5, sm: 2, md: 2.5 },
           boxSizing: "border-box",
         }}
       >
