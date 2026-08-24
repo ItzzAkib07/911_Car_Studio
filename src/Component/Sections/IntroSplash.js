@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import bgImage from "../../images/background-2.png";
 import video from "../../images/smoke.mp4";
 import logo from "../../images/911_logo.png";
 
@@ -66,37 +67,25 @@ const IntroSplash = ({ onFinish }) => {
     }
   }, [progress, onFinish]);
 
-  const handleSkip = () => {
-    setIsExiting(true);
-    setTimeout(() => {
-      if (onFinish) onFinish();
-    }, 200);
-  };
-
   const currentStage =
     STAGES.find((s) => progress >= s.min && progress <= s.max) || STAGES[0];
 
   return (
     <section className={`premium-intro-splash ${isExiting ? "fade-out" : ""}`}>
-      {/* Background Atmospheric Smoke Video */}
-      <video src={video} autoPlay muted playsInline loop className="intro-bg-video" />
+      {/* Studio Background Image with Atmospheric Video Overlay */}
+      <div
+        className="intro-bg-image"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
+      <video
+        src={video}
+        autoPlay
+        muted
+        playsInline
+        loop
+        className="intro-bg-video"
+      />
       <div className="intro-vignette-overlay"></div>
-
-      {/* Top Bar: Location Badge & Skip Button */}
-      <div className="intro-top-bar">
-        <div className="intro-location-pill">
-          <i className="fa-solid fa-location-dot"></i>
-          <span>PUNE FLAGSHIP • DY PATIL</span>
-        </div>
-        <button
-          className="intro-skip-btn"
-          onClick={handleSkip}
-          aria-label="Skip Introduction"
-        >
-          <span>SKIP INTRO</span>
-          <i className="fa-solid fa-forward-step"></i>
-        </button>
-      </div>
 
       {/* Main Studio Intro HUD */}
       <div className="intro-hud-card">
@@ -115,7 +104,8 @@ const IntroSplash = ({ onFinish }) => {
             PREMIUM CAR DETAILING STUDIO
           </span>
           <p className="intro-tagline">
-            Aerospace-Grade Coatings • Self-Healing PPF • Master Paint Correction
+            Aerospace-Grade Coatings • Self-Healing PPF • Master Paint
+            Correction
           </p>
         </div>
 
@@ -126,7 +116,9 @@ const IntroSplash = ({ onFinish }) => {
               <i className={currentStage.icon}></i>
             </div>
             <div className="telemetry-info">
-              <span className="telemetry-stage-title">{currentStage.title}</span>
+              <span className="telemetry-stage-title">
+                {currentStage.title}
+              </span>
               <p className="telemetry-stage-desc">{currentStage.desc}</p>
             </div>
             <span className="telemetry-percentage">
@@ -150,7 +142,7 @@ const IntroSplash = ({ onFinish }) => {
               <span className="pulse-dot"></span>
               INITIALIZING STUDIO CALIBRATION
             </span>
-            <span className="telemetry-location-tag">DY PATIL, PUNE 411047</span>
+            {/* <span className="telemetry-location-tag">DY PATIL, PUNE 411047</span> */}
           </div>
         </div>
       </div>

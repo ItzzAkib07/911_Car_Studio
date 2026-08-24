@@ -25,9 +25,29 @@ const Home = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
-  // Initialize AOS animation library
+  // Initialize AOS animation library with bidirectional scroll support
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 850,
+      easing: "ease-out-cubic",
+      once: false, // Trigger animations in BOTH scroll directions (down & up)
+      mirror: true, // Elements animate in when scrolling down and when scrolling back up
+      offset: 70,
+      debounceDelay: 50,
+      throttleDelay: 99,
+    });
+
+    const handleAosRefresh = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener("resize", handleAosRefresh);
+    window.addEventListener("orientationchange", handleAosRefresh);
+
+    return () => {
+      window.removeEventListener("resize", handleAosRefresh);
+      window.removeEventListener("orientationchange", handleAosRefresh);
+    };
   }, []);
 
   // Sticky header scroll listener
@@ -64,9 +84,16 @@ const Home = () => {
   // Landing page splash screen state
   const [showFirstSection, setShowFirstSection] = useState(true);
 
+  const handleFinishIntro = () => {
+    setShowFirstSection(false);
+    setTimeout(() => {
+      AOS.refreshHard();
+    }, 120);
+  };
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setShowFirstSection(false);
+      handleFinishIntro();
     }, 7000);
 
     return () => {
@@ -77,7 +104,7 @@ const Home = () => {
   return (
     <>
       {showFirstSection && (
-        <IntroSplash onFinish={() => setShowFirstSection(false)} />
+        <IntroSplash onFinish={handleFinishIntro} />
       )}
 
       {/* Main Container */}

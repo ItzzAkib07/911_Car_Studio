@@ -22,8 +22,8 @@ const ServicesSection = () => {
         {/* Service 01 — PPF */}
         <div
           className="premium-service-row"
-          data-aos="fade-up"
-          data-aos-delay="100"
+          data-aos="fade-right"
+          data-aos-duration="900"
         >
           <div className="premium-service-img-wrap">
             <img src={service1} alt="Paint Protection Film Service" />
@@ -52,8 +52,8 @@ const ServicesSection = () => {
         {/* Service 02 — Paint Correction */}
         <div
           className="premium-service-row premium-service-row-reverse"
-          data-aos="fade-up"
-          data-aos-delay="150"
+          data-aos="fade-left"
+          data-aos-duration="900"
         >
           <div className="premium-service-img-wrap">
             <img src={service2} alt="Paint Correction Service" />
@@ -82,8 +82,8 @@ const ServicesSection = () => {
         {/* Service 03 — Ceramic / Graphene */}
         <div
           className="premium-service-row"
-          data-aos="fade-up"
-          data-aos-delay="200"
+          data-aos="fade-right"
+          data-aos-duration="900"
         >
           <div className="premium-service-img-wrap">
             <img src={wasing} alt="Ceramic Graphene Coatings" />
@@ -114,8 +114,8 @@ const ServicesSection = () => {
         {/* Service 04 — Exterior Detailing */}
         <div
           className="premium-service-row premium-service-row-reverse"
-          data-aos="fade-up"
-          data-aos-delay="250"
+          data-aos="fade-left"
+          data-aos-duration="900"
         >
           <div className="premium-service-img-wrap">
             <img src={painting} alt="Exterior Detailing and Car Spa" />

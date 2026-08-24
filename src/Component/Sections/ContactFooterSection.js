@@ -11,29 +11,34 @@ const ContactFooterSection = () => {
         <h1 className="premium-services-title">VISIT OUR STUDIO</h1>
         <div className="premium-services-line"></div>
         <p className="premium-services-subtitle">
-          Experience perfection in automotive care. Visit our flagship studio in Pune or connect directly with our detailing master artisans.
+          Experience perfection in automotive care. Visit our 911 car detailing
+          studio in Pune or connect directly with our detailing master artisans.
         </p>
       </div>
 
       <div className="premium-contact-wrapper">
         {/* Left Column: Consolidated High-Impact Studio Cards */}
-        <div className="premium-contact-cards">
-          {/* Card 1: Studio Flagship Location & Timings */}
-          <div className="premium-contact-card" data-aos="fade-up">
+        <div
+          className="premium-contact-cards"
+          data-aos="fade-right"
+          data-aos-duration="900"
+        >
+          {/* Card 1: Studio 911 car detailing Location & Timings */}
+          <div className="premium-contact-card">
             <div className="premium-contact-card-header">
               <div className="premium-contact-icon">
                 <i className="fa-solid fa-location-dot"></i>
               </div>
               <div className="premium-contact-card-title-group">
                 <span className="premium-contact-tag">PUNE STUDIO</span>
-                <h3>LOCATION & TIMINGS</h3>
+                <h3>911 car detailing STUDIO LOCATION</h3>
               </div>
             </div>
 
             <div className="premium-contact-card-body">
               <p className="premium-contact-address-text">
                 <strong>911 PREMIUM CAR DETAILING STUDIO</strong>
-                In Front of Golden Winds, DY Patil, Pune – 411047
+                In Front of Golden Winds, DY Patil Campus, Pune – 411047
               </p>
 
               <div className="premium-contact-hours-compact">
@@ -54,24 +59,29 @@ const ContactFooterSection = () => {
                 rel="noreferrer"
                 className="premium-contact-link-btn"
               >
-                <i className="fa-solid fa-diamond-turn-right"></i> Get Directions
+                <i className="fa-solid fa-diamond-turn-right"></i> Get Studio
+                Directions
               </a>
             </div>
           </div>
 
-          {/* Card 2: Direct Consultation & Instant Communication Channels */}
-          <div className="premium-contact-card" data-aos="fade-up" data-aos-delay="100">
+          {/* Card 2: Direct Helplines */}
+          <div className="premium-contact-card">
             <div className="premium-contact-card-header">
               <div className="premium-contact-icon">
-                <i className="fa-solid fa-headset"></i>
+                <i className="fa-solid fa-phone-volume"></i>
               </div>
               <div className="premium-contact-card-title-group">
-                <span className="premium-contact-tag">INSTANT SUPPORT</span>
-                <h3>CALL, CHAT & CONSULT</h3>
+                <span className="premium-contact-tag">DIRECT HELPLINES</span>
+                <h3>CALL OUR MASTER ARTISANS</h3>
               </div>
             </div>
 
             <div className="premium-contact-card-body">
+              <p className="premium-contact-subtext">
+                Speak directly with our detailing consultants for immediate slot
+                booking & guidance:
+              </p>
               <div className="premium-contact-phone-list">
                 <a href="tel:9112829911" className="premium-contact-phone-btn">
                   <i className="fa-solid fa-phone"></i> +91 91128 29911
@@ -80,7 +90,22 @@ const ContactFooterSection = () => {
                   <i className="fa-solid fa-phone"></i> +91 86574 45050
                 </a>
               </div>
+            </div>
+          </div>
 
+          {/* Card 3: WhatsApp & Online Concierge Support */}
+          <div className="premium-contact-card">
+            <div className="premium-contact-card-header">
+              <div className="premium-contact-icon">
+                <i className="fa-brands fa-whatsapp"></i>
+              </div>
+              <div className="premium-contact-card-title-group">
+                <span className="premium-contact-tag">INSTANT CONNECT</span>
+                <h3>CHAT & EMAIL INQUIRIES</h3>
+              </div>
+            </div>
+
+            <div className="premium-contact-card-body">
               <div className="premium-contact-channel-list">
                 <a
                   href="https://wa.me/message/FXCIZ4L4CNDJK1"
@@ -94,7 +119,8 @@ const ContactFooterSection = () => {
                   href="mailto:tausifshaikh2505@gmail.com"
                   className="premium-contact-email-link"
                 >
-                  <i className="fa-solid fa-envelope"></i> tausifshaikh2505@gmail.com
+                  <i className="fa-solid fa-envelope"></i>{" "}
+                  tausifshaikh2505@gmail.com
                 </a>
               </div>
             </div>
@@ -102,21 +128,31 @@ const ContactFooterSection = () => {
         </div>
 
         {/* Right Column: Live Interactive Google Map Frame */}
-        <div className="premium-contact-map-card" data-aos="fade-up" data-aos-delay="200">
+        <div
+          className="premium-contact-map-card"
+          data-aos="fade-left"
+          data-aos-duration="900"
+        >
           <div className="premium-contact-map-header">
             <div className="premium-map-dot-group">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span className="map-dot red"></span>
+              <span className="map-dot yellow"></span>
+              <span className="map-dot green"></span>
             </div>
-            <span className="premium-map-title">Flagship Studio Location</span>
+            <div className="premium-map-title-wrap">
+              <span className="map-pulse-indicator"></span>
+              <span className="premium-map-title">
+                911 Studio Live Location
+              </span>
+            </div>
             <a
               href="https://maps.app.goo.gl/GZWDTttb2p7iTPGu5"
               target="_blank"
               rel="noreferrer"
               className="premium-map-expand"
             >
-              <i className="fa-solid fa-arrow-up-right-from-square"></i> Open Map
+              <i className="fa-solid fa-arrow-up-right-from-square"></i> Open in
+              Maps
             </a>
           </div>
           <div className="premium-contact-map-frame">
@@ -128,11 +164,21 @@ const ContactFooterSection = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+          <div className="premium-map-footer-badge">
+            <i className="fa-solid fa-location-crosshairs"></i>
+            <span>
+              DY Patil Campus, In Front of Golden Winds, Pune – 411047
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Integrated Grand Footer Hub */}
-      <div className="premium-footer-hub" data-aos="fade-up">
+      <div
+        className="premium-footer-hub"
+        data-aos="fade-up"
+        data-aos-duration="900"
+      >
         <div className="premium-footer-grid">
           {/* Col 1: Studio Brand & Bio */}
           <div className="premium-footer-col premium-footer-brand-col">
@@ -143,7 +189,9 @@ const ContactFooterSection = () => {
               </span>
             </div>
             <p className="premium-footer-bio">
-              Pune's premier automotive surface protection and detailing studio. Delivering aerospace-grade coating, precision PPF edge-wrapping, and master paint correction.
+              Pune's premier automotive surface protection and detailing studio.
+              Delivering aerospace-grade coating, precision PPF edge-wrapping,
+              and master paint correction.
             </p>
             <div className="premium-footer-socials">
               <a
@@ -181,19 +229,29 @@ const ContactFooterSection = () => {
                 <SmoothScrollingLink to="home">Home</SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="quality">Quality Assured</SmoothScrollingLink>
+                <SmoothScrollingLink to="quality">
+                  Quality Assured
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Our Services</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Our Services
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="pricing">Pricing Plans</SmoothScrollingLink>
+                <SmoothScrollingLink to="pricing">
+                  Pricing Plans
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="booking">Book Service</SmoothScrollingLink>
+                <SmoothScrollingLink to="booking">
+                  Book Service
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="contact">Studio Location</SmoothScrollingLink>
+                <SmoothScrollingLink to="contact">
+                  Studio Location
+                </SmoothScrollingLink>
               </li>
             </ul>
           </div>
@@ -203,22 +261,34 @@ const ContactFooterSection = () => {
             <h4 className="premium-footer-heading">SERVICES</h4>
             <ul className="premium-footer-links">
               <li>
-                <SmoothScrollingLink to="services">Paint Protection Film (PPF)</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Paint Protection Film (PPF)
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Ceramic & Graphene Coating</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Ceramic & Graphene Coating
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Paint Correction & Polish</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Paint Correction & Polish
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Exterior Detailing & Spa</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Exterior Detailing & Spa
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Interior Deep Detailing</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Interior Deep Detailing
+                </SmoothScrollingLink>
               </li>
               <li>
-                <SmoothScrollingLink to="services">Glass & Wheel Coating</SmoothScrollingLink>
+                <SmoothScrollingLink to="services">
+                  Glass & Wheel Coating
+                </SmoothScrollingLink>
               </li>
             </ul>
           </div>
@@ -252,7 +322,8 @@ const ContactFooterSection = () => {
         <div className="premium-footer-bottom">
           <p className="premium-footer-copy">
             &copy; {new Date().getFullYear()}{" "}
-            <strong>911 Premium Car Detailing Studio</strong>. All rights reserved.
+            <strong>911 Premium Car Detailing Studio</strong>. All rights
+            reserved.
           </p>
           <p className="premium-footer-credit">
             Crafted with <span className="heart-pulse">❤️</span> by{" "}
