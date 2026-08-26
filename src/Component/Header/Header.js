@@ -159,7 +159,7 @@ const Header = ({ isScrolled, slide, close }) => {
 
               <li className="icons">
                 <a
-                  href="https://wa.me/message/FXCIZ4L4CNDJK1"
+                  href="https://wa.me/message/IVQCEUWS35SAG1"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp"
@@ -193,7 +193,7 @@ const Header = ({ isScrolled, slide, close }) => {
               </g-emoji>{" "}
               by{" "}
               <a
-                href="https://itzzakib07.github.io/dopefolio/"
+                href="https://dezifolio.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
               >

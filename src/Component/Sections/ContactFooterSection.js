@@ -108,7 +108,7 @@ const ContactFooterSection = () => {
             <div className="premium-contact-card-body">
               <div className="premium-contact-channel-list">
                 <a
-                  href="https://wa.me/message/FXCIZ4L4CNDJK1"
+                  href="https://wa.me/message/IVQCEUWS35SAG1"
                   target="_blank"
                   rel="noreferrer"
                   className="premium-contact-wa-btn"
@@ -211,7 +211,7 @@ const ContactFooterSection = () => {
                 <i className="fa-brands fa-instagram"></i>
               </a>
               <a
-                href="https://wa.me/message/FXCIZ4L4CNDJK1"
+                href="https://wa.me/message/IVQCEUWS35SAG1"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
@@ -328,7 +328,7 @@ const ContactFooterSection = () => {
           <p className="premium-footer-credit">
             Crafted with <span className="heart-pulse">❤️</span> by{" "}
             <a
-              href="https://itzzakib07.github.io/dopefolio/"
+              href="https://dezifolio.netlify.app/"
               target="_blank"
               rel="noreferrer"
             >

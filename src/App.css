@@ -1800,37 +1800,260 @@ h1 {
 
 
 /* =========================================================================
-   9. KEY BENEFITS SECTION
+   9. KEY BENEFITS SECTION & 3D DETAILING LABORATORY
    ========================================================================= */
 
 .premium-benefits-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 50%, #0a0a0a 100%);
+  padding: 5.5rem 2rem 4rem;
+  background: linear-gradient(180deg, #090909 0%, #0d0d0d 50%, #070707 100%);
   overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .premium-benefits-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* 3D Model Stage Container */
+.benefits-3d-stage-container {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+  position: relative;
+  width: 100%;
+}
+
+.car-3d-wrapper {
+  width: 100%;
+  position: relative;
+  border-radius: 1.65rem;
+  /* background: radial-gradient(circle at 50% 40%, #1a1a1a 0%, #0e0e0e 65%, #060606 100%); */
+  /* border: 1.5px solid rgba(235, 187, 141, 0.28); */
+  /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 50px rgba(235, 187, 141, 0.04); */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-3d-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.car-3d-canvas-container:active {
+  cursor: grabbing;
+}
+
+.car-3d-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* 3D Top HUD Badges */
+.car-3d-hud-header {
+  position: absolute;
+  top: 1.35rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 2rem;
+  background: rgba(12, 12, 12, 0.8);
+  border: 1px solid rgba(235, 187, 141, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #EBBB8D;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.hud-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseIndicator 1.8s infinite;
+}
+
+.hud-rotate-toggle {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 2rem;
+  background: rgba(18, 18, 18, 0.9);
+  border: 1px solid rgba(235, 187, 141, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #F5D5B5;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hud-rotate-toggle:hover,
+.hud-rotate-toggle.active {
+  background: rgba(235, 187, 141, 0.2);
+  border-color: #EBBB8D;
+  color: #EBBB8D;
+}
+
+/* 3D Interaction Hint */
+.car-3d-hint {
+  position: absolute;
+  top: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 1.5rem;
+  background: rgba(10, 10, 10, 0.65);
+  border: 1px solid rgba(235, 187, 141, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #F5D5B5;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+.car-3d-hint i {
+  color: #EBBB8D;
+  font-size: 0.78rem;
+}
+
+/* Dedicated Bottom Controls Dock (Separated from canvas so model is 100% visible) */
+.car-3d-controls-dock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 1.75rem;
+  background: rgba(10, 10, 10, 0.95);
+  border-top: 1px solid rgba(235, 187, 141, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.dock-title-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #EBBB8D;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.dock-title-label i {
+  font-size: 0.85rem;
+}
+
+.car-3d-mode-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  background: rgba(235, 187, 141, 0.08);
+  border: 1px solid rgba(235, 187, 141, 0.24);
+  color: #ddd;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.mode-btn i {
+  color: #EBBB8D;
+  font-size: 0.82rem;
+  transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+  background: rgba(235, 187, 141, 0.18);
+  border-color: #EBBB8D;
+  color: #fff;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #EBBB8D 0%, #F5D5B5 50%, #C99765 100%);
+  color: #111;
+  border-color: #ffffff;
+  box-shadow: 0 4px 18px rgba(235, 187, 141, 0.45);
+}
+
+.mode-btn.active i {
+  color: #111;
+}
+
+/* Benefits Grid & Cards */
 .premium-benefits-grid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .premium-benefit-card {
-  background: rgba(22, 22, 22, 0.9);
-  border: 1px solid rgba(235, 187, 141, 0.1);
-  border-radius: 1rem;
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  transition: all 0.4s ease;
+  background: linear-gradient(145deg, #151515 0%, #101010 100%);
+  border: 1px solid rgba(235, 187, 141, 0.15);
+  border-radius: 1.25rem;
+  padding: 1.85rem 1.6rem;
+  text-align: left;
+  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .premium-benefit-card::before {
@@ -1842,59 +2065,123 @@ h1 {
   height: 3px;
   background: linear-gradient(90deg, transparent, #EBBB8D, transparent);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
 }
 
-.premium-benefit-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(235, 187, 141, 0.3);
-  box-shadow: 0 12px 40px rgba(235, 187, 141, 0.15);
+.premium-benefit-card:hover,
+.premium-benefit-card.active-3d-card {
+  transform: translateY(-6px);
+  border-color: rgba(235, 187, 141, 0.45);
+  box-shadow: 0 16px 45px rgba(235, 187, 141, 0.16), 0 0 25px rgba(235, 187, 141, 0.08);
 }
 
-.premium-benefit-card:hover::before {
+.premium-benefit-card:hover::before,
+.premium-benefit-card.active-3d-card::before {
   opacity: 1;
 }
 
+.premium-benefit-card.active-3d-card {
+  background: linear-gradient(145deg, #1a1714 0%, #12100d 100%);
+  border-color: #EBBB8D;
+}
+
+.premium-benefit-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.benefit-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #EBBB8D;
+  background: rgba(235, 187, 141, 0.12);
+  border: 1px solid rgba(235, 187, 141, 0.28);
+  padding: 0.25rem 0.65rem;
+  border-radius: 2rem;
+  letter-spacing: 0.06rem;
+}
+
+.benefit-zone-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgb(170, 165, 165);
+  letter-spacing: 0.04rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+}
+
+.benefit-zone-tag i {
+  color: #EBBB8D;
+  font-size: 0.7rem;
+}
+
 .premium-benefit-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(235, 187, 141, 0.2), rgba(235, 187, 141, 0.05));
+  background: linear-gradient(135deg, rgba(235, 187, 141, 0.18), rgba(235, 187, 141, 0.04));
+  border: 1px solid rgba(235, 187, 141, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.25rem;
-  transition: all 0.4s ease;
+  margin: 0 0 1.25rem 0;
+  transition: all 0.35s ease;
 }
 
-.premium-benefit-card:hover .premium-benefit-icon {
-  background: linear-gradient(135deg, #EBBB8D, rgba(235, 187, 141, 0.5));
-  box-shadow: 0 4px 20px rgba(235, 187, 141, 0.4);
+.premium-benefit-card:hover .premium-benefit-icon,
+.premium-benefit-card.active-3d-card .premium-benefit-icon {
+  background: linear-gradient(135deg, #EBBB8D, #C99765);
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(235, 187, 141, 0.45);
+  border-color: #ffffff;
 }
 
 .premium-benefit-icon i {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: #EBBB8D;
-  transition: color 0.4s ease;
+  transition: color 0.35s ease;
 }
 
-.premium-benefit-card:hover .premium-benefit-icon i {
+.premium-benefit-card:hover .premium-benefit-icon i,
+.premium-benefit-card.active-3d-card .premium-benefit-icon i {
   color: #111;
 }
 
 .premium-benefit-card h3 {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.08rem;
   color: white;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.65rem 0;
+  line-height: 1.35;
 }
 
 .premium-benefit-card p {
-  font-size: 0.88rem;
-  color: rgb(150, 145, 145);
-  line-height: 1.7;
-  margin: 0;
+  font-size: 0.86rem;
+  color: rgb(165, 160, 160);
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+}
+
+.benefit-inspect-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  color: #EBBB8D;
+  transition: all 0.3s ease;
+}
+
+.premium-benefit-card:hover .benefit-inspect-cta,
+.premium-benefit-card.active-3d-card .benefit-inspect-cta {
+  color: #F5D5B5;
+  transform: translateX(3px);
 }
 
 
@@ -4530,6 +4817,41 @@ h1 {
     min-height: 360px;
   }
 
+  /* 3D Benefits Section — Tablet */
+  .premium-benefits-section {
+    padding: 4.5rem 1.5rem 3rem;
+  }
+
+  .car-3d-canvas-container {
+    height: 460px;
+  }
+
+  .car-3d-controls-dock {
+    padding: 0.85rem 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .dock-title-label {
+    font-size: 0.72rem;
+  }
+
+  .car-3d-mode-toolbar {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .mode-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+  }
+
+  .premium-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
   .premium-pricing-section {
     padding: 4rem 1.5rem;
   }
@@ -5313,6 +5635,82 @@ h1 {
     display: none;
   }
 
+  /* 3D Benefits Section — Mobile */
+  .premium-benefits-section {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+
+  .car-3d-wrapper {
+    border-radius: 1.35rem;
+  }
+
+  .car-3d-canvas-container {
+    height: 420px;
+  }
+
+  .car-3d-hud-header {
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .hud-badge-live {
+    font-size: 0.68rem;
+    padding: 0.38rem 0.85rem;
+  }
+
+  .hud-rotate-toggle {
+    font-size: 0.65rem;
+    padding: 0.38rem 0.85rem;
+  }
+
+  .car-3d-hint {
+    top: 3.6rem;
+    font-size: 0.66rem;
+    padding: 0.3rem 0.85rem;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .car-3d-controls-dock {
+    padding: 0.85rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .dock-title-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .car-3d-mode-toolbar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .mode-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.7rem;
+    gap: 0.35rem;
+    border-radius: 1.5rem;
+  }
+
+  .premium-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .premium-benefit-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1.15rem;
+  }
+
   /* Contact & Location — Mobile */
   .premium-contact-section,
   .premium-footer-section {
@@ -5622,6 +6020,40 @@ h1 {
 
 /* Extra Small Phones (max-width: 420px) */
 @media only screen and (max-width: 420px) {
+  .car-3d-canvas-container {
+    height: 380px;
+  }
+
+  .car-3d-hud-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .car-3d-hint {
+    display: none;
+  }
+
+  .car-3d-controls-dock {
+    padding: 0.75rem 0.65rem;
+    gap: 0.5rem;
+  }
+
+  .dock-title-label {
+    font-size: 0.68rem;
+  }
+
+  .car-3d-mode-toolbar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+
+  .mode-btn {
+    font-size: 0.64rem;
+    padding: 0.45rem 0.4rem;
+    gap: 0.25rem;
+  }
+
   .premium-contact-phone-list {
     grid-template-columns: 1fr;
     gap: 0.5rem;
