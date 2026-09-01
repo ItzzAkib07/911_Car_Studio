@@ -2,6 +2,7 @@ import React from "react";
 import { Tooltip, Box } from "@mui/material";
 import SmoothScrollingLink from "../SmoothScrollingLink";
 import logo from "../../images/911_logo.png";
+import PortfolioCreditBadge from "../PortfolioCreditBadge";
 
 const Header = ({ isScrolled, slide, close }) => {
   return (
@@ -176,30 +177,7 @@ const Header = ({ isScrolled, slide, close }) => {
               &copy;{new Date().getFullYear()}, 911 Car Detailing Studio
             </span>
 
-            <p className="footer-heart">
-              Made with{" "}
-              <g-emoji
-                className="g-emoji"
-                alias="heart"
-                fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"
-              >
-                <img
-                  className="emoji"
-                  alt="heart"
-                  height="18"
-                  width="18"
-                  src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"
-                />
-              </g-emoji>{" "}
-              by{" "}
-              <a
-                href="https://dezifolio.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Akib
-              </a>
-            </p>
+            <PortfolioCreditBadge />
           </footer>
         </Box>
       </div>

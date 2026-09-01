@@ -1,6 +1,7 @@
 import React from "react";
 import SmoothScrollingLink from "../SmoothScrollingLink";
 import logo from "../../images/911_logo.png";
+import PortfolioCreditBadge from "../PortfolioCreditBadge";
 
 const ContactFooterSection = () => {
   return (
@@ -325,16 +326,7 @@ const ContactFooterSection = () => {
             <strong>911 Premium Car Detailing Studio</strong>. All rights
             reserved.
           </p>
-          <p className="premium-footer-credit">
-            Crafted with <span className="heart-pulse">❤️</span> by{" "}
-            <a
-              href="https://dezifolio.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Akib
-            </a>
-          </p>
+          <PortfolioCreditBadge />
         </div>
       </div>
     </footer>

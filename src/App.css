@@ -4680,6 +4680,154 @@ h1 {
   50% { transform: scale(1.25); }
 }
 
+/* =========================================================================
+   PORTFOLIO CREDIT BADGE (Light Heart Color & Popping Hearts Hover Animation)
+   ========================================================================= */
+
+.portfolio-credit-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-credit-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #FFF0F3 0%, #FFE4E8 50%, #FFD6E0 100%);
+  border: 1px solid rgba(255, 165, 184, 0.7);
+  box-shadow: 0 2px 10px rgba(255, 77, 109, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  z-index: 1;
+}
+
+.portfolio-credit-box:hover,
+.portfolio-credit-box.hovered {
+  background: linear-gradient(135deg, #FFF5F7 0%, #FFCCD5 50%, #FFB3C1 100%);
+  border-color: rgba(255, 77, 109, 0.6);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 22px rgba(255, 77, 109, 0.35), 0 0 14px rgba(255, 107, 133, 0.25), inset 0 1px 2px #FFFFFF;
+}
+
+.portfolio-credit-text {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: #7A2238;
+  transition: color 0.25s ease;
+}
+
+.portfolio-credit-box:hover .portfolio-credit-text {
+  color: #631427;
+}
+
+.portfolio-heart-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #E11D48;
+  font-size: 0.85rem;
+  filter: drop-shadow(0 1px 3px rgba(225, 29, 72, 0.35));
+  transition: transform 0.25s ease;
+}
+
+.portfolio-heart-icon.beating {
+  animation: heartPulseActive 0.6s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes heartPulseActive {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.35) rotate(-6deg);
+  }
+  50% {
+    transform: scale(1.12) rotate(6deg);
+  }
+  75% {
+    transform: scale(1.3) rotate(-3deg);
+  }
+}
+
+.portfolio-credit-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #9F1239;
+  text-decoration: underline;
+  text-decoration-color: rgba(225, 29, 72, 0.4);
+  text-underline-offset: 3px;
+  transition: all 0.25s ease;
+}
+
+.portfolio-credit-box:hover .portfolio-credit-name {
+  color: #BE123C;
+  text-decoration-color: #BE123C;
+}
+
+.portfolio-sparkle-svg {
+  color: #E11D48;
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.portfolio-credit-box:hover .portfolio-sparkle-svg {
+  opacity: 1;
+  transform: rotate(15deg) scale(1.15);
+  color: #BE123C;
+}
+
+/* Floating Hearts Portal */
+.portfolio-hearts-portal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 20;
+}
+
+.portfolio-floating-heart {
+  position: absolute;
+  top: 40%;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  animation: popFloatHeart cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  filter: drop-shadow(0 2px 5px rgba(225, 29, 72, 0.4));
+  line-height: 1;
+}
+
+@keyframes popFloatHeart {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--drift-x) * 0.2), calc(-50% + var(--drift-y) * 0.2)) scale(1.25) rotate(var(--rot));
+  }
+  40% {
+    transform: translate(calc(-50% + var(--drift-x) * 0.5), calc(-50% + var(--drift-y) * 0.5)) scale(1.05) rotate(calc(var(--rot) * 0.9));
+  }
+  75% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift-x)), calc(-50% + var(--drift-y))) scale(0.65) rotate(calc(var(--rot) * 1.4));
+  }
+}
+
 
 /* =========================================================================
    15. RESPONSIVE MEDIA QUERIES
