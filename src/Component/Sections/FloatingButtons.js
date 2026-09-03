@@ -5,29 +5,29 @@ import SmoothScrollingLink from "../SmoothScrollingLink";
 const FloatingButtons = () => {
   return (
     <>
-      {/* WhatsAPP Button */}
+      {/* WhatsApp Floating Button */}
       <Tooltip title="Chat with us on Whatsapp" placement="right">
-        <span className="whatsapp">
-          <button>
-            <a
-              href="https://wa.me/message/IVQCEUWS35SAG1"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-whatsapp"></i>
-            </a>
-          </button>
-        </span>
+        <a
+          href="https://wa.me/message/IVQCEUWS35SAG1"
+          target="_blank"
+          rel="noreferrer"
+          className="fixed bottom-6 left-6 w-[3.25rem] h-[3.25rem] rounded-full bg-[#25d366] flex items-center justify-center text-white text-[1.85rem] z-[999] shadow-[0_4px_20px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_25px_rgba(37,211,102,0.65)] hover:scale-110 transition-all duration-300 no-underline cursor-pointer"
+          aria-label="Chat on WhatsApp"
+        >
+          <i className="fa-brands fa-whatsapp text-white leading-none"></i>
+        </a>
       </Tooltip>
 
-      {/* Scroll Top button */}
-      <SmoothScrollingLink to="home">
+      {/* Scroll to Top Floating Button */}
+      <SmoothScrollingLink to="home" className="no-underline">
         <Tooltip title="Scroll to Top" placement="left">
-          <span className="scroll">
-            <button>
-              <i className="fa-solid fa-jet-fighter-up"></i>
-            </button>
-          </span>
+          <button
+            type="button"
+            className="fixed bottom-6 right-6 max-sm:right-4 w-[3.25rem] h-[3.25rem] rounded-full bg-[#1a1a1a] hover:bg-[#EBBB8D] border-[1.5px] border-[#EBBB8D]/40 hover:border-[#EBBB8D] text-[#EBBB8D] hover:text-[#111] flex items-center justify-center text-[1.35rem] z-[999] shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_6px_25px_rgba(235,187,141,0.4)] hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer"
+            aria-label="Scroll to top"
+          >
+            <i className="fa-solid fa-jet-fighter-up leading-none transition-colors duration-300"></i>
+          </button>
         </Tooltip>
       </SmoothScrollingLink>
     </>

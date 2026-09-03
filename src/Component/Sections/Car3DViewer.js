@@ -749,17 +749,25 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
   }, [activeMode]);
 
   return (
-    <div className="car-3d-wrapper">
+    <div className="w-full relative rounded-[1.65rem] max-md:rounded-[1.35rem] overflow-hidden flex flex-col select-none">
       {/* 3D Canvas Area */}
-      <div className="car-3d-canvas-container" ref={containerRef}>
+      <div
+        className="relative w-full h-[520px] max-lg:h-[460px] max-md:h-[420px] cursor-grab active:cursor-grabbing touch-none"
+        ref={containerRef}
+      >
         {/* Top HUD Badges */}
-        <div className="car-3d-hud-header">
-          <div className="hud-badge-live">
-            <span className="hud-pulse-dot"></span>
+        <div className="absolute top-5 max-md:top-3.5 left-6 max-md:left-3.5 right-6 max-md:right-3.5 flex items-center justify-between gap-4 max-md:gap-2 z-10 pointer-events-none">
+          <div className="inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full bg-[#0c0c0c]/80 border border-[#EBBB8D]/35 backdrop-blur-md text-[#EBBB8D] text-xs max-md:text-[0.68rem] font-black tracking-[0.12rem] uppercase shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse"></span>
             <span>911 STUDIO 3D LAB</span>
           </div>
+
           <button
-            className={`hud-rotate-toggle ${isAutoRotate ? "active" : ""}`}
+            className={`pointer-events-auto inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full backdrop-blur-md text-xs max-md:text-[0.65rem] font-extrabold tracking-[0.08rem] cursor-pointer transition-all duration-300 border ${
+              isAutoRotate
+                ? "bg-[#EBBB8D]/20 border-[#EBBB8D] text-[#EBBB8D] shadow-[0_0_15px_rgba(235,187,141,0.25)]"
+                : "bg-[#121212]/90 border-[#EBBB8D]/30 text-[#F5D5B5] hover:bg-[#EBBB8D]/20 hover:border-[#EBBB8D] hover:text-[#EBBB8D]"
+            }`}
             onClick={() => setIsAutoRotate((prev) => !prev)}
             title={isAutoRotate ? "Pause Turntable" : "Auto-Rotate Turntable"}
           >
@@ -769,51 +777,42 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
         </div>
 
         {/* Floating Interaction Hint */}
-        <div className="car-3d-hint">
-          <i className="fa-solid fa-hand-pointer"></i>
+        <div className="absolute top-18 max-md:top-14 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 py-1.5 px-4 max-md:px-3 rounded-full bg-[#0a0a0a]/65 border border-[#EBBB8D]/20 backdrop-blur-md text-[#F5D5B5] text-xs max-md:text-[0.66rem] font-bold tracking-wide pointer-events-none z-[5] opacity-90 whitespace-nowrap max-md:max-w-[90%] text-center">
+          <i className="fa-solid fa-hand-pointer text-[#EBBB8D]"></i>
           <span>Drag to Rotate 360° • Click Cards to Inspect</span>
         </div>
       </div>
 
       {/* Dedicated Bottom Controls Dock (Positioned below the canvas so 3D model is never obscured) */}
-      <div className="car-3d-controls-dock">
-        <div className="dock-title-label">
-          <i className="fa-solid fa-layer-group"></i>
+      <div className="flex items-center justify-between max-md:flex-col gap-5 max-md:gap-2.5 p-4 max-md:p-3 px-7 max-md:px-4 bg-[#0a0a0a]/95 border-t border-[#EBBB8D]/20 backdrop-blur-xl z-10 flex-wrap">
+        <div className="inline-flex items-center gap-2 text-[#EBBB8D] text-xs max-md:text-[0.72rem] font-black tracking-[0.1rem] uppercase">
+          <i className="fa-solid fa-layer-group text-sm"></i>
           <span>ACTIVE 3D LAYER:</span>
         </div>
 
-        <div className="car-3d-mode-toolbar">
-          <button
-            className={`mode-btn ${activeMode === "gloss" ? "active" : ""}`}
-            onClick={() => setActiveMode("gloss")}
-          >
-            <i className="fa-solid fa-star"></i>
-            <span>MIRROR GLOSS</span>
-          </button>
-
-          <button
-            className={`mode-btn ${activeMode === "ceramic" ? "active" : ""}`}
-            onClick={() => setActiveMode("ceramic")}
-          >
-            <i className="fa-solid fa-shield-halved"></i>
-            <span>9H CERAMIC</span>
-          </button>
-
-          <button
-            className={`mode-btn ${activeMode === "ppf" ? "active" : ""}`}
-            onClick={() => setActiveMode("ppf")}
-          >
-            <i className="fa-solid fa-gem"></i>
-            <span>SELF-HEALING PPF</span>
-          </button>
-
-          <button
-            className={`mode-btn ${activeMode === "hydrophobic" ? "active" : ""}`}
-            onClick={() => setActiveMode("hydrophobic")}
-          >
-            <i className="fa-solid fa-droplet"></i>
-            <span>HYDROPHOBIC RAIN</span>
-          </button>
+        <div className="flex items-center gap-2.5 max-md:grid max-md:grid-cols-2 max-md:w-full flex-wrap">
+          {[
+            { key: "gloss", label: "MIRROR GLOSS", icon: "fa-solid fa-star" },
+            { key: "ceramic", label: "9H CERAMIC", icon: "fa-solid fa-shield-halved" },
+            { key: "ppf", label: "SELF-HEALING PPF", icon: "fa-solid fa-gem" },
+            { key: "hydrophobic", label: "HYDROPHOBIC RAIN", icon: "fa-solid fa-droplet" },
+          ].map((mode) => {
+            const isActive = activeMode === mode.key;
+            return (
+              <button
+                key={mode.key}
+                className={`inline-flex items-center justify-center gap-2 py-2.5 max-md:py-2 px-5 max-md:px-2 rounded-full text-xs max-md:text-[0.7rem] font-extrabold tracking-wider cursor-pointer transition-all duration-300 whitespace-nowrap border max-md:w-full ${
+                  isActive
+                    ? "bg-gradient-to-r from-[#EBBB8D] via-[#F5D5B5] to-[#C99765] text-[#111] border-white shadow-[0_4px_18px_rgba(235,187,141,0.45)]"
+                    : "bg-[#EBBB8D]/8 border-[#EBBB8D]/25 text-neutral-300 hover:bg-[#EBBB8D]/18 hover:border-[#EBBB8D] hover:text-white"
+                }`}
+                onClick={() => setActiveMode(mode.key)}
+              >
+                <i className={`${mode.icon} ${isActive ? "text-[#111]" : "text-[#EBBB8D]"}`}></i>
+                <span>{mode.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
