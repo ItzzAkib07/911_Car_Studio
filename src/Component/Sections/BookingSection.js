@@ -249,10 +249,10 @@ const BookingSection = () => {
   return (
     <section
       id="booking"
-      className="w-full py-20 max-md:py-12 px-8 max-md:px-4 relative overflow-hidden scroll-mt-20 box-border"
+      className="w-full py-20 max-md:py-12 px-8 max-md:px-4 relative overflow-hidden scroll-mt-20 box-border bg-[#010101]"
       style={{
         backgroundImage:
-          'radial-gradient(circle at center, rgba(14, 14, 14, 0.86) 0%, rgba(5, 5, 5, 0.97) 100%), url("/src/images/booking_background.png")',
+          'radial-gradient(circle at 50% 15%, rgba(212, 0, 0, 0.08) 0%, transparent 60%), radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("/src/images/booking_background.png")',
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -264,16 +264,15 @@ const BookingSection = () => {
         className="text-center max-w-[750px] mx-auto mb-14 max-md:mb-10 px-4"
         data-aos="fade-up"
       >
-        <span className="text-[0.85rem] max-md:text-[0.75rem] tracking-[0.4rem] text-[#EBBB8D] font-semibold uppercase block mb-3">
-          RESERVATION
+        <span className="text-[0.85rem] max-md:text-[0.75rem] tracking-[0.4rem] text-[#D40000] font-bold uppercase block mb-3">
+          STUDIO APPOINTMENT
         </span>
-        <h1 className="text-5xl max-lg:text-4xl max-md:text-3xl max-sm:text-2xl font-extrabold tracking-[0.15rem] text-white m-0 hover:text-neutral-300 transition-colors duration-200">
-          BOOK YOUR SERVICE
+        <h1 className="text-5xl max-lg:text-4xl max-md:text-3xl max-sm:text-2xl font-extrabold tracking-[0.15rem] text-[#E0D8D5] m-0 hover:text-white transition-colors duration-200">
+          BOOK YOUR DETAIL
         </h1>
-        <div className="w-20 h-[3px] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] my-5 mx-auto rounded-full"></div>
+        <div className="w-20 h-[3px] bg-gradient-to-r from-[#D40000] via-[#510404] to-transparent my-5 mx-auto rounded-full"></div>
         <p className="text-lg max-md:text-sm text-neutral-400 max-w-[550px] mx-auto leading-relaxed font-normal">
-          Schedule your detailing session with 911 Studio. Select your required
-          package or request door-to-door pick up & drop across Pune.
+          YOUR CAR. YOUR TIME. YOUR 911 EXPERIENCE. Schedule your detailing session or request door-to-door pick up & drop across Pune.
         </p>
       </div>
 
@@ -283,7 +282,7 @@ const BookingSection = () => {
         data-aos-delay="100"
       >
         <form
-          className="bg-[#141414] border border-[#EBBB8D]/20 rounded-[1.5rem] p-12 max-md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(235,187,141,0.15)] relative box-border before:content-[''] before:absolute before:top-0 before:left-[10%] before:right-[10%] before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[#EBBB8D] before:to-transparent"
+          className="bg-[#0D0C0B] border border-[rgba(224,216,213,0.12)] rounded-[1.5rem] p-12 max-md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(212,0,0,0.15)] relative box-border before:content-[''] before:absolute before:top-0 before:left-[10%] before:right-[10%] before:h-[2px] before:bg-gradient-to-r before:from-transparent before:via-[#D40000] before:to-transparent"
           ref={form}
           onSubmit={sendEmail}
         >
@@ -331,8 +330,8 @@ const BookingSection = () => {
           <div className="grid grid-cols-2 max-md:grid-cols-1 gap-8 max-md:gap-6 mb-8 items-start box-border">
             {/* Full Name */}
             <div className="flex flex-col justify-start gap-2 w-full box-border">
-              <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                <i className="fa-solid fa-user text-[#F5D5B5] text-[0.85rem]"></i>{" "}
+              <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                <i className="fa-solid fa-user text-[#D40000] text-[0.85rem]"></i>{" "}
                 Full Name *
               </label>
               <TextField
@@ -346,16 +345,16 @@ const BookingSection = () => {
                 sx={{
                   width: "100%",
                   "& .MuiInput-root": {
-                    color: "white",
+                    color: "#E0D8D5",
                     fontSize: "0.95rem",
                     height: "38px",
-                    borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                    borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                     boxSizing: "border-box",
                     "&:hover:not(.Mui-disabled):before": {
-                      borderBottom: "1px solid #EBBB8D",
+                      borderBottom: "1px solid #D40000",
                     },
                     "&.Mui-focused:after": {
-                      borderBottom: "2px solid #EBBB8D",
+                      borderBottom: "2px solid #D40000",
                     },
                   },
                   "& .MuiInputBase-input": {
@@ -365,7 +364,7 @@ const BookingSection = () => {
                     lineHeight: "38px",
                   },
                   "& .MuiInputBase-input::placeholder": {
-                    color: "rgba(255, 255, 255, 0.35)",
+                    color: "rgba(224, 216, 213, 0.35)",
                     opacity: 1,
                   },
                 }}
@@ -374,8 +373,8 @@ const BookingSection = () => {
 
             {/* Phone Number */}
             <div className="flex flex-col justify-start gap-2 w-full box-border">
-              <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                <i className="fa-solid fa-phone text-[#F5D5B5] text-[0.85rem]"></i>{" "}
+              <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                <i className="fa-solid fa-phone text-[#D40000] text-[0.85rem]"></i>{" "}
                 Phone Number *
               </label>
               <TextField
@@ -389,16 +388,16 @@ const BookingSection = () => {
                 sx={{
                   width: "100%",
                   "& .MuiInput-root": {
-                    color: "white",
+                    color: "#E0D8D5",
                     fontSize: "0.95rem",
                     height: "38px",
-                    borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                    borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                     boxSizing: "border-box",
                     "&:hover:not(.Mui-disabled):before": {
-                      borderBottom: "1px solid #EBBB8D",
+                      borderBottom: "1px solid #D40000",
                     },
                     "&.Mui-focused:after": {
-                      borderBottom: "2px solid #EBBB8D",
+                      borderBottom: "2px solid #D40000",
                     },
                   },
                   "& .MuiInputBase-input": {
@@ -408,7 +407,7 @@ const BookingSection = () => {
                     lineHeight: "38px",
                   },
                   "& .MuiInputBase-input::placeholder": {
-                    color: "rgba(255, 255, 255, 0.35)",
+                    color: "rgba(224, 216, 213, 0.35)",
                     opacity: 1,
                   },
                 }}
@@ -417,14 +416,14 @@ const BookingSection = () => {
 
             {/* Vehicle / Car Model */}
             <div className="flex flex-col justify-start gap-2 w-full box-border">
-              <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                <i className="fa-solid fa-car text-[#F5D5B5] text-[0.85rem]"></i>{" "}
+              <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                <i className="fa-solid fa-car text-[#D40000] text-[0.85rem]"></i>{" "}
                 Vehicle / Car Model *
               </label>
               <TextField
                 id="modal"
                 name="modal"
-                placeholder="e.g. Porsche 911 / BMW 3 Series / Thar"
+                placeholder="e.g. Porsche 911 / BMW M3 / Thar"
                 value={getModal}
                 variant="standard"
                 autoComplete="off"
@@ -432,16 +431,16 @@ const BookingSection = () => {
                 sx={{
                   width: "100%",
                   "& .MuiInput-root": {
-                    color: "white",
+                    color: "#E0D8D5",
                     fontSize: "0.95rem",
                     height: "38px",
-                    borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                    borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                     boxSizing: "border-box",
                     "&:hover:not(.Mui-disabled):before": {
-                      borderBottom: "1px solid #EBBB8D",
+                      borderBottom: "1px solid #D40000",
                     },
                     "&.Mui-focused:after": {
-                      borderBottom: "2px solid #EBBB8D",
+                      borderBottom: "2px solid #D40000",
                     },
                   },
                   "& .MuiInputBase-input": {
@@ -451,7 +450,7 @@ const BookingSection = () => {
                     lineHeight: "38px",
                   },
                   "& .MuiInputBase-input::placeholder": {
-                    color: "rgba(255, 255, 255, 0.35)",
+                    color: "rgba(224, 216, 213, 0.35)",
                     opacity: 1,
                   },
                 }}
@@ -460,8 +459,8 @@ const BookingSection = () => {
 
             {/* Select Service */}
             <div className="flex flex-col justify-start gap-2 w-full box-border">
-              <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                <i className="fa-solid fa-screwdriver-wrench text-[#F5D5B5] text-[0.85rem]"></i>{" "}
+              <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                <i className="fa-solid fa-screwdriver-wrench text-[#D40000] text-[0.85rem]"></i>{" "}
                 Select Service *
               </label>
               <FormControl variant="standard" sx={{ width: "100%" }}>
@@ -472,10 +471,10 @@ const BookingSection = () => {
                   displayEmpty
                   onChange={handleServiceChange}
                   sx={{
-                    color: getService ? "#F5D5B5" : "rgba(255, 255, 255, 0.4)",
+                    color: getService ? "#FFFFFF" : "rgba(224, 216, 213, 0.4)",
                     fontSize: "0.95rem",
                     height: "38px",
-                    borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                    borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                     boxSizing: "border-box",
                     "& .MuiSelect-select": {
                       padding: "0 !important",
@@ -485,32 +484,32 @@ const BookingSection = () => {
                       boxSizing: "border-box",
                     },
                     "&:hover:not(.Mui-disabled):before": {
-                      borderBottom: "1px solid #EBBB8D",
+                      borderBottom: "1px solid #D40000",
                     },
                     "&.Mui-focused:after": {
-                      borderBottom: "2px solid #EBBB8D",
+                      borderBottom: "2px solid #D40000",
                     },
                     "& .MuiSvgIcon-root": {
-                      color: "#EBBB8D",
+                      color: "#D40000",
                     },
                   }}
                   MenuProps={{
                     PaperProps: {
                       sx: {
-                        bgcolor: "#1a1a1a",
-                        border: "1px solid rgba(235, 187, 141, 0.25)",
-                        boxShadow: "0 10px 40px rgba(0,0,0,0.8)",
+                        bgcolor: "#0D0C0B",
+                        border: "1px solid rgba(224, 216, 213, 0.15)",
+                        boxShadow: "0 10px 40px rgba(0,0,0,0.9)",
                         "& .MuiMenuItem-root": {
-                          color: "#eee",
+                          color: "#E0D8D5",
                           fontSize: "0.9rem",
                           padding: "0.75rem 1.25rem",
                           "&:hover": {
-                            bgcolor: "rgba(235, 187, 141, 0.15)",
-                            color: "#EBBB8D",
+                            bgcolor: "rgba(212, 0, 0, 0.15)",
+                            color: "#FFFFFF",
                           },
                           "&.Mui-selected": {
-                            bgcolor: "rgba(235, 187, 141, 0.25)",
-                            color: "#EBBB8D",
+                            bgcolor: "rgba(212, 0, 0, 0.25)",
+                            color: "#FFFFFF",
                             fontWeight: 700,
                           },
                         },
@@ -549,8 +548,8 @@ const BookingSection = () => {
 
           {/* Full Width Query / Special Requirements */}
           <div className="flex flex-col justify-start gap-2 w-full box-border col-span-2 mb-7">
-            <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-              <i className="fa-solid fa-comment-dots text-[#F5D5B5] text-[0.85rem]"></i>{" "}
+            <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+              <i className="fa-solid fa-comment-dots text-[#D40000] text-[0.85rem]"></i>{" "}
               Special Requirements / Query (Optional)
             </label>
             <TextField
@@ -566,19 +565,19 @@ const BookingSection = () => {
               sx={{
                 width: "100%",
                 "& .MuiInput-root": {
-                  color: "white",
+                  color: "#E0D8D5",
                   fontSize: "0.95rem",
-                  borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                  borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                   padding: "0.4rem 0",
                   "&:hover:not(.Mui-disabled):before": {
-                    borderBottom: "1px solid #EBBB8D",
+                    borderBottom: "1px solid #D40000",
                   },
                   "&.Mui-focused:after": {
-                    borderBottom: "2px solid #EBBB8D",
+                    borderBottom: "2px solid #D40000",
                   },
                 },
                 "& .MuiInputBase-input::placeholder": {
-                  color: "rgba(255, 255, 255, 0.35)",
+                  color: "rgba(224, 216, 213, 0.35)",
                   opacity: 1,
                 },
               }}
@@ -588,7 +587,7 @@ const BookingSection = () => {
           {/* =========================================================
               COUPON / OFFERS SECTION (Opt-In Checkbox & Box)
               ========================================================= */}
-          <div className="w-full bg-white/[0.02] border border-[#EBBB8D]/22 hover:border-[#EBBB8D]/40 rounded-[1.25rem] p-5 max-md:p-4 mt-7 mb-0 box-border transition-colors duration-300">
+          <div className="w-full bg-[#1B1716]/40 border border-[rgba(224,216,213,0.12)] hover:border-[#D40000]/40 rounded-[1.25rem] p-5 max-md:p-4 mt-7 mb-0 box-border transition-colors duration-300">
             <div className="flex items-center justify-between flex-wrap gap-3.5">
               <FormGroup>
                 <FormControlLabel
@@ -597,16 +596,16 @@ const BookingSection = () => {
                       checked={hasCoupon}
                       onChange={handleCouponToggle}
                       sx={{
-                        color: "rgba(235, 187, 141, 0.6)",
+                        color: "rgba(224, 216, 213, 0.4)",
                         "&.Mui-checked": {
-                          color: "#EBBB8D",
+                          color: "#D40000",
                         },
                       }}
                     />
                   }
                   label={
-                    <span className="inline-flex items-center gap-2 text-[#F5D5B5] text-[0.95rem] font-bold tracking-wide">
-                      <i className="fa-solid fa-tags text-[#EBBB8D] text-base"></i>{" "}
+                    <span className="inline-flex items-center gap-2 text-[#E0D8D5] text-[0.95rem] font-bold tracking-wide">
+                      <i className="fa-solid fa-tags text-[#D40000] text-base"></i>{" "}
                       Have a coupon code?
                     </span>
                   }
@@ -617,7 +616,7 @@ const BookingSection = () => {
               {isOffersActive ? (
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-[0.78rem] font-extrabold tracking-wider uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] hover:from-[#F5D5B5] hover:to-[#e0a365] border-none rounded-full py-1.5 px-4 cursor-pointer transition-all duration-250 shadow-[0_4px_12px_rgba(235,187,141,0.25)] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(235,187,141,0.45)]"
+                  className="inline-flex items-center gap-2 text-[0.78rem] font-extrabold tracking-wider uppercase text-white bg-[#D40000] hover:bg-[#510404] border-none rounded-full py-1.5 px-4 cursor-pointer transition-all duration-250 shadow-[0_4px_12px_rgba(212,0,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(212,0,0,0.5)]"
                   onClick={() =>
                     window.dispatchEvent(new CustomEvent("open_offer_modal"))
                   }
@@ -628,13 +627,13 @@ const BookingSection = () => {
               ) : (
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-[0.76rem] font-extrabold tracking-wider text-[#EBBB8D] bg-[#EBBB8D]/[0.08] border border-[#EBBB8D]/35 hover:bg-[#EBBB8D]/20 hover:text-white hover:border-[#EBBB8D] rounded-full py-1.5 px-3.5 cursor-pointer transition-all duration-250 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 text-[0.76rem] font-extrabold tracking-wider text-[#E0D8D5] bg-[#1B1716] border border-[rgba(224,216,213,0.15)] hover:bg-[#D40000]/20 hover:text-white hover:border-[#D40000] rounded-full py-1.5 px-3.5 cursor-pointer transition-all duration-250 hover:-translate-y-0.5"
                   onClick={() =>
                     window.dispatchEvent(new CustomEvent("open_offer_modal"))
                   }
                   title="Studio running at maximum capacity"
                 >
-                  <i className="fa-solid fa-gauge-high"></i> Studio Full Boost{" "}
+                  <i className="fa-solid fa-gauge-high text-[#D40000]"></i> Studio Full Boost{" "}
                   <i className="fa-solid fa-circle-info text-[0.7rem]"></i>
                 </button>
               )}
@@ -642,18 +641,18 @@ const BookingSection = () => {
 
             {/* Expanded Coupon Code Input Field */}
             {hasCoupon && (
-              <div className="mt-5 pt-4.5 border-t border-dashed border-[#EBBB8D]/20">
-                {/* Playful notice banner when no active offers are available */}
+              <div className="mt-5 pt-4.5 border-t border-dashed border-[rgba(224,216,213,0.12)]">
+                {/* Notice banner when no active offers are available */}
                 {!isOffersActive && (
-                  <div className="flex items-start gap-3.5 bg-gradient-to-r from-[#EBBB8D]/[0.08] to-[#141414]/85 border border-dashed border-[#EBBB8D]/35 rounded-2xl p-4.5 mb-5">
-                    <div className="text-2xl text-[#EBBB8D] mt-0.5 shrink-0">
+                  <div className="flex items-start gap-3.5 bg-[#0D0C0B] border border-dashed border-[rgba(224,216,213,0.2)] rounded-2xl p-4.5 mb-5">
+                    <div className="text-2xl text-[#D40000] mt-0.5 shrink-0">
                       <i className="fa-solid fa-flag-checkered"></i>
                     </div>
                     <div>
                       <strong className="block text-[0.92rem] text-white mb-1.5 tracking-wide">
                         Garage Running at Full Throttle! 🏎️💨
                       </strong>
-                      <p className="text-[0.82rem] text-neutral-300 m-0 leading-relaxed font-normal">
+                      <p className="text-[0.82rem] text-neutral-400 m-0 leading-relaxed font-normal">
                         Our detailing bays and infrared curing lamps are running
                         at maximum RPM! We don't have ongoing discount coupon
                         drops right now, but every vehicle booked still receives
@@ -666,11 +665,11 @@ const BookingSection = () => {
                 )}
 
                 <div className="flex items-center gap-3 w-full max-sm:flex-col">
-                  <div className="flex-1 w-full flex items-center bg-[#141414] border border-[#EBBB8D]/30 focus-within:border-[#EBBB8D] focus-within:shadow-[0_0_12px_rgba(235,187,141,0.25)] rounded-xl py-2 px-4 gap-2.5 transition-all duration-300 box-border">
-                    <i className="fa-solid fa-ticket text-[#EBBB8D] text-base"></i>
+                  <div className="flex-1 w-full flex items-center bg-[#1B1716] border border-[rgba(224,216,213,0.15)] focus-within:border-[#D40000] focus-within:shadow-[0_0_12px_rgba(212,0,0,0.25)] rounded-xl py-2 px-4 gap-2.5 transition-all duration-300 box-border">
+                    <i className="fa-solid fa-ticket text-[#D40000] text-base"></i>
                     <input
                       type="text"
-                      className="flex-1 bg-transparent border-none outline-none text-white text-[0.95rem] font-bold tracking-wider uppercase placeholder:normal-case placeholder:font-normal placeholder:tracking-normal placeholder:text-white/35"
+                      className="flex-1 bg-transparent border-none outline-none text-white text-[0.95rem] font-bold tracking-wider uppercase placeholder:normal-case placeholder:font-normal placeholder:tracking-normal placeholder:text-neutral-500"
                       placeholder="Enter promo code (e.g. STUDIO911)"
                       value={couponCodeInput}
                       onChange={(e) =>
@@ -691,7 +690,7 @@ const BookingSection = () => {
                   ) : (
                     <button
                       type="button"
-                      className="inline-flex items-center justify-center gap-1.5 py-3 px-6 text-[0.82rem] font-extrabold tracking-wider uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] hover:from-[#F5D5B5] hover:to-[#e0a365] border-none rounded-xl cursor-pointer transition-all duration-300 whitespace-nowrap hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(235,187,141,0.4)] max-sm:w-full"
+                      className="inline-flex items-center justify-center gap-1.5 py-3 px-6 text-[0.82rem] font-extrabold tracking-wider uppercase text-white bg-[#D40000] hover:bg-[#510404] border-none rounded-xl cursor-pointer transition-all duration-300 whitespace-nowrap hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(212,0,0,0.4)] max-sm:w-full"
                       onClick={handleApplyCouponClick}
                     >
                       <i className="fa-solid fa-check"></i> APPLY
@@ -721,11 +720,11 @@ const BookingSection = () => {
 
                 {/* Bottom link to view offers or pricing */}
                 {isOffersActive ? (
-                  <div className="flex items-center justify-between flex-wrap gap-2 mt-4.5 pt-3.5 border-t border-dashed border-white/[0.08] text-[0.8rem] text-white/50">
+                  <div className="flex items-center justify-between flex-wrap gap-2 mt-4.5 pt-3.5 border-t border-dashed border-[rgba(224,216,213,0.08)] text-[0.8rem] text-neutral-400">
                     <span>Looking for active discount codes?</span>
                     <button
                       type="button"
-                      className="bg-transparent border-none text-[#EBBB8D] hover:text-[#F5D5B5] hover:underline text-[0.82rem] font-bold cursor-pointer inline-flex items-center gap-1.5 p-0 transition-all duration-200"
+                      className="bg-transparent border-none text-[#D40000] hover:text-white hover:underline text-[0.82rem] font-bold cursor-pointer inline-flex items-center gap-1.5 p-0 transition-all duration-200"
                       onClick={() =>
                         window.dispatchEvent(
                           new CustomEvent("open_offer_modal"),
@@ -737,14 +736,14 @@ const BookingSection = () => {
                     </button>
                   </div>
                 ) : (
-                  <div className="flex items-center justify-between flex-wrap gap-2 mt-4.5 pt-3.5 border-t border-dashed border-white/[0.08] text-[0.8rem] text-white/50">
+                  <div className="flex items-center justify-between flex-wrap gap-2 mt-4.5 pt-3.5 border-t border-dashed border-[rgba(224,216,213,0.08)] text-[0.8rem] text-neutral-400">
                     <span>
                       Want to check our studio package specifications?
                     </span>
                     <SmoothScrollingLink to="pricing">
                       <button
                         type="button"
-                        className="bg-transparent border-none text-[#EBBB8D] hover:text-[#F5D5B5] hover:underline text-[0.82rem] font-bold cursor-pointer inline-flex items-center gap-1.5 p-0 transition-all duration-200"
+                        className="bg-transparent border-none text-[#D40000] hover:text-white hover:underline text-[0.82rem] font-bold cursor-pointer inline-flex items-center gap-1.5 p-0 transition-all duration-200"
                       >
                         Explore All Detailing Plans{" "}
                         <i className="fa-solid fa-angle-right"></i>
@@ -760,13 +759,12 @@ const BookingSection = () => {
               LIVE PRICING BREAKDOWN CARD (Visible when service selected or coupon applied)
               ========================================================= */}
           {baseServicePrice > 0 && (
-            <div className="w-full bg-gradient-to-br from-[#EBBB8D]/[0.06] to-[#141414]/95 border-[1.5px] border-[#EBBB8D]/35 rounded-[1.25rem] p-6 max-md:p-4 mt-7 mb-0 box-border shadow-[0_10px_35px_rgba(0,0,0,0.5),0_0_25px_rgba(235,187,141,0.1)]">
-              <div className="flex items-center justify-between flex-wrap gap-2 pb-3.5 border-b border-[#EBBB8D]/20 mb-4">
-                <span className="text-[0.78rem] font-extrabold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2">
-                  <i className="fa-solid fa-receipt"></i> ESTIMATED SERVICE
-                  SUMMARY
+            <div className="w-full bg-gradient-to-br from-[#1B1716]/80 to-[#0D0C0B] border-[1.5px] border-[#D40000]/35 rounded-[1.25rem] p-6 max-md:p-4 mt-7 mb-0 box-border shadow-[0_10px_35px_rgba(0,0,0,0.6),0_0_25px_rgba(212,0,0,0.1)]">
+              <div className="flex items-center justify-between flex-wrap gap-2 pb-3.5 border-b border-[rgba(224,216,213,0.1)] mb-4">
+                <span className="text-[0.78rem] font-extrabold text-[#D40000] tracking-wider uppercase flex items-center gap-2">
+                  <i className="fa-solid fa-receipt"></i> ESTIMATED SERVICE SUMMARY
                 </span>
-                <span className="text-[0.88rem] font-bold text-white">
+                <span className="text-[0.88rem] font-bold text-[#E0D8D5]">
                   {getService}
                 </span>
               </div>
@@ -775,7 +773,7 @@ const BookingSection = () => {
                 {/* Original Base Price */}
                 <div className="flex items-center justify-between text-[0.9rem] text-neutral-300">
                   <span className="flex items-center gap-1.5">
-                    <i className="fa-solid fa-tag text-[#EBBB8D]"></i> Original Package Price
+                    <i className="fa-solid fa-tag text-[#D40000]"></i> Original Package Price
                   </span>
                   <span className="font-bold text-white">
                     ₹{baseServicePrice.toLocaleString("en-IN")}
@@ -798,28 +796,28 @@ const BookingSection = () => {
                   </div>
                 )}
 
-                <div className="w-full h-px bg-[#EBBB8D]/20 my-1"></div>
+                <div className="w-full h-px bg-[rgba(224,216,213,0.1)] my-1"></div>
 
                 {/* Final Total Row */}
                 <div className="flex items-center justify-between text-[1.05rem] pt-1">
-                  <span className="font-extrabold text-[#F5D5B5] tracking-wide">
+                  <span className="font-extrabold text-[#E0D8D5] tracking-wide">
                     Final Estimated Amount
                   </span>
-                  <span className="text-2xl font-black text-[#EBBB8D] tracking-wide">
+                  <span className="text-2xl font-black text-[#D40000] tracking-wide">
                     ₹{finalPayableAmount.toLocaleString("en-IN")}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[0.74rem] text-white/45 mt-4 pt-3 border-t border-dashed border-white/[0.08]">
-                <i className="fa-solid fa-shield-halved text-[#EBBB8D]"></i> 100% Transparency
+              <div className="flex items-center gap-1.5 text-[0.74rem] text-neutral-400 mt-4 pt-3 border-t border-dashed border-[rgba(224,216,213,0.08)]">
+                <i className="fa-solid fa-shield-halved text-[#D40000]"></i> 100% Transparency
                 • No Hidden Taxes or Surcharges
               </div>
             </div>
           )}
 
           {/* Pick-Up & Drop Service Toggle Box */}
-          <div className="w-full bg-white/[0.02] border border-[#EBBB8D]/22 hover:border-[#EBBB8D]/40 rounded-[1.25rem] p-5 max-md:p-4 mt-7 mb-0 box-border transition-colors duration-300">
+          <div className="w-full bg-[#1B1716]/40 border border-[rgba(224,216,213,0.12)] hover:border-[#D40000]/40 rounded-[1.25rem] p-5 max-md:p-4 mt-7 mb-0 box-border transition-colors duration-300">
             <div className="flex items-center justify-between flex-wrap gap-3">
               <FormGroup>
                 <FormControlLabel
@@ -828,29 +826,29 @@ const BookingSection = () => {
                       checked={showFields}
                       onChange={toggleFields}
                       sx={{
-                        color: "rgba(235, 187, 141, 0.6)",
+                        color: "rgba(224, 216, 213, 0.4)",
                         "&.Mui-checked": {
-                          color: "#EBBB8D",
+                          color: "#D40000",
                         },
                       }}
                     />
                   }
                   label={
-                    <span className="inline-flex items-center gap-2 text-[#F5D5B5] text-[0.95rem] font-bold tracking-wide">
-                      <i className="fa-solid fa-truck-pickup text-[#EBBB8D] text-base"></i> Want Doorstep
+                    <span className="inline-flex items-center gap-2 text-[#E0D8D5] text-[0.95rem] font-bold tracking-wide">
+                      <i className="fa-solid fa-truck-pickup text-[#D40000] text-base"></i> Want Doorstep
                       Pick-up & Drop Service?
                     </span>
                   }
                 />
               </FormGroup>
-              <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-[#EBBB8D] bg-[#EBBB8D]/10 border border-[#EBBB8D]/25 py-1 px-3.5 rounded-full">
-                <i className="fa-solid fa-shield-halved text-emerald-400 text-xs"></i> Safe & Insured
+              <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-[#E0D8D5] bg-[#1B1716] border border-[rgba(224,216,213,0.15)] py-1 px-3.5 rounded-full">
+                <i className="fa-solid fa-shield-halved text-[#D40000] text-xs"></i> Safe & Insured
                 Transit
               </span>
             </div>
 
             <SmoothScrollingLink to="pricing">
-              <span className="inline-flex items-center gap-1.5 text-[0.8rem] text-[#EBBB8D]/80 hover:text-[#F5D5B5] hover:underline font-semibold mt-2 cursor-pointer transition-colors duration-200">
+              <span className="inline-flex items-center gap-1.5 text-[0.8rem] text-neutral-400 hover:text-[#D40000] hover:underline font-semibold mt-2 cursor-pointer transition-colors duration-200">
                 View Pricing Plans{" "}
                 <i className="fa-solid fa-arrow-up-right-from-square text-[0.7rem]"></i>
               </span>
@@ -859,9 +857,9 @@ const BookingSection = () => {
 
           {/* Animated Conditional Pickup Fields */}
           {showFields && (
-            <div className="mt-5 p-5 max-md:p-4 bg-[#141414]/60 border border-dashed border-[#EBBB8D]/25 rounded-2xl">
-              <div className="flex items-center gap-2 text-[0.82rem] text-[#EBBB8D] mb-5">
-                <i className="fa-solid fa-circle-info text-sm"></i>
+            <div className="mt-5 p-5 max-md:p-4 bg-[#1B1716]/50 border border-dashed border-[rgba(224,216,213,0.15)] rounded-2xl">
+              <div className="flex items-center gap-2 text-[0.82rem] text-[#E0D8D5] mb-5">
+                <i className="fa-solid fa-circle-info text-sm text-[#D40000]"></i>
                 <span>
                   Please specify your preferred date, time, and exact pickup
                   address across Pune.
@@ -871,8 +869,8 @@ const BookingSection = () => {
               <div className="grid grid-cols-2 max-md:grid-cols-1 gap-8 max-md:gap-6 items-start box-border">
                 {/* Pick-Up Date & Time */}
                 <div className="flex flex-col justify-start gap-2 w-full box-border">
-                  <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                    <i className="fa-solid fa-calendar-days text-[#F5D5B5] text-[0.85rem]"></i> Pick-up Date &
+                  <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                    <i className="fa-solid fa-calendar-days text-[#D40000] text-[0.85rem]"></i> Pick-up Date &
                     Time *
                   </label>
                   <div className="relative w-full h-[38px] flex items-center box-border">
@@ -888,17 +886,17 @@ const BookingSection = () => {
                       minDate={currentDate}
                       placeholderText="Select pickup date and time"
                       isClearable
-                      className="w-full h-[38px] bg-transparent border-none border-b border-[#EBBB8D]/25 hover:border-[#EBBB8D] focus:border-b-2 focus:border-[#EBBB8D] text-white text-[0.95rem] pr-12 outline-none cursor-pointer box-border transition-colors duration-300 leading-[38px] flex items-center"
+                      className="w-full h-[38px] bg-transparent border-none border-b border-[rgba(224,216,213,0.15)] hover:border-[#D40000] focus:border-b-2 focus:border-[#D40000] text-[#E0D8D5] text-[0.95rem] pr-12 outline-none cursor-pointer box-border transition-colors duration-300 leading-[38px] flex items-center"
                       autoComplete="off"
                     />
-                    <i className="fa-solid fa-clock absolute right-0 top-1/2 -translate-y-1/2 text-[#EBBB8D] pointer-events-none text-[0.9rem] z-[1]"></i>
+                    <i className="fa-solid fa-clock absolute right-0 top-1/2 -translate-y-1/2 text-[#D40000] pointer-events-none text-[0.9rem] z-[1]"></i>
                   </div>
                 </div>
 
                 {/* Pick-Up Address */}
                 <div className="flex flex-col justify-start gap-2 w-full box-border">
-                  <label className="text-[0.82rem] font-bold text-[#EBBB8D] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
-                    <i className="fa-solid fa-location-dot text-[#F5D5B5] text-[0.85rem]"></i> Complete
+                  <label className="text-[0.82rem] font-bold text-[#E0D8D5] tracking-wider uppercase flex items-center gap-2 min-h-[1.4rem] m-0">
+                    <i className="fa-solid fa-location-dot text-[#D40000] text-[0.85rem]"></i> Complete
                     Pick-up Address *
                   </label>
                   <TextField
@@ -912,16 +910,16 @@ const BookingSection = () => {
                     sx={{
                       width: "100%",
                       "& .MuiInput-root": {
-                        color: "white",
+                        color: "#E0D8D5",
                         fontSize: "0.95rem",
                         height: "38px",
-                        borderBottom: "1px solid rgba(235, 187, 141, 0.25)",
+                        borderBottom: "1px solid rgba(224, 216, 213, 0.15)",
                         boxSizing: "border-box",
                         "&:hover:not(.Mui-disabled):before": {
-                          borderBottom: "1px solid #EBBB8D",
+                          borderBottom: "1px solid #D40000",
                         },
                         "&.Mui-focused:after": {
-                          borderBottom: "2px solid #EBBB8D",
+                          borderBottom: "2px solid #D40000",
                         },
                       },
                       "& .MuiInputBase-input": {
@@ -931,7 +929,7 @@ const BookingSection = () => {
                         lineHeight: "38px",
                       },
                       "& .MuiInputBase-input::placeholder": {
-                        color: "rgba(255, 255, 255, 0.35)",
+                        color: "rgba(224, 216, 213, 0.35)",
                         opacity: 1,
                       },
                     }}
@@ -945,7 +943,7 @@ const BookingSection = () => {
           <div className="flex flex-col items-center gap-5 mt-9 w-full">
             <div className="flex items-center justify-center gap-4 w-full flex-wrap">
               <button
-                className="inline-flex items-center justify-center gap-2.5 py-4 px-9 text-[0.95rem] font-black tracking-wider uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] via-[#F5D5B5] to-[#C99765] hover:from-[#F5D5B5] hover:via-[#EBBB8D] hover:to-[#e0a365] border-none rounded-full cursor-pointer transition-all duration-350 shadow-[0_8px_25px_rgba(235,187,141,0.35)] hover:shadow-[0_12px_35px_rgba(235,187,141,0.55)] hover:-translate-y-0.5 flex-1 min-w-[250px] max-md:w-full"
+                className="inline-flex items-center justify-center gap-2.5 py-4 px-9 text-[0.95rem] font-black tracking-wider uppercase text-white bg-[#D40000] hover:bg-[#510404] border border-[#D40000] rounded-full cursor-pointer transition-all duration-350 shadow-[0_8px_25px_rgba(212,0,0,0.35)] hover:shadow-[0_12px_35px_rgba(212,0,0,0.6)] hover:-translate-y-0.5 flex-1 min-w-[250px] max-md:w-full"
                 type="submit"
               >
                 CONFIRM APPOINTMENT{" "}
@@ -957,7 +955,7 @@ const BookingSection = () => {
 
               <button
                 type="button"
-                className="inline-flex items-center justify-center gap-2 py-4 px-7 text-[0.88rem] font-extrabold tracking-wider uppercase text-[#EBBB8D] hover:text-white bg-[#EBBB8D]/[0.06] hover:bg-[#EBBB8D]/20 border border-[#EBBB8D]/35 hover:border-[#EBBB8D] rounded-full cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(235,187,141,0.2)] max-md:w-full"
+                className="inline-flex items-center justify-center gap-2 py-4 px-7 text-[0.88rem] font-extrabold tracking-wider uppercase text-[#E0D8D5] hover:text-white bg-[#1B1716] hover:bg-[#D40000]/20 border border-[rgba(224,216,213,0.2)] hover:border-[#D40000] rounded-full cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(212,0,0,0.2)] max-md:w-full"
                 onClick={handleResetForm}
                 title="Clear and reset all booking form fields"
               >
@@ -966,18 +964,18 @@ const BookingSection = () => {
             </div>
 
             {/* Trust badges */}
-            <div className="flex items-center justify-center flex-wrap gap-3 text-[0.8rem] max-md:text-[0.72rem] text-white/50 mt-1 max-md:flex-col max-md:text-center">
+            <div className="flex items-center justify-center flex-wrap gap-3 text-[0.8rem] max-md:text-[0.72rem] text-neutral-400 mt-1 max-md:flex-col max-md:text-center">
               <span className="inline-flex items-center gap-1.5">
-                <i className="fa-solid fa-circle-check text-[#EBBB8D]"></i> Zero Advance
+                <i className="fa-solid fa-circle-check text-[#D40000]"></i> Zero Advance
                 Required
               </span>
-              <span className="text-[#EBBB8D]/40 max-md:hidden">•</span>
+              <span className="text-[#D40000]/40 max-md:hidden">•</span>
               <span className="inline-flex items-center gap-1.5">
-                <i className="fa-solid fa-bolt text-[#EBBB8D]"></i> Same-Day Response
+                <i className="fa-solid fa-bolt text-[#D40000]"></i> Same-Day Response
               </span>
-              <span className="text-[#EBBB8D]/40 max-md:hidden">•</span>
+              <span className="text-[#D40000]/40 max-md:hidden">•</span>
               <span className="inline-flex items-center gap-1.5">
-                <i className="fa-solid fa-shield-heart text-[#EBBB8D]"></i> 100% Satisfaction
+                <i className="fa-solid fa-shield-heart text-[#D40000]"></i> 100% Satisfaction
                 Guarantee
               </span>
             </div>

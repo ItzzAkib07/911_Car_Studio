@@ -88,11 +88,11 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     rendererRef.current = renderer;
 
     // 4. Lighting Rig (Luxury Studio Detailing Bay)
-    const ambientLight = new THREE.AmbientLight(0xfff5ea, 1.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
     scene.add(ambientLight);
 
-    // Key Light (Warm Champagne)
-    const keyLight = new THREE.DirectionalLight(0xf5d5b5, 3.2);
+    // Key Light (Crisp Metallic White Studio Light)
+    const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
     keyLight.position.set(4, 7, 5);
     keyLight.castShadow = true;
     keyLight.shadow.mapSize.width = 1024;
@@ -104,18 +104,18 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     fillLight.position.set(-5, 4, -3);
     scene.add(fillLight);
 
-    // Rim/Hair Light (Champagne Gold Edge Accents)
-    const rimLight = new THREE.DirectionalLight(0xebbb8d, 2.5);
+    // Rim/Hair Light (911 Performance Red Edge Accents)
+    const rimLight = new THREE.DirectionalLight(0xD40000, 2.2);
     rimLight.position.set(0, 5, -6);
     scene.add(rimLight);
 
     // Front Fascia Studio Softbox Light (Highlights front bumper curves, hood shine, and 4-point LEDs)
-    const frontStudioLight = new THREE.DirectionalLight(0xfff5ea, 2.4);
+    const frontStudioLight = new THREE.DirectionalLight(0xffffff, 2.4);
     frontStudioLight.position.set(0, 3.8, 6.5);
     scene.add(frontStudioLight);
 
-    // Under-chassis soft neon ground bounce
-    const underGlow = new THREE.PointLight(0xebbb8d, 1.8, 8);
+    // Under-chassis soft red ground bounce
+    const underGlow = new THREE.PointLight(0xD40000, 1.6, 8);
     underGlow.position.set(0, 0.2, 0);
     scene.add(underGlow);
 
@@ -126,7 +126,7 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     // Main floor disc
     const floorGeo = new THREE.CylinderGeometry(3.6, 3.6, 0.08, 64);
     const floorMat = new THREE.MeshStandardMaterial({
-      color: 0x111111,
+      color: 0x0D0C0B,
       roughness: 0.25,
       metalness: 0.85,
     });
@@ -135,10 +135,10 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     floorMesh.receiveShadow = true;
     turntableGroup.add(floorMesh);
 
-    // Glowing concentric outer neon ring
+    // Glowing concentric outer neon ring (Performance Red)
     const ringGeo = new THREE.RingGeometry(3.45, 3.55, 64);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0xebbb8d,
+      color: 0xD40000,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.85,
@@ -148,13 +148,13 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     ringMesh.position.y = 0.01;
     turntableGroup.add(ringMesh);
 
-    // Inner concentric neon ring
+    // Inner concentric neon ring (Metallic White)
     const innerRingGeo = new THREE.RingGeometry(2.1, 2.15, 64);
     const innerRingMat = new THREE.MeshBasicMaterial({
-      color: 0xebbb8d,
+      color: 0xE0D8D5,
       side: THREE.DoubleSide,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.45,
     });
     const innerRingMesh = new THREE.Mesh(innerRingGeo, innerRingMat);
     innerRingMesh.rotation.x = -Math.PI / 2;
@@ -168,40 +168,46 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
 
     // Paint Materials
     const paintMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x141414,
-      metalness: 0.88,
-      roughness: 0.12,
+      color: 0x0D0C0B,
+      metalness: 0.92,
+      roughness: 0.10,
       clearcoat: 1.0,
-      clearcoatRoughness: 0.04,
-      reflectivity: 0.95,
-      sheen: 0.6,
-      sheenColor: new THREE.Color(0xebbb8d),
+      clearcoatRoughness: 0.03,
+      reflectivity: 0.98,
+      sheen: 0.7,
+      sheenColor: new THREE.Color(0xD40000),
     });
 
     const carbonMaterial = new THREE.MeshStandardMaterial({
-      color: 0x0a0a0a,
-      roughness: 0.4,
-      metalness: 0.6,
+      color: 0x080808,
+      roughness: 0.45,
+      metalness: 0.55,
     });
 
     const glassMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x151c24,
+      color: 0x101418,
       metalness: 0.95,
-      roughness: 0.05,
-      transmission: 0.7,
+      roughness: 0.04,
+      transmission: 0.75,
       transparent: true,
       opacity: 0.88,
       reflectivity: 1.0,
     });
 
     const goldAlloyMaterial = new THREE.MeshStandardMaterial({
-      color: 0xebbb8d,
-      metalness: 0.92,
-      roughness: 0.22,
+      color: 0xC9A86A,
+      metalness: 0.95,
+      roughness: 0.2,
+    });
+
+    const redPerformanceMaterial = new THREE.MeshStandardMaterial({
+      color: 0xD40000,
+      metalness: 0.8,
+      roughness: 0.25,
     });
 
     const chromeMaterial = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
+      color: 0xE0D8D5,
       metalness: 0.98,
       roughness: 0.05,
     });
@@ -209,13 +215,13 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     const ledHeadlightMat = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       transparent: true,
-      opacity: 0.95,
+      opacity: 0.98,
     });
 
     const ledTaillightMat = new THREE.MeshBasicMaterial({
-      color: 0xff2233,
+      color: 0xD40000,
       transparent: true,
-      opacity: 0.95,
+      opacity: 0.98,
     });
 
     // 6A. Main Sculpted Lower Chassis
@@ -524,7 +530,7 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     // 7A. PPF Hexagonal Hologram Shield
     const shieldGeo = new THREE.IcosahedronGeometry(2.75, 2);
     const shieldMat = new THREE.MeshBasicMaterial({
-      color: 0xebbb8d,
+      color: 0xD40000,
       wireframe: true,
       transparent: true,
       opacity: 0.0,
@@ -537,7 +543,7 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     // 7B. Ceramic 9H Nanotech Shimmer Layer
     const ceramicGeo = new THREE.IcosahedronGeometry(2.6, 3);
     const ceramicMat = new THREE.MeshPhysicalMaterial({
-      color: 0xf5d5b5,
+      color: 0xE0D8D5,
       transparent: true,
       opacity: 0.0,
       roughness: 0.0,
@@ -585,12 +591,12 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
     const scannerGroup = new THREE.Group();
     const scanRing = new THREE.Mesh(
       new THREE.RingGeometry(0.2, 0.28, 32),
-      new THREE.MeshBasicMaterial({ color: 0xebbb8d, side: THREE.DoubleSide, transparent: true, opacity: 0.9 })
+      new THREE.MeshBasicMaterial({ color: 0xD40000, side: THREE.DoubleSide, transparent: true, opacity: 0.95 })
     );
     scanRing.rotation.x = -Math.PI / 2;
     scannerGroup.add(scanRing);
 
-    const scanBeacon = new THREE.PointLight(0xebbb8d, 2.5, 3);
+    const scanBeacon = new THREE.PointLight(0xD40000, 2.5, 3);
     scannerGroup.add(scanBeacon);
 
     scannerGroup.position.set(0, 0.7, 1.4);
@@ -749,7 +755,7 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
   }, [activeMode]);
 
   return (
-    <div className="w-full relative rounded-[1.65rem] max-md:rounded-[1.35rem] overflow-hidden flex flex-col select-none">
+    <div className="w-full relative rounded-[1.65rem] max-md:rounded-[1.35rem] overflow-hidden flex flex-col select-none bg-[#0D0C0B] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
       {/* 3D Canvas Area */}
       <div
         className="relative w-full h-[520px] max-lg:h-[460px] max-md:h-[420px] cursor-grab active:cursor-grabbing touch-none"
@@ -757,16 +763,16 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
       >
         {/* Top HUD Badges */}
         <div className="absolute top-5 max-md:top-3.5 left-6 max-md:left-3.5 right-6 max-md:right-3.5 flex items-center justify-between gap-4 max-md:gap-2 z-10 pointer-events-none">
-          <div className="inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full bg-[#0c0c0c]/80 border border-[#EBBB8D]/35 backdrop-blur-md text-[#EBBB8D] text-xs max-md:text-[0.68rem] font-black tracking-[0.12rem] uppercase shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse"></span>
+          <div className="inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full bg-[#0D0C0B]/90 border border-white/15 backdrop-blur-md text-[#E0D8D5] text-xs max-md:text-[0.68rem] font-black tracking-[0.12rem] uppercase shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-[#D40000] shadow-[0_0_8px_#D40000] animate-pulse"></span>
             <span>911 STUDIO 3D LAB</span>
           </div>
 
           <button
-            className={`pointer-events-auto inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full backdrop-blur-md text-xs max-md:text-[0.65rem] font-extrabold tracking-[0.08rem] cursor-pointer transition-all duration-300 border ${
+            className={`pointer-events-auto inline-flex items-center gap-2.5 py-2 max-md:py-1.5 px-4.5 max-md:px-3.5 rounded-full backdrop-blur-md text-xs max-md:text-[0.65rem] font-black tracking-[0.08rem] cursor-pointer transition-all duration-300 border ${
               isAutoRotate
-                ? "bg-[#EBBB8D]/20 border-[#EBBB8D] text-[#EBBB8D] shadow-[0_0_15px_rgba(235,187,141,0.25)]"
-                : "bg-[#121212]/90 border-[#EBBB8D]/30 text-[#F5D5B5] hover:bg-[#EBBB8D]/20 hover:border-[#EBBB8D] hover:text-[#EBBB8D]"
+                ? "bg-[#D40000] border-[#D40000] text-white shadow-[0_0_18px_rgba(212,0,0,0.6)]"
+                : "bg-[#1B1716] border-white/15 text-[#E0D8D5] hover:bg-[#D40000]/20 hover:border-[#D40000] hover:text-white"
             }`}
             onClick={() => setIsAutoRotate((prev) => !prev)}
             title={isAutoRotate ? "Pause Turntable" : "Auto-Rotate Turntable"}
@@ -777,15 +783,15 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
         </div>
 
         {/* Floating Interaction Hint */}
-        <div className="absolute top-18 max-md:top-14 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 py-1.5 px-4 max-md:px-3 rounded-full bg-[#0a0a0a]/65 border border-[#EBBB8D]/20 backdrop-blur-md text-[#F5D5B5] text-xs max-md:text-[0.66rem] font-bold tracking-wide pointer-events-none z-[5] opacity-90 whitespace-nowrap max-md:max-w-[90%] text-center">
-          <i className="fa-solid fa-hand-pointer text-[#EBBB8D]"></i>
+        <div className="absolute top-18 max-md:top-14 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 py-1.5 px-4 max-md:px-3 rounded-full bg-[#010101]/80 border border-white/10 backdrop-blur-md text-[#E0D8D5]/80 text-xs max-md:text-[0.66rem] font-bold tracking-wide pointer-events-none z-[5] opacity-90 whitespace-nowrap max-md:max-w-[90%] text-center">
+          <i className="fa-solid fa-hand-pointer text-[#D40000]"></i>
           <span>Drag to Rotate 360° • Click Cards to Inspect</span>
         </div>
       </div>
 
-      {/* Dedicated Bottom Controls Dock (Positioned below the canvas so 3D model is never obscured) */}
-      <div className="flex items-center justify-between max-md:flex-col gap-5 max-md:gap-2.5 p-4 max-md:p-3 px-7 max-md:px-4 bg-[#0a0a0a]/95 border-t border-[#EBBB8D]/20 backdrop-blur-xl z-10 flex-wrap">
-        <div className="inline-flex items-center gap-2 text-[#EBBB8D] text-xs max-md:text-[0.72rem] font-black tracking-[0.1rem] uppercase">
+      {/* Dedicated Bottom Controls Dock */}
+      <div className="flex items-center justify-between max-md:flex-col gap-5 max-md:gap-2.5 p-4 max-md:p-3 px-7 max-md:px-4 bg-[#010101]/95 border-t border-white/10 backdrop-blur-xl z-10 flex-wrap">
+        <div className="inline-flex items-center gap-2 text-[#D40000] text-xs max-md:text-[0.72rem] font-black tracking-[0.12rem] uppercase">
           <i className="fa-solid fa-layer-group text-sm"></i>
           <span>ACTIVE 3D LAYER:</span>
         </div>
@@ -801,14 +807,14 @@ const Car3DViewer = ({ activeBenefit, onSelectBenefit, activeMode, setActiveMode
             return (
               <button
                 key={mode.key}
-                className={`inline-flex items-center justify-center gap-2 py-2.5 max-md:py-2 px-5 max-md:px-2 rounded-full text-xs max-md:text-[0.7rem] font-extrabold tracking-wider cursor-pointer transition-all duration-300 whitespace-nowrap border max-md:w-full ${
+                className={`inline-flex items-center justify-center gap-2 py-2.5 max-md:py-2 px-5 max-md:px-2 rounded-full text-xs max-md:text-[0.7rem] font-black tracking-wider cursor-pointer transition-all duration-300 whitespace-nowrap border max-md:w-full ${
                   isActive
-                    ? "bg-gradient-to-r from-[#EBBB8D] via-[#F5D5B5] to-[#C99765] text-[#111] border-white shadow-[0_4px_18px_rgba(235,187,141,0.45)]"
-                    : "bg-[#EBBB8D]/8 border-[#EBBB8D]/25 text-neutral-300 hover:bg-[#EBBB8D]/18 hover:border-[#EBBB8D] hover:text-white"
+                    ? "bg-[#D40000] text-white border-[#D40000] shadow-[0_4px_18px_rgba(212,0,0,0.5)]"
+                    : "bg-[#1B1716] border-white/10 text-[#E0D8D5] hover:bg-[#D40000]/20 hover:border-[#D40000] hover:text-white"
                 }`}
                 onClick={() => setActiveMode(mode.key)}
               >
-                <i className={`${mode.icon} ${isActive ? "text-[#111]" : "text-[#EBBB8D]"}`}></i>
+                <i className={`${mode.icon} ${isActive ? "text-white" : "text-[#D40000]"}`}></i>
                 <span>{mode.label}</span>
               </button>
             );

@@ -72,7 +72,7 @@ const OfferModal = ({ isEnabled, customConfig }) => {
         justifyContent: "flex-end",
         p: { xs: 1, sm: 2, md: 3 },
         backdropFilter: "blur(4px)",
-        backgroundColor: "rgba(0, 0, 0, 0.45)",
+        backgroundColor: "rgba(0, 0, 0, 0.65)",
         zIndex: 1300,
       }}
     >
@@ -87,10 +87,10 @@ const OfferModal = ({ isEnabled, customConfig }) => {
           overflowY: "auto",
         }}
       >
-        <div className="relative w-full bg-gradient-to-br from-[#181818] via-[#111111] to-[#0a0a0a] border border-[#EBBB8D]/35 rounded-2xl max-md:rounded-xl p-6 max-md:p-4 shadow-[0_20px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(235,187,141,0.16)] box-border">
+        <div className="relative w-full bg-gradient-to-br from-[#1B1716] via-[#0D0C0B] to-[#010101] border border-[rgba(224,216,213,0.15)] rounded-2xl max-md:rounded-xl p-6 max-md:p-4 shadow-[0_20px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(212,0,0,0.15)] box-border">
           {/* Floating Top-Right Close Button */}
           <button
-            className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#EBBB8D]/10 border border-[#EBBB8D]/30 text-[#EBBB8D] flex items-center justify-center text-sm cursor-pointer hover:bg-[#EBBB8D] hover:text-[#111] hover:rotate-90 hover:scale-105 transition-all duration-300 shadow-md z-10"
+            className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#1B1716] border border-[rgba(224,216,213,0.2)] text-[#E0D8D5] flex items-center justify-center text-sm cursor-pointer hover:bg-[#D40000] hover:text-white hover:rotate-90 hover:scale-105 transition-all duration-300 shadow-md z-10"
             onClick={handleClose}
             aria-label="Close Offer Popup"
           >
@@ -100,13 +100,13 @@ const OfferModal = ({ isEnabled, customConfig }) => {
           {/* When NO offers are currently active */}
           {!hasActiveOffers ? (
             <div className="flex flex-col items-center text-center p-2">
-              <div className="w-13 h-13 rounded-full bg-[#EBBB8D]/10 border border-[#EBBB8D]/30 flex items-center justify-center mb-3.5 shadow-[0_0_20px_rgba(235,187,141,0.2)]">
-                <i className="fa-solid fa-flag-checkered text-xl text-[#EBBB8D]"></i>
+              <div className="w-13 h-13 rounded-full bg-[#1B1716] border border-[rgba(224,216,213,0.15)] flex items-center justify-center mb-3.5 shadow-[0_0_20px_rgba(212,0,0,0.2)]">
+                <i className="fa-solid fa-flag-checkered text-xl text-[#D40000]"></i>
               </div>
-              <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-extrabold tracking-[0.1rem] uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] py-1 px-3 rounded-full mb-2.5">
+              <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-extrabold tracking-[0.1rem] uppercase text-white bg-[#D40000] py-1 px-3 rounded-full mb-2.5">
                 <i className="fa-solid fa-gauge-high"></i> GARAGE RUNNING FULL THROTTLE 🏎️💨
               </div>
-              <h2 id="offer-modal-title" className="text-lg font-black text-white mb-2 tracking-wide">
+              <h2 id="offer-modal-title" className="text-lg font-black text-[#E0D8D5] mb-2 tracking-wide">
                 NO ACTIVE OFFERS CURRENTLY
               </h2>
               <p id="offer-modal-description" className="text-[0.78rem] text-neutral-400 leading-relaxed max-w-[360px] mx-auto mb-4">
@@ -114,21 +114,21 @@ const OfferModal = ({ isEnabled, customConfig }) => {
               </p>
               <div className="flex items-center justify-center flex-wrap gap-2.5 mb-5">
                 <div className="inline-flex items-center gap-1.5 text-[0.72rem] text-neutral-300">
-                  <i className="fa-solid fa-circle-check text-[#EBBB8D] text-xs"></i>
+                  <i className="fa-solid fa-circle-check text-[#D40000] text-xs"></i>
                   <span>Zero Advance Required</span>
                 </div>
                 <div className="inline-flex items-center gap-1.5 text-[0.72rem] text-neutral-300">
-                  <i className="fa-solid fa-circle-check text-[#EBBB8D] text-xs"></i>
+                  <i className="fa-solid fa-circle-check text-[#D40000] text-xs"></i>
                   <span>Certified Master Artisans</span>
                 </div>
                 <div className="inline-flex items-center gap-1.5 text-[0.72rem] text-neutral-300">
-                  <i className="fa-solid fa-circle-check text-[#EBBB8D] text-xs"></i>
+                  <i className="fa-solid fa-circle-check text-[#D40000] text-xs"></i>
                   <span>Doorstep Pick-up & Drop</span>
                 </div>
               </div>
-              <SmoothScrollingLink to="booking">
+              <SmoothScrollingLink to="booking" className="w-full no-underline">
                 <button
-                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-gradient-to-r from-[#EBBB8D] to-[#C99765] text-[#111] text-[0.72rem] font-extrabold tracking-wider rounded-full cursor-pointer hover:from-[#F5D5B5] hover:to-[#e0a365] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(235,187,141,0.5)] transition-all duration-250 shadow-[0_4px_15px_rgba(235,187,141,0.3)] border-none uppercase"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#D40000] hover:bg-[#510404] text-white text-[0.72rem] font-extrabold tracking-wider rounded-full cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(212,0,0,0.5)] transition-all duration-250 shadow-[0_4px_15px_rgba(212,0,0,0.3)] border-none uppercase"
                   onClick={handleClose}
                 >
                   <i className="fa-solid fa-calendar-check"></i> PROCEED WITH STANDARD BOOKING
@@ -140,10 +140,10 @@ const OfferModal = ({ isEnabled, customConfig }) => {
             <>
               {/* Modal Top Header */}
               <div className="text-center mb-4.5 px-2">
-                <span className="inline-flex items-center gap-1.5 text-[0.65rem] font-extrabold tracking-[0.12rem] uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] via-[#F5D5B5] to-[#C99765] py-1 px-3 rounded-full shadow-[0_4px_12px_rgba(235,187,141,0.35)] mb-2">
+                <span className="inline-flex items-center gap-1.5 text-[0.65rem] font-extrabold tracking-[0.12rem] uppercase text-white bg-[#D40000] py-1 px-3 rounded-full shadow-[0_4px_12px_rgba(212,0,0,0.35)] mb-2">
                   <i className="fa-solid fa-sparkles"></i> {config.modalTitle || "STUDIO SPECIAL OFFERS"}
                 </span>
-                <h2 id="offer-modal-title" className="text-xl max-sm:text-lg font-black tracking-wide m-0 mb-1 bg-gradient-to-r from-white via-neutral-100 to-[#EBBB8D] bg-clip-text text-transparent">
+                <h2 id="offer-modal-title" className="text-xl max-sm:text-lg font-black tracking-wide m-0 mb-1 text-[#E0D8D5]">
                   EXCLUSIVE STUDIO DEALS
                 </h2>
                 <p id="offer-modal-description" className="text-[0.78rem] text-neutral-400 m-0 leading-snug">
@@ -157,19 +157,19 @@ const OfferModal = ({ isEnabled, customConfig }) => {
                 {activeOffers.map((offer) => (
                   <div
                     key={offer.id}
-                    className="bg-white/[0.03] border border-[#EBBB8D]/25 rounded-2xl p-4 transition-all duration-300 relative hover:border-[#EBBB8D]/50 hover:bg-[#EBBB8D]/5 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
+                    className="bg-[#0D0C0B] border border-[rgba(224,216,213,0.1)] rounded-2xl p-4 transition-all duration-300 relative hover:border-[#D40000]/50 hover:bg-[#1B1716] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.4)]"
                   >
                     {/* Offer Card Top Row */}
                     <div className="flex items-start justify-between gap-2.5 mb-1.5">
                       <div className="flex flex-col gap-0.5">
-                        <span className="text-[0.6rem] font-extrabold tracking-wider text-[#EBBB8D] uppercase">
+                        <span className="text-[0.6rem] font-extrabold tracking-wider text-[#D40000] uppercase">
                           {offer.badge}
                         </span>
-                        <h3 className="text-base font-extrabold text-white m-0">
+                        <h3 className="text-base font-extrabold text-[#E0D8D5] m-0">
                           {offer.name}
                         </h3>
                       </div>
-                      <div className="text-[0.85rem] font-black text-[#111] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] py-1 px-2.5 rounded-full whitespace-nowrap tracking-wide shadow-[0_3px_10px_rgba(235,187,141,0.3)]">
+                      <div className="text-[0.85rem] font-black text-white bg-[#D40000] py-1 px-2.5 rounded-full whitespace-nowrap tracking-wide shadow-[0_3px_10px_rgba(212,0,0,0.3)]">
                         {offer.discountType === "percentage"
                           ? `${offer.discountValue}% OFF`
                           : `₹${offer.discountValue.toLocaleString("en-IN")} OFF`}
@@ -186,7 +186,7 @@ const OfferModal = ({ isEnabled, customConfig }) => {
                       <ul className="list-none p-0 m-0 mb-3 flex flex-col gap-1.5">
                         {offer.highlights.map((point, idx) => (
                           <li key={idx} className="flex items-center gap-2 text-[0.74rem] text-neutral-300">
-                            <i className="fa-solid fa-circle-check text-[#EBBB8D] text-xs"></i>
+                            <i className="fa-solid fa-circle-check text-[#D40000] text-xs"></i>
                             <span>{point}</span>
                           </li>
                         ))}
@@ -194,16 +194,16 @@ const OfferModal = ({ isEnabled, customConfig }) => {
                     )}
 
                     {/* Promo Code & Action Strip */}
-                    <div className="flex items-center justify-between gap-2.5 flex-wrap pt-2.5 border-t border-dashed border-[#EBBB8D]/20">
+                    <div className="flex items-center justify-between gap-2.5 flex-wrap pt-2.5 border-t border-dashed border-[rgba(224,216,213,0.1)]">
                       <div
-                        className="inline-flex items-center gap-1.5 bg-[#EBBB8D]/10 border border-dashed border-[#EBBB8D]/40 py-1 px-2.5 rounded-xl cursor-pointer hover:bg-[#EBBB8D]/20 hover:border-[#EBBB8D] transition-all duration-250"
+                        className="inline-flex items-center gap-1.5 bg-[#1B1716] border border-dashed border-[rgba(224,216,213,0.25)] py-1 px-2.5 rounded-xl cursor-pointer hover:bg-[#D40000]/15 hover:border-[#D40000] transition-all duration-250"
                         onClick={() => handleCopyCode(offer.code)}
                         title="Click to copy code"
                       >
-                        <span className="text-[0.82rem] font-extrabold tracking-wider text-[#EBBB8D]">
+                        <span className="text-[0.82rem] font-extrabold tracking-wider text-[#E0D8D5]">
                           {offer.code}
                         </span>
-                        <button className="bg-[#EBBB8D] text-[#111] border-none rounded py-0.5 px-1.5 text-[0.62rem] font-extrabold inline-flex items-center gap-1 cursor-pointer hover:bg-[#F5D5B5] transition-colors">
+                        <button className="bg-[#D40000] text-white border-none rounded py-0.5 px-1.5 text-[0.62rem] font-extrabold inline-flex items-center gap-1 cursor-pointer hover:bg-[#510404] transition-colors">
                           <i
                             className={`fa-solid ${
                               copiedCode === offer.code ? "fa-check" : "fa-copy"
@@ -213,9 +213,9 @@ const OfferModal = ({ isEnabled, customConfig }) => {
                         </button>
                       </div>
 
-                      <SmoothScrollingLink to="booking">
+                      <SmoothScrollingLink to="booking" className="no-underline">
                         <button
-                          className="inline-flex items-center gap-1.5 text-[0.72rem] font-extrabold tracking-wider uppercase text-[#111] bg-gradient-to-r from-[#EBBB8D] to-[#F5D5B5] py-1.5 px-3.5 rounded-full cursor-pointer hover:from-[#F5D5B5] hover:to-[#e0a365] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(235,187,141,0.5)] transition-all duration-250 shadow-[0_4px_12px_rgba(235,187,141,0.3)] border-none"
+                          className="inline-flex items-center gap-1.5 text-[0.72rem] font-extrabold tracking-wider uppercase text-white bg-[#D40000] hover:bg-[#510404] py-1.5 px-3.5 rounded-full cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(212,0,0,0.5)] transition-all duration-250 shadow-[0_4px_12px_rgba(212,0,0,0.3)] border-none"
                           onClick={() => handleApplyCoupon(offer.code)}
                         >
                           <i className="fa-solid fa-bolt"></i> APPLY CODE
@@ -225,7 +225,7 @@ const OfferModal = ({ isEnabled, customConfig }) => {
 
                     {/* Validity text */}
                     {offer.validity && (
-                      <span className="block text-[0.68rem] text-white/40 mt-1.5">
+                      <span className="block text-[0.68rem] text-neutral-500 mt-1.5">
                         <i className="fa-regular fa-clock"></i> {offer.validity}
                       </span>
                     )}
@@ -236,7 +236,7 @@ const OfferModal = ({ isEnabled, customConfig }) => {
               {/* Modal Dismiss */}
               <div className="text-center mt-2.5">
                 <button
-                  className="bg-transparent border-none text-white/45 text-xs font-semibold cursor-pointer py-1 hover:text-[#EBBB8D] hover:underline transition-colors"
+                  className="bg-transparent border-none text-neutral-400 text-xs font-semibold cursor-pointer py-1 hover:text-[#D40000] hover:underline transition-colors"
                   onClick={handleClose}
                 >
                   Close & Continue Browsing
