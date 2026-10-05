@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import SmoothScrollingLink from "../SmoothScrollingLink";
 import { pricingPlans } from "../data/pricingData";
+import bgImage from "../../images/background-3.png";
 
 // Modal style
 const modalStyle = {
@@ -34,8 +35,7 @@ const PricingSection = () => {
       id="pricing"
       className="w-full py-20 max-md:py-12 px-8 max-md:px-4 overflow-hidden scroll-mt-24 box-border relative bg-[#010101]"
       style={{
-        backgroundImage:
-          'radial-gradient(circle at 50% 20%, rgba(212, 0, 0, 0.07) 0%, transparent 60%), radial-gradient(circle at center, rgba(13, 12, 11, 0.85) 0%, rgba(1, 1, 1, 0.98) 100%), url("/src/images/background-3.png")',
+        backgroundImage: `radial-gradient(circle at 50% 20%, rgba(212, 0, 0, 0.07) 0%, transparent 60%), radial-gradient(circle at center, rgba(13, 12, 11, 0.85) 0%, rgba(1, 1, 1, 0.98) 100%), url("${bgImage}")`,
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

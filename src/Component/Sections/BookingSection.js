@@ -10,6 +10,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import DatePicker from "react-datepicker";
 import SmoothScrollingLink from "../SmoothScrollingLink";
+import bgImage from "../../images/booking_background.png";
 import {
   getServicePrice,
   calculateDiscount,
@@ -251,8 +252,7 @@ const BookingSection = () => {
       id="booking"
       className="w-full py-20 max-md:py-12 px-8 max-md:px-4 relative overflow-hidden scroll-mt-20 box-border bg-[#010101]"
       style={{
-        backgroundImage:
-          'radial-gradient(circle at 50% 15%, rgba(212, 0, 0, 0.08) 0%, transparent 60%), radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("/src/images/booking_background.png")',
+        backgroundImage: `radial-gradient(circle at 50% 15%, rgba(212, 0, 0, 0.08) 0%, transparent 60%), radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("${bgImage}")`,
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

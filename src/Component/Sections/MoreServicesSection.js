@@ -1,5 +1,6 @@
 import React from "react";
 import SmoothScrollingLink from "../SmoothScrollingLink";
+import bgImage from "../../images/background-2.png";
 
 const moreCardsData = [
   {
@@ -57,7 +58,7 @@ const MoreServicesSection = () => {
     <section
       className="py-20 max-md:py-12 px-8 max-md:px-4 overflow-hidden relative box-border w-full"
       style={{
-        backgroundImage: `radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("/src/images/background-2.png")`,
+        backgroundImage: `radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("${bgImage}")`,
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

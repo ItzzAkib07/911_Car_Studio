@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "../../images/background-1.png";
 
 const QualitySection = () => {
   return (
@@ -6,8 +7,7 @@ const QualitySection = () => {
       id="quality"
       className="w-full py-20 max-md:py-12 px-8 max-md:px-4 overflow-hidden scroll-mt-24 box-border relative"
       style={{
-        backgroundImage:
-          'radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("/src/images/background-1.png")',
+        backgroundImage: `radial-gradient(circle at center, rgba(13, 12, 11, 0.88) 0%, rgba(1, 1, 1, 0.98) 100%), url("${bgImage}")`,
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
